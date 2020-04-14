@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Container, GridColumn, Header } from 'semantic-ui-react';
+import { Grid, Image, Container, GridColumn, Header, List } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -7,11 +7,28 @@ class Landing extends React.Component {
     return (
         /* Outside to maintain consistent borders. */
         <Container>
-          <Container>
-            <Image bordered fluid src='/images/medicine_ball.jpg'/>
+          <Container verticalAlign='middle' textAlign='center' id='landing_1'>
+            <Grid>
+              <GridColumn>
+                <Grid verticalAlign='middle' textAlign='center'>
+                  <List>
+                    <List.Item>
+                      <Header as={'h1'} inverted color='grey' >Manoa</Header>
+                    </List.Item>
+                    <List.Item>
+                      <Header as={'h1'}inverted color='grey' >Fitness</Header>
+                    </List.Item>
+                    <List.Item>
+                      <Header as={'h1'} inverted color='grey' >Finder</Header>
+                    </List.Item>
+                  </List>
+                </Grid>
+              </GridColumn>
+            </Grid>
+
           </Container>
           <Header textAlign='centered' as={'h1'}>Match based on what you are looking for!</Header>
-          <Grid divided = 'vertically'>
+          <Grid divided='vertically'>
             <Grid.Row columns={3}>
               <Grid.Column>
                 Test 1
