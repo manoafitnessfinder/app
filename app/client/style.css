@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&display=swap');
+
+.header {
+  font-family: 'Arsenal', sans-serif !important;
+  text-transform: lowercase!important;
+  font-size: 40px!important;
+}
+
+.ui.segment {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+table, button, tr, td, tbody {
+  background-color: #6d9b7c!important;
+}
+
+tbody {
+  border-radius: 10px!important;
+}
