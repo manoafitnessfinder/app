@@ -1,0 +1,4 @@
+.aboutBackground{
+  background: url('/app/public/images/topImage2.png') no-repeat fixed center;
+  background-size: cover;
+}
