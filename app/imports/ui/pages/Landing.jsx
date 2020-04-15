@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Container, GridColumn, Header, List } from 'semantic-ui-react';
+import { Grid, Image, Container, GridColumn, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -7,49 +7,35 @@ class Landing extends React.Component {
     return (
         /* Outside to maintain consistent borders. */
         <Container>
-          <Container verticalAlign='middle' textAlign='center' id='landing_1'>
+          <Container verticalAlign='middle' textAlign='center'>
             <Grid>
               <GridColumn>
                 <Grid verticalAlign='middle' textAlign='center'>
-                  <List>
-                    <List.Item>
-                      <Header as={'h1'} inverted color='grey' >Manoa</Header>
-                    </List.Item>
-                    <List.Item>
-                      <Header as={'h1'}inverted color='grey' >Fitness</Header>
-                    </List.Item>
-                    <List.Item>
-                      <Header as={'h1'} inverted color='grey' >Finder</Header>
-                    </List.Item>
-                  </List>
+                  <Image id = 'landing_top_image' fluid src='/images/landing_page_top.JPG'/>
                 </Grid>
               </GridColumn>
             </Grid>
-
           </Container>
-          <Header textAlign='centered' as={'h1'}>Match based on what you are looking for!</Header>
-          <Grid divided='vertically'>
-            <Grid.Row columns={3}>
+          <Header inverted color='green' textAlign='centered' as={'h1'}>
+            Match based on what you are looking for!</Header>
+          <Grid>
+            <Grid.Row columns = {3}>
               <Grid.Column>
-                Test 1
+                <Image fluid src='/images/two_people_running.jpg'/>
               </Grid.Column>
               <Grid.Column>
-                Test 2
+                <Image fluid src='/images/one_armed_pushups.jpg'/>
               </Grid.Column>
               <Grid.Column>
-                Test 3
+                <Image fluid src='/images/gym_machines.jpg'/>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Grid>
-            <GridColumn>
-              <Grid columns='equal' verticalAlign='middle' textAlign='center'>
-                <Image size='small' circular src="/images/meteor-logo.png"/>
-                <h1>Welcome to this template</h1>
-                <p>Now get to work and modify this app!</p>
-              </Grid>
-            </GridColumn>
-          </Grid>
+          <Header inverted color='green' textAlign='centered' as={'h1'}>
+            Join today and work towards your better self!</Header>
+          <Container id = 'landing_bottom_image'>
+            <Image id = 'landing_top_image' fluid src='/images/yoga_pose.jpg'/>
+          </Container>
         </Container>
     );
   }

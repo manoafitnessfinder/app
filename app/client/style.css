@@ -1,5 +1,7 @@
-#landing_1 {
-  background: url("/images/medicine_ball.jpg") no-repeat;
-  width: 100%;
-  height: 600px;
+#landing_top_image {
+  padding-top: 10px;
+}
+
+#landing_bottom_image {
+
 }
