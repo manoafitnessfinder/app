@@ -9,17 +9,23 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '60px', marginTop: '20px' };
-    const cStyle = { left: "50%", transform: "translate(-50%, 0)"};
+    const cStyle = { left: "35%", transform: "translate(-35%, 0)"};
     return (
-        <Menu style={menuStyle} attached="top" borderless>
+        <Menu attached="top" borderless>
           <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-            <Dropdown inverted text='Home'>
-              <Dropdown.Menu>
-                <Dropdown.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>About Us</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Icon color='#33e36d' name='minus' />
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Home</Menu.Item>
+          </Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>About Us</Menu.Item>
+          </Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Testimonials</Menu.Item>
+          </Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Tips and Tricks</Menu.Item>
+          </Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Contact Us</Menu.Item>
           </Menu.Item>
           {this.props.currentUser ? (
               [

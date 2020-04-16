@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.Menu.Item {
+  font-family: 'Julius Sans One', sans-serif !important;
+}
+
 .icon{
-  color: #33e36d;
+  color: #6D9B7C;
 }
 
 .Button{
-  color: #33e36d;
+  color: #6D9B7C;
 }
