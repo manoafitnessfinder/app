@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Container, GridColumn, Header } from 'semantic-ui-react';
+import { Grid, Image, Container, Header, Segment } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -8,18 +8,12 @@ class Landing extends React.Component {
         /* Outside to maintain consistent borders. */
         <Container>
           <Container verticalAlign='middle' textAlign='center'>
-            <Grid>
-              <GridColumn>
-                <Grid verticalAlign='middle' textAlign='center'>
-                  <Image id = 'landing_top_image' fluid src='/images/landing_page_top.JPG'/>
-                </Grid>
-              </GridColumn>
-            </Grid>
+            <Image id='landing_top_image' fluid src='/images/landing_page_top.JPG'/>
           </Container>
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Match based on what you are looking for!</Header>
           <Grid>
-            <Grid.Row columns = {3}>
+            <Grid.Row columns={3}>
               <Grid.Column>
                 <Image fluid src='/images/two_people_running.jpg'/>
               </Grid.Column>
@@ -33,8 +27,8 @@ class Landing extends React.Component {
           </Grid>
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Join today and work towards your better self!</Header>
-          <Container id = 'landing_bottom_image'>
-            <Image id = 'landing_top_image' fluid src='/images/yoga_pose.jpg'/>
+          <Container>
+            <Image id='landing_bottom_image' fluid src='/images/yoga_pose.jpg'/>
           </Container>
         </Container>
     );
