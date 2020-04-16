@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Container, Header, Segment } from 'semantic-ui-react';
+import { Grid, Image, Container, Header, Segment, Button } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -27,8 +27,13 @@ class Landing extends React.Component {
           </Grid>
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Join today and work towards your better self!</Header>
-          <Container>
-            <Image id='landing_bottom_image' fluid src='/images/yoga_pose.jpg'/>
+          <Container id='landing_bottom_image'>
+            <Segment floated = 'right' compact tertiary textAlign = 'center' id='image_overlay'>
+              <Header inverted color='green' textAlign='center' as={'h1'}>Match With <br/> Someone today!<br/> </Header>
+              <Button color = 'green' compact size = 'medium'>
+                Join Now!
+              </Button>
+            </Segment>
           </Container>
         </Container>
     );
