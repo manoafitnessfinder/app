@@ -49,7 +49,7 @@ class About extends React.Component {
             </Grid.Row>
           <Grid.Row>
             <Grid.Column width={8}>
-              <Image src="/images/about2.JPG" fluid/>
+              <Image src="/images/about2.jpg" fluid/>
             </Grid.Column>
             <Grid.Column textAlign='center' width={8}>
               <Header size='huge' style={{ color: '#6D9B7C' }}>
