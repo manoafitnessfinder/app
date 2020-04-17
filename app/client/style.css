@@ -34,3 +34,21 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+/* #6: SOPHIA 04/16/20 */
+.userMenu, .ui.inverted.table.tableInfo tr td {
+  background-color: #6D9B7C!important;
+}
+
+tbody {
+  border-radius: 10px!important;
+}
+
+.userComment {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+.profileIcon {
+  color: white!important;
+}
