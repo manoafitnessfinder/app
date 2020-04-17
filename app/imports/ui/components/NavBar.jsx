@@ -12,20 +12,20 @@ class NavBar extends React.Component {
     const cStyle = { left: "35%", transform: "translate(-35%, 0)"};
     return (
         <Menu attached="top" borderless>
-          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Home</Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/landing" key='landing'>
+            Home
+          </Menu.Item>
+          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/about" key='about'>
+                About Us
           </Menu.Item>
           <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>About Us</Menu.Item>
+            Testimonials
           </Menu.Item>
           <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Testimonials</Menu.Item>
+            Tips and Tricks
           </Menu.Item>
           <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Tips and Tricks</Menu.Item>
-          </Menu.Item>
-          <Menu.Item style={cStyle} as={NavLink} activeClassName="" exact to="/">
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Contact Us</Menu.Item>
+            Contact Us
           </Menu.Item>
           {this.props.currentUser ? (
               [
@@ -40,6 +40,7 @@ class NavBar extends React.Component {
                   <Dropdown.Menu>
                     <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                     <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                    <Dropdown.Item icon="user" text="Profile Page" as={NavLink} exact to="/profile"/>
                   </Dropdown.Menu>
                 </Dropdown>
             ) : (

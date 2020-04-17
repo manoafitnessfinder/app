@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
-import { Stuffs } from '../../api/stuff/Stuff';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
