@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Grid, Button, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
+import { Container, Icon, Grid, Menu, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
@@ -41,7 +41,6 @@ class AddStuff extends React.Component {
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class UserProfile extends React.Component {
 
-
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -49,56 +48,66 @@ class UserProfile extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    let fRef=null;
+    let fRef = null;
     return (
         <Container>
           <Divider hidden/>
           <Header as="h2" textAlign="center">Username's Profile</Header>
+          <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
+            <Menu.Item><Icon name='user'/> Add Friend</Menu.Item>
+            <Menu.Item><Icon name='heart'/> Like Page</Menu.Item>
+            <Menu.Item><Icon name='map'/> User Feed</Menu.Item>
+          </Menu>
           <Divider hidden/>
-          <Grid columns={2}>
+          <Grid verticalAlign='middle'>
             <Grid.Row verticalAlign='middle' textAlign='justify'>
-              <Grid.Column><Image circular size="medium"
+              <Grid.Column width={5}><Image circular className='userImage' fluid
                                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/></Grid.Column>
-              <Grid.Column>
-                <center><Button centered color='teal'>Add Friend</Button></center>
-                <Divider hidden/>
+              <Grid.Column width={11}>
+                <Header as='h3'>NAME - AGE - GENDER</Header>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
                 ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia deserunt mollit anim id est laborum.
-                </Grid.Column>
+              </Grid.Column>
             </Grid.Row>
           </Grid>
           <Divider hidden/>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column>
+                  <Table className="tableInfo" color='teal' inverted padded textAlign='center'>
+                    <Table.Body>
+                      <Table.Row>
+                        <Table.Cell>Interests</Table.Cell>
+                        <Table.Cell>Running, Lifting</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell>Seeking</Table.Cell>
+                        <Table.Cell>Gym buddy</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell>Level</Table.Cell>
+                        <Table.Cell>Beginner</Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell>Goals</Table.Cell>
+                        <Table.Cell>Run an 8 minute mile</Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table>
+              </Grid.Column>
+            </Grid.Row>
+        </Grid>
 
-          <Table color='teal' inverted compact textAlign='center'>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>Interests</Table.Cell>
-                <Table.Cell>Running, Lifting</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Seeking</Table.Cell>
-                <Table.Cell>Gym buddy</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Level</Table.Cell>
-                <Table.Cell>Beginner</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Goals</Table.Cell>
-                <Table.Cell>Run an 8 minute mile</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
-
+          <Divider hidden/>
 
 
           <AutoForm ref={ref => {
             fRef = ref;
           }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-            <Segment>
+            <Segment className="userComment">
               <LongTextField name='comment'/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
