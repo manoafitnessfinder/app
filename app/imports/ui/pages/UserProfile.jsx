@@ -57,12 +57,13 @@ class UserProfile extends React.Component {
           <Divider hidden/>
           <Grid verticalAlign='middle'>
             <Grid.Row verticalAlign='middle' textAlign='justify'>
-              <Grid.Column width={5}>
+              <Grid.Column width={1} />
+              <Grid.Column width={4}>
                 <Image circular className='userImage'
                        fluid
                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
               </Grid.Column>
-              <Grid.Column width={11}>
+              <Grid.Column width={10}>
                 <Header as='h3'>NAME - AGE - GENDER</Header>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -70,6 +71,7 @@ class UserProfile extends React.Component {
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia deserunt mollit anim id est laborum.
               </Grid.Column>
+              <Grid.Column width={1} />
             </Grid.Row>
           </Grid>
           <Divider hidden/>
