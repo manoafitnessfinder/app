@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Image, Message, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -38,45 +38,51 @@ class Signup extends React.Component {
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
+    const signupStyle = { padding: '10px' };
     return (
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Register your account
+            <Image style={signupStyle} size='huge' centered src="/images/signup.jpg"/>
+            <Header as="h3" textAlign="center">
+              Sign-up and start connecting with other Manoa students today!
             </Header>
             <Form onSubmit={this.submit}>
-              <Segment stacked>
-                <Form.Input
-                  label="Email"
-                  icon="user"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
+              <Container>
+              <Form.Group widths='equal'>
+                <Form.Input fluid label='First name' placeholder='First name' />
+                <Form.Input fluid label='Last name' placeholder='Last name' />
+              </Form.Group>
+              <Form.Group widths='equal'>
+                <Form.Input fluid
+                            label="Email"
+                            name="email"
+                            type="email"
+                            placeholder="UH E-mail address"
+                            onChange={this.handleChange}
                 />
                 <Form.Input
-                  label="Password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
-              </Segment>
+              </Form.Group>
+                <Form.Field align='center'>
+                  <Checkbox label='I agree to the Terms and Conditions' />
+                </Form.Field>
+              <Form.Field align='center'>
+                <Form.Button basic color='green' content="Set Up Profile"/>
+              </Form.Field>
+              </Container>
             </Form>
-            <Message>
-              Already have an account? Login <Link to="/signin">here</Link>
-            </Message>
             {this.state.error === '' ? (
               ''
             ) : (
               <Message
                 error
-                header="Registration was not successful"
+                header="There was an error is your registration. Try again or contact us."
                 content={this.state.error}
               />
             )}
