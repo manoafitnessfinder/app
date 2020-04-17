@@ -50,9 +50,9 @@ class UserProfile extends React.Component {
           <Divider hidden/>
           <Header as="h2" textAlign="center">Username&apos;s Profile</Header>
           <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
-            <Menu.Item><Icon name='user'/> Add Friend</Menu.Item>
-            <Menu.Item><Icon name='heart'/> Like Page</Menu.Item>
-            <Menu.Item><Icon name='map'/> User Feed</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='map'/> User Feed</Menu.Item>
           </Menu>
           <Divider hidden/>
           <Grid verticalAlign='middle'>
