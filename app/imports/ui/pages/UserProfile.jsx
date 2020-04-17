@@ -5,8 +5,8 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
 import swal from 'sweetalert';
+import { Stuffs } from '../../api/stuff/Stuff';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -19,8 +19,8 @@ const formSchema = new SimpleSchema({
   },
 });
 
-/** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class UserProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -36,10 +36,6 @@ class AddStuff extends React.Component {
           }
         });
   }
-}
-
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class UserProfile extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -52,18 +48,22 @@ class UserProfile extends React.Component {
     return (
         <Container>
           <Divider hidden/>
-          <Header as="h2" textAlign="center">Username's Profile</Header>
+          <Header as="h2" textAlign="center">Username&apos;s Profile</Header>
           <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
-            <Menu.Item><Icon name='user'/> Add Friend</Menu.Item>
-            <Menu.Item><Icon name='heart'/> Like Page</Menu.Item>
-            <Menu.Item><Icon name='map'/> User Feed</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='map'/> User Feed</Menu.Item>
           </Menu>
           <Divider hidden/>
           <Grid verticalAlign='middle'>
             <Grid.Row verticalAlign='middle' textAlign='justify'>
-              <Grid.Column width={5}><Image circular className='userImage' fluid
-                                  src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/></Grid.Column>
-              <Grid.Column width={11}>
+              <Grid.Column width={1} />
+              <Grid.Column width={4}>
+                <Image circular className='userImage'
+                       fluid
+                       src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
+              </Grid.Column>
+              <Grid.Column width={10}>
                 <Header as='h3'>NAME - AGE - GENDER</Header>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
@@ -71,35 +71,36 @@ class UserProfile extends React.Component {
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia deserunt mollit anim id est laborum.
               </Grid.Column>
+              <Grid.Column width={1} />
             </Grid.Row>
           </Grid>
           <Divider hidden/>
           <Grid>
             <Grid.Row>
               <Grid.Column>
-                  <Table className="tableInfo" color='teal' inverted padded textAlign='center'>
-                    <Table.Body>
-                      <Table.Row>
-                        <Table.Cell>Interests</Table.Cell>
-                        <Table.Cell>Running, Lifting</Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell>Seeking</Table.Cell>
-                        <Table.Cell>Gym buddy</Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell>Level</Table.Cell>
-                        <Table.Cell>Beginner</Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell>Goals</Table.Cell>
-                        <Table.Cell>Run an 8 minute mile</Table.Cell>
-                      </Table.Row>
-                    </Table.Body>
-                  </Table>
+                <Table className="tableInfo" color='teal' inverted padded textAlign='center'>
+                  <Table.Body>
+                    <Table.Row>
+                      <Table.Cell>Interests</Table.Cell>
+                      <Table.Cell>Running, Lifting</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Seeking</Table.Cell>
+                      <Table.Cell>Gym buddy</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Level</Table.Cell>
+                      <Table.Cell>Beginner</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Goals</Table.Cell>
+                      <Table.Cell>Run an 8 minute mile</Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                </Table>
               </Grid.Column>
             </Grid.Row>
-        </Grid>
+          </Grid>
 
           <Divider hidden/>
 
@@ -131,7 +132,6 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Stuff');
   return {
-
     ready: subscription.ready(),
   };
 })(UserProfile);
