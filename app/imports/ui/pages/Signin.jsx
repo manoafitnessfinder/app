@@ -68,7 +68,7 @@ export default class Signin extends React.Component {
                       type="password"
                       onChange={this.handleChange}
                   />
-                  <Form.Button basic color='green' attached content="Submit"/>
+                  <Form.Button basic color='green' content="Submit"/>
                   <Link to="/signup"><Button basic color='green' attached content="Don't have an account? Sign up now!" /></Link>
                 </Container>
               </Form>

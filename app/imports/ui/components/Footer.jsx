@@ -10,7 +10,7 @@ class Footer extends React.Component {
         <footer>
           <Grid style={divStyle} centered stackable columns='3' container>
             <Grid.Column>
-              <h3 textAlign='left'>About Us</h3>
+              <h3 textalign='left'>About Us</h3>
               <hr/>
               <p>
                 <a href="https://github.com/manoafitnessfinder/app/">Our github page</a>
@@ -24,7 +24,7 @@ class Footer extends React.Component {
             </Grid.Column>
 
             <Grid.Column>
-              <h3 textAlign='left'>Sitemap (Work in progress)</h3>
+              <h3 textalign='left'>Sitemap (Work in progress)</h3>
               <hr/>
               <p>
                 <Menu.Item
@@ -40,7 +40,7 @@ class Footer extends React.Component {
               <h3>
                 { /* Later possibility to add an email box here to autofill
                 the signup page box from the user entered text */ }
-                <Menu.Item textAlign='left'
+                <Menu.Item textalign='left'
                            as={NavLink}
                            activeClassName="active"
                            exact to="/signup"
