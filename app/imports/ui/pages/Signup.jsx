@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import swal from 'sweetalert';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Image, Message, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import { Profiles } from '../../api/profile/Profile';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -21,10 +25,16 @@ class Signup extends React.Component {
 
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
+    const { name, email, password } = this.state;
+    const owner = this.state.email;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+      }
+    });
+    Profiles.insert({ name, owner }, err => {
+      if (err) {
+        swal('Error', err.message, 'error');
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
@@ -33,7 +43,7 @@ class Signup extends React.Component {
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const { from } = this.props.location.state || { from: { pathname: '/editprofile' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -50,8 +60,12 @@ class Signup extends React.Component {
             <Form onSubmit={this.submit}>
               <Container>
               <Form.Group widths='equal'>
-                <Form.Input fluid label='First name' placeholder='First name' />
-                <Form.Input fluid label='Last name' placeholder='Last name' />
+                <Form.Input fluid label='Name'
+                            name="name"
+                            type="name"
+                            placeholder='Your name here.'
+                            onChange={this.handleChange}
+                />
               </Form.Group>
               <Form.Group widths='equal'>
                 <Form.Input fluid
@@ -95,7 +109,16 @@ class Signup extends React.Component {
 
 /** Ensure that the React Router location object is available in case we need to redirect. */
 Signup.propTypes = {
+  profiles: PropTypes.array.isRequired,
   location: PropTypes.object,
+  ready: PropTypes.bool.isRequired,
 };
 
-export default Signup;
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  const subscription = Meteor.subscribe('Profiles');
+  return {
+    profiles: Profiles.find({}).fetch(),
+    ready: subscription.ready(),
+  };
+})(Signup);

@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
@@ -22,18 +22,20 @@ const formSchema = new SimpleSchema({
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class UserProfile extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
-  render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
-  }
+  render() { return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>; }
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
     let fRef = null;
+    if (this.props.profiles[0].description === '') {
+      return <Redirect to={`/editprofile/${this.props.profiles[0]._id}`} />;
+    }
     return (
         <Container>
           <Divider hidden/>
           <h1>
-            <Link to={`/editprofile/${this.props.profiles[0]._id}`}>EDIT PROFILE. MAKE THIS LOOK NICE LATER</Link>
+            <Link to={`/editprofile/${this.props.profiles[0]._id}`}>
+              EDIT PROFILE BUTTON. SOPHIA PLEASE MAKE THIS LOOK NICE LATER</Link>
           </h1>
           <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
           <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>

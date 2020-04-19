@@ -8,9 +8,9 @@ const Profiles = new Mongo.Collection('Profiles');
 /** Define a schema to specify the structure of each document in the collection. */
 const ProfileSchema = new SimpleSchema({
   name: String,
-  age: String,
-  image: String,
-  description: String,
+  age: { type: String, defaultValue: '' },
+  image: { type: String, defaultValue: '' },
+  description: { type: String, defaultValue: '' },
   gender: {
     type: String,
     allowedValues: ['Male', 'Female', 'Undefined'],
@@ -31,7 +31,7 @@ const ProfileSchema = new SimpleSchema({
     allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
     defaultValue: 'Beginner',
   },
-  goals: String,
+  goals: { type: String, defaultValue: '' },
   owner: String,
 }, { tracker: Tracker });
 
