@@ -30,8 +30,8 @@ class Footer extends React.Component {
                 <Menu.Item
                     as={NavLink}
                     activeClassName="active"
-                    exact to="/UserProfile"
-                    key='UserProfile'>Profile
+                    exact to="/profile"
+                    key='profile'>Profile
                 </Menu.Item>
               </p>
             </Grid.Column>

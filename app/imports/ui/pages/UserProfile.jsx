@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Icon, Grid, Menu, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
+import { Container, Icon, Grid, Menu, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
-import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
@@ -32,7 +32,10 @@ class UserProfile extends React.Component {
     return (
         <Container>
           <Divider hidden/>
-          <Header as="h2" textalign="center">Username&apos;s Profile</Header>
+          <h1>
+            <Link to={`/editprofile/${this.props.profiles[0]._id}`}>EDIT PROFILE. MAKE THIS LOOK NICE LATER</Link>
+          </h1>
+          <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
           <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
             <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
             <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
@@ -49,9 +52,8 @@ class UserProfile extends React.Component {
               </Grid.Column>
               <Grid.Column width={10}>
                 <Header
-                    as='h3'>{this.props.profiles[0].name} -
-                   {this.props.profiles[0].age} -
-                  Gender: {this.props.profiles[0].gender}</Header>
+                    as='h3'>{this.props.profiles[0].name}, {this.props.profiles[0].age}, {this.props.profiles[0].gender}
+                </Header>
                 <p>{this.props.profiles[0].description}</p>
               </Grid.Column>
               <Grid.Column width={1}/>
