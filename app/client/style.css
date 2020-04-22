@@ -52,3 +52,21 @@ tbody {
 .profileIcon {
   color: white!important;
 }
+
+/* #24: SOPHIA 04/21/20 */
+.d-flex {
+  display: flex;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+}
+
+.profileForm {
+  background-color: #6D9B7C!important;
+  color: white!important;
+}
+
+.editProfileButton {
+  color: #6D9B7C!important;
+  background-color: white!important;
+  margin: 30px 0 20px 0 !important;
+}

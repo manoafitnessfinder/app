@@ -33,11 +33,14 @@ class UserProfile extends React.Component {
     return (
         <Container>
           <Divider hidden/>
-          <h1>
-            <Link to={`/editprofile/${this.props.profiles[0]._id}`}>
-              EDIT PROFILE BUTTON. SOPHIA PLEASE MAKE THIS LOOK NICE LATER</Link>
-          </h1>
-          <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
+          <Grid>
+            <Grid.Column width={13}>
+              <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
+            </Grid.Column>
+            <Grid.Column width={3} textAlign='right'>
+              <Icon name='edit'/> <Link to={`/editprofile/${this.props.profiles[0]._id}`}>Edit Profile</Link>
+            </Grid.Column>
+          </Grid>
           <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
             <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
             <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
@@ -45,14 +48,14 @@ class UserProfile extends React.Component {
           </Menu>
           <Divider hidden/>
           <Grid verticalalign='middle'>
-            <Grid.Row verticalalign='middle' textalign='justify'>
+            <Grid.Row>
               <Grid.Column width={1}/>
               <Grid.Column width={4}>
                 <Image circular className='userImage'
                        fluid
                        src={this.props.profiles[0].image}/>
               </Grid.Column>
-              <Grid.Column width={10}>
+              <Grid.Column width={10} verticalAlign='middle' textAlign='justified'>
                 <Header
                     as='h3'>{this.props.profiles[0].name}, {this.props.profiles[0].age}, {this.props.profiles[0].gender}
                 </Header>

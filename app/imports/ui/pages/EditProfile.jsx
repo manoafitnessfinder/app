@@ -1,8 +1,10 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Divider } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
-  TextField } from 'uniforms-semantic';
+import {
+  AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
+  TextField, LongTextField
+} from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -31,20 +33,26 @@ class EditProfile extends React.Component {
     return (
         <Grid container centered>
           <Grid.Column>
+            <Divider hidden/>
             <Header as="h2" textAlign="center">Edit Profile</Header>
             <AutoForm schema={ProfileSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
-              <Segment>
-                <TextField name='name'/>
+              <Segment inverted className='profileForm' very padded>
+                <Header as='h3' textAlign='center'>Profile Information</Header>
                 <TextField name='name'/>
                 <TextField name='image'/>
-                <TextField name='description'/>
+                <LongTextField name='description'/>
+                <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
-                <SelectField name='seeking'/>
-                <SelectField name='level'/>
+                <Grid className='d-flex'>
+                  <SelectField name='seeking'/>
+                  <SelectField name='level'/>
+                </Grid>
                 <TextField name='goals'/>
-                <SubmitField value='Submit'/>
+                <Grid centered>
+                <SubmitField className='editProfileButton' value='Submit Changes'/>
+                </Grid>
                 <ErrorsField/>
-                <HiddenField name='owner' />
+                <HiddenField name='owner'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
