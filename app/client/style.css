@@ -53,14 +53,14 @@ tbody {
   color: white!important;
 }
 
-/* #24: SOPHIA 04/21/20 */
+/* #4, #24: SOPHIA 04/21/20 */
 .doubleLine {
   display: flex;
   padding-top: 10px!important;
   padding-bottom: 10px!important;
 }
 
-.profileForm {
+.profileForm, .scheduleBar {
   background-color: #6D9B7C!important;
   color: white!important;
 }
