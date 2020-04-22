@@ -40,10 +40,10 @@ class EditProfile extends React.Component {
                 <Header as='h3' textAlign='center'>Profile Information</Header>
                 <TextField name='name'/>
                 <TextField name='image'/>
-                <LongTextField name='description'/>
+                <LongTextField className='descBox'name='description'/>
                 <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
-                <Grid className='d-flex'>
+                <Grid className='doubleLine'>
                   <SelectField name='seeking'/>
                   <SelectField name='level'/>
                 </Grid>

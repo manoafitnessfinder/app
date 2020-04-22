@@ -54,7 +54,7 @@ tbody {
 }
 
 /* #24: SOPHIA 04/21/20 */
-.d-flex {
+.doubleLine {
   display: flex;
   padding-top: 10px!important;
   padding-bottom: 10px!important;
@@ -63,6 +63,10 @@ tbody {
 .profileForm {
   background-color: #6D9B7C!important;
   color: white!important;
+}
+
+#uniforms-0000-0002, #uniforms-0000-0004, #uniforms-0000-0005 {
+  font-family: 'Lato', sans-serif!important;
 }
 
 .editProfileButton {
