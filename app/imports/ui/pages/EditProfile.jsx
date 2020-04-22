@@ -1,15 +1,17 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
+  TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Profiles, ProfileSchema } from '../../api/profile/Profile';
 
 /** Renders the Page for editing a single document. */
-class EditStuff extends React.Component {
+class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
@@ -33,9 +35,10 @@ class EditStuff extends React.Component {
             <AutoForm schema={ProfileSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
+                <TextField name='name'/>
                 <TextField name='image'/>
                 <TextField name='description'/>
-                <SelectField name='interests'/>
+                <MultiSelectField name='interests'/>
                 <SelectField name='seeking'/>
                 <SelectField name='level'/>
                 <TextField name='goals'/>
@@ -50,7 +53,7 @@ class EditStuff extends React.Component {
   }
 }
 
-EditStuff.propTypes = {
+EditProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -63,4 +66,4 @@ export default withTracker(({ match }) => {
     doc: Profiles.findOne(documentId),
     ready: subscription.ready(),
   };
-})(EditStuff);
+})(EditProfile);
