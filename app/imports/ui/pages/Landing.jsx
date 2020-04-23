@@ -8,7 +8,7 @@ class Landing extends React.Component {
         /* Outside to maintain consistent borders. */
         <Container>
           <Container verticalAlign='middle' textAlign='center'>
-            <Image id='landing_top_image' fluid src='/images/landing_page_top.JPG'/>
+            <Image className = "landing" fluid src='/images/landing_page_top.JPG'/>
           </Container>
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Match based on what you are looking for!</Header>
@@ -27,8 +27,8 @@ class Landing extends React.Component {
           </Grid>
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Join today and work towards your better self!</Header>
-          <Container id='landing_bottom_image'>
-            <Segment floated = 'right' compact tertiary textAlign = 'center' id='image_overlay'>
+          <Container className = 'landing_bottom_image'>
+            <Segment floated = 'right' compact tertiary textAlign = 'center'>
               <Header inverted color='green' textAlign='center' as={'h1'}>Match With <br/> Someone today!<br/> </Header>
               <Button color = 'green' compact size = 'medium'>
                 Join Now!
