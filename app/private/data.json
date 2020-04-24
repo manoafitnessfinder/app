@@ -1,0 +1,16 @@
+{
+  "profiles": [
+    {
+      "name": "Patrick McCrindle",
+      "age": 29,
+      "image": "",
+      "description": "This is I. I is me.",
+      "gender": "Male",
+      "interests": ["Running", "Lifting"],
+      "seeking": "No Preference",
+      "level": "Beginner",
+      "goals": "Get gud.",
+      "owner": "pmccrind@hawaii.edu"
+    }
+  ]
+}
