@@ -21,7 +21,7 @@ const ProfileSchema = new SimpleSchema({
     defaultValue: 'Running',
   },
   'interests.$': { type: String, allowedValues: ['Running', 'Lifting', 'Acrobatics', 'Calisthenics',
-    'Walking', 'Hiking', 'Climbing' ] },
+    'Walking', 'Hiking', 'Climbing'] },
   seeking: {
     type: String,
     allowedValues: ['Gym Buddy', 'Mentor', 'Mentee', 'No Preference'],

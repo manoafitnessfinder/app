@@ -23,5 +23,5 @@
       "owner": "john@foo.com"
     }
   ],
-  "loadAssetsFile":  true
+  "loadAssetsFile":  false
 }

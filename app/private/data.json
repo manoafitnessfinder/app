@@ -1,16 +1,19 @@
 {
   "profiles": [
     {
-      "name": "Patrick McCrindle",
-      "age": 29,
-      "image": "",
-      "description": "This is I. I is me.",
+      "name": "Lindon Slavica",
+      "age": 18,
+      "image": "https://www.oncewoven.com/gfx/users/default-05.png",
+      "description": "",
       "gender": "Male",
-      "interests": ["Running", "Lifting"],
+      "interests": [
+        "Running",
+        "Lifting"
+      ],
       "seeking": "No Preference",
       "level": "Beginner",
-      "goals": "Get gud.",
-      "owner": "pmccrind@hawaii.edu"
+      "goals": "",
+      "owner": "1@foo.com"
     }
   ]
 }
