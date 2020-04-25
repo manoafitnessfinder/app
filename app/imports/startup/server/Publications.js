@@ -30,11 +30,8 @@ Meteor.publish('Profiles', function publish() {
 });
 
 Meteor.publish('AllProfiles', function publish() {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Profiles.find({ owner: { $ne: username } });
-  }
-  return this.ready();
+  const username = Meteor.users.findOne(this.userId).username;
+  return Profiles.find({ owner: { $ne: username } });
 });
 
 Meteor.publish('Events', function publish() {
@@ -42,4 +39,5 @@ Meteor.publish('Events', function publish() {
     const username = Meteor.users.findOne(this.userId).username;
     return Events.find({ owner: username });
   }
+  return this.ready();
 });
