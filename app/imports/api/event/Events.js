@@ -9,7 +9,11 @@ const Events = new Mongo.Collection('Events');
 const EventSchema = new SimpleSchema({
   date: String,
   time: String,
-  type: String,
+  type: {
+    type: String,
+    allowedValues: ['Run', 'Hike', 'Walk', 'Lift', 'Other'],
+    defaultValue: 'Walk',
+  },
   location: String,
   associated: String,
   notes: String,
