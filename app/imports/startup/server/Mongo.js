@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profile.js';
+import { Events } from '../../api/event/Events.js';
 
 /* eslint-disable no-console */
 
@@ -44,4 +45,16 @@ if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
   console.log(`Loading data from private/${assetsFileName}`);
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
   jsonData.profiles.map(profile => addProfile(profile));
+}
+
+function addEvents(data) {
+  console.log(`  Adding: ${data.date} for (${data.time})`);
+  Events.insert(data);
+}
+
+if (Events.find().count() === 0) {
+  if (Meteor.settings.defaultEvents) {
+    console.log('Creating default events.');
+    Meteor.settings.defaultEvents.map(data => addEvents(data));
+  }
 }

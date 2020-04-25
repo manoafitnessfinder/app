@@ -23,5 +23,16 @@
       "owner": "john@foo.com"
     }
   ],
-  "loadAssetsFile":  true
+  "loadAssetsFile":  true,
+  "defaultEvents": [
+    {
+      "date": "April 23rd",
+      "time": "5:00",
+      "type": "Run",
+      "location": "Ewa Beach",
+      "associated": "galileo@moon.com",
+      "notes": "very fun!",
+      "owner": "john@foo.com"
+    }
+  ]
 }
