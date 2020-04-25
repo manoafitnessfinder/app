@@ -23,5 +23,16 @@
       "goals": "Run an 8 min mile",
       "owner": "john@foo.com"
     }
+  ],
+  "defaultEvents": [
+    {
+      "date": "April 23rd",
+      "time": "5:00",
+      "type": "Run",
+      "location": "Ewa Beach",
+      "associated": "galileo@moon.com",
+      "notes": "very fun!",
+      "owner": "john@foo.com"
+    }
   ]
 }

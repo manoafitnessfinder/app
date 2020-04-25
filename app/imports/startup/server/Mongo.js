@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profile.js';
+import { Events } from '../../api/event/Events.js';
 
 /* eslint-disable no-console */
 
@@ -28,5 +29,18 @@ if (Profiles.find().count() === 0) {
   if (Meteor.settings.defaultProfile) {
     console.log('Creating default profile for John@Foo.com.');
     Meteor.settings.defaultProfile.map(data => addProfile(data));
+  }
+}
+
+function addEvents(data) {
+  console.log(`  Adding: ${data.date} for (${data.time})`);
+  Events.insert(data);
+}
+
+
+if (Events.find().count() === 0) {
+  if (Meteor.settings.defaultEvents) {
+    console.log('Creating default events.');
+    Meteor.settings.defaultEvents.map(data => addEvents(data));
   }
 }
