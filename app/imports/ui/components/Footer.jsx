@@ -22,7 +22,6 @@ class Footer extends React.Component {
                 <a href="https://manoafitnessfinder.github.io/#team-members">Meet the team</a>
               </p>
             </Grid.Column>
-
             <Grid.Column>
               <h3 textalign='left'>Sitemap (Work in progress)</h3>
               <hr/>
@@ -34,8 +33,15 @@ class Footer extends React.Component {
                     key='profile'>Profile
                 </Menu.Item>
               </p>
+              <p>
+                <Menu.Item
+                    as={NavLink}
+                    activeClassName="active"
+                    exact to="/AllProfiles"
+                    key='AllProfiles'>All Profiles
+                </Menu.Item>
+              </p>
             </Grid.Column>
-
             <Grid.Column>
               <h3>
                 { /* Later possibility to add an email box here to autofill

@@ -19,17 +19,17 @@ if (Stuffs.find().count() === 0) {
 }
 
 function addProfile(data) {
-  console.log(`  Adding: ${data.description} for (${data.owner})`);
+  console.log(`  Adding: ${data.name} for (${data.owner})`);
   Profiles.insert(data);
 }
 
-/** Initialize the collection if empty. */
 if (Profiles.find().count() === 0) {
   if (Meteor.settings.defaultProfile) {
     console.log('Creating default profile for John@Foo.com.');
     Meteor.settings.defaultProfile.map(data => addProfile(data));
   }
 }
+
 /* The code below was copied from bowfolios. */
 /**
  * If the loadAssetsFile field in settings.development.json is true, then load the data in private/data.json.

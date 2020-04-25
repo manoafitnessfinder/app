@@ -27,3 +27,11 @@ Meteor.publish('Profiles', function publish() {
   }
   return this.ready();
 });
+
+Meteor.publish('AllProfiles', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Profiles.find({ owner: { $ne: username } });
+  }
+  return this.ready();
+});
