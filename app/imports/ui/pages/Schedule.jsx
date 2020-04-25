@@ -62,7 +62,7 @@ class Schedule extends React.Component {
               <Segment fixed inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
                 <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                  <TextField name='date'/>
+                  <TextField name='date' label='Date (MM/DD/YY)'/>
                   <TextField name='time'/>
                   <SelectField name='type' label='Event Type'/>
                   <TextField name='location'/>
@@ -103,7 +103,7 @@ Schedule.propTypes = {
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Events');
   return {
-    events: Events.find({}).fetch(),
+    events: Events.find({}, { sort: { time: 1 } }).fetch(),
     ready: subscription.ready(),
   };
 })(Schedule);
