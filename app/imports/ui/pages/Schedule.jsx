@@ -8,6 +8,7 @@ import {
   TextField, LongTextField,
 } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import Event from '/imports/ui/components/Event';
 import SimpleSchema from 'simpl-schema';
@@ -17,7 +18,11 @@ import { Events } from '../../api/event/Events';
 const formSchema = new SimpleSchema({
   date: String,
   time: String,
-  type: String,
+  type: {
+    type: String,
+    allowedValues: ['Run', 'Hike', 'Walk', 'Lift', 'Other'],
+    defaultValue: 'Walk',
+  },
   location: String,
   associated: String,
   notes: String,
@@ -59,7 +64,7 @@ class Schedule extends React.Component {
                 <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                   <TextField name='date'/>
                   <TextField name='time'/>
-                  <TextField name='type' label='Event Type'/>
+                  <SelectField name='type' label='Event Type'/>
                   <TextField name='location'/>
                   <TextField name='associated' label='Include a Friend'/>
                   <LongTextField name='notes'/>
