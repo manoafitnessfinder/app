@@ -26,8 +26,7 @@ class Event extends React.Component {
           <Card.Content extra textAlign='right'>
             <Icon name='edit'/>< Link
                 to={`/editevent/${this.props.event._id}`
-                }>Edit</Link><br/>
-            <Icon name='trash'/> <a href=''>Delete</a>
+                }>Edit</Link> <Icon name='trash'/><Link onClick={() => this.removeItem(this.props.event._id)}>Delete</Link>
           </Card.Content>
         </Card>
     );
