@@ -1,14 +1,16 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import AddFriend from '../components/AddFriend';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class AllProfiles extends React.Component {
   render() {
     return (
         <Card>
-          <Image src={this.props.profile.image} wrapped ui={false} />
+          <Image src={this.props.profile.image} wrapped ui={false}/>
           <Card.Content>
             <Card.Header>{this.props.profile.name}</Card.Header>
             <Card.Meta>
@@ -19,6 +21,9 @@ class AllProfiles extends React.Component {
             </Card.Description>
             <Card.Content extra>
               <Link to={`/User/${this.props.profile._id}`}>View Profile</Link>
+            </Card.Content>
+            <Card.Content extra>
+              <AddFriend owner={Meteor.user().username} contactId={this.props.profile._id}/>
             </Card.Content>
           </Card.Content>
         </Card>

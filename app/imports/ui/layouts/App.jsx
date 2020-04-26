@@ -22,6 +22,7 @@ import EditProfile from '../pages/EditProfile';
 import Schedule from '../pages/Schedule';
 import AllProfiles from '../pages/AllProfiles';
 import User from '../pages/User';
+import Friends from '../pages/Friends';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -45,6 +46,7 @@ class App extends React.Component {
               <ProtectedRoute path="/editprofile/:_id" component={EditProfile}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <ProtectedRoute path="/user/:_id" component={User}/>
+              <ProtectedRoute path="/friends/" component={Friends}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

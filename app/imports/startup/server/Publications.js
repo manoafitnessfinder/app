@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
+import { Friends } from '../../api/friend/Friend';
 import { Events } from '../../api/event/Events.js';
 
 /** This subscription publishes only the documents associated with the logged in user */
@@ -38,6 +39,14 @@ Meteor.publish('Events', function publish() {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Events.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish('Friends', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Friends.find({ owner: username });
   }
   return this.ready();
 });
