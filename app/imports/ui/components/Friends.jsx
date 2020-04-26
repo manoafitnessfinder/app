@@ -30,9 +30,7 @@ class FriendsList extends React.Component {
           </Card>
       );
     }
-    return (
-        <h3></h3>
-    );
+    return (<h3></h3>);
   }
 }
 
