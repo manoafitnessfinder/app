@@ -19,7 +19,6 @@ import Signout from '../pages/Signout';
 import About from '../pages/About';
 import UserProfile from '../pages/UserProfile';
 import EditProfile from '../pages/EditProfile';
-import UserLanding from '../pages/UserLanding';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,7 +35,6 @@ class App extends React.Component {
               <Route path="/about" component={About}/>
               <Route path="/profile" component={UserProfile}/>
               <Route path="/landing" component={Landing}/>
-              <Route path="/userlanding" component={UserLanding}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/editprofile/:_id" component={EditProfile}/>
