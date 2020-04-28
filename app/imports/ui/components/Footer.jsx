@@ -23,7 +23,7 @@ class Footer extends React.Component {
               </p>
             </Grid.Column>
             <Grid.Column>
-              <h3 textalign='left'>Sitemap (Work in progress)</h3>
+              <h3 textalign='left'>Sitemap</h3>
               <hr/>
               <p>
                 <Menu.Item
@@ -39,6 +39,30 @@ class Footer extends React.Component {
                     activeClassName="active"
                     exact to="/AllProfiles"
                     key='AllProfiles'>All Profiles
+                </Menu.Item>
+              </p>
+              <p>
+                <Menu.Item
+                    as={NavLink}
+                    activeClassName="active"
+                    exact to="/schedule"
+                    key='schedule'>Schedule
+                </Menu.Item>
+              </p>
+              <p>
+                <Menu.Item
+                    as={NavLink}
+                    activeClassName="active"
+                    exact to="/friends"
+                    key='friends'>Friends List
+                </Menu.Item>
+              </p>
+              <p>
+                <Menu.Item
+                    as={NavLink}
+                    activeClassName="active"
+                    exact to="/editprofile/:_id"
+                    key='editprofile'>Edit Your Profile
                 </Menu.Item>
               </p>
             </Grid.Column>

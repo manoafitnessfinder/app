@@ -73,4 +73,8 @@ tbody {
   margin: 30px 0 20px 0 !important;
 }
 
-
+/* Navbar */
+.menu.attached.borderless.topmenu {
+  border: none!important;
+  box-shadow: none!important;
+}
