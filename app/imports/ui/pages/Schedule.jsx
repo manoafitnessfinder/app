@@ -58,7 +58,7 @@ class Schedule extends React.Component {
         <Grid container>
           <Divider hidden/>
           <Grid.Row>
-            <Grid.Column width={3}>
+            <Grid.Column width={4}>
               <Segment fixed inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
                 <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
@@ -73,7 +73,7 @@ class Schedule extends React.Component {
                 </AutoForm>
               </Segment>
             </Grid.Column>
-            <Grid.Column width={13}>
+            <Grid.Column width={12}>
               <Divider horizontal>
                 <Header as='h1' textAlign='center'>Upcoming Events</Header>
               </Divider>

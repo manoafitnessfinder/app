@@ -68,6 +68,14 @@ tbody {
 }
 
 .editProfileButton {
+  /* Added to center submit button. */
+  position: relative;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* Added to center submit button. */
+
   color: #6D9B7C!important;
   background-color: white!important;
   margin: 30px 0 20px 0 !important;
@@ -75,6 +83,7 @@ tbody {
 
 /* Navbar */
 .menu.attached.borderless.topmenu {
+  padding-top: 10px;
   border: none!important;
   box-shadow: none!important;
 }
