@@ -50,10 +50,7 @@ class Signup extends React.Component {
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    /* Need to add id to the editprofile path for redirection to work. */
-    /* const id = this.props.profiles._id; */
-    const { from } = this.props.location.state ||
-    ({ from: { pathname: `/editprofile/${this.props.profiles._id}` } } && this.props.profiles._id !== undefined);
+    const { from } = this.props.location.state || { from: { pathname: /profile/ } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
