@@ -1,20 +1,16 @@
-#landing_top_image {
+/* For landing page. */
+.landing {
   padding-top: 10px;
 }
 
-#landing_bottom_image {
-  padding-top: 10px;
-}
-
-#image_overlay {
-
-}
-#landing_bottom_image {
+.landing_bottom_image {
   background-image: url("/images/yoga_pose.jpg");
   background-size: cover;
   width: 100%;
   height: 800px;
+  padding-top: 10px;
 }
+/* For landing page. */
 
 .icon{
   color: #6D9B7C;
@@ -35,7 +31,7 @@
   padding-bottom: 30px;
 }
 
-/* #6: SOPHIA 04/16/20 */
+/*User Profile Page #6: SOPHIA 04/16/20 */
 .userMenu, .ui.inverted.table.tableInfo tr td {
   background-color: #6D9B7C!important;
 }
@@ -52,5 +48,33 @@ tbody {
 .profileIcon {
   color: white!important;
 }
+/*User Profile Page #6: SOPHIA 04/16/20 */
 
 
+/* #4, #24: SOPHIA 04/21/20 */
+.doubleLine {
+  display: flex;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+}
+
+.profileForm, .scheduleBar {
+  background-color: #6D9B7C!important;
+  color: white!important;
+}
+
+#uniforms-0000-0002, #uniforms-0000-0004, #uniforms-0000-0005 {
+  font-family: 'Lato', sans-serif!important;
+}
+
+.editProfileButton {
+  color: #6D9B7C!important;
+  background-color: white!important;
+  margin: 30px 0 20px 0 !important;
+}
+
+/* Navbar */
+.menu.attached.borderless.topmenu {
+  border: none!important;
+  box-shadow: none!important;
+}
