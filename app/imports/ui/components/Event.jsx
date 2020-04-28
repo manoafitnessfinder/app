@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Icon, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import moment from 'moment';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Event extends React.Component {
@@ -15,7 +16,7 @@ class Event extends React.Component {
         <Card color='green' centered>
           <Card.Content textAlign='center'>
             <Header as='h3'>
-              {this.props.event.date} @ {this.props.event.time}
+              {moment(this.props.event.date).format('MM/DD/YYYY @ hh:mm A')}
             </Header>
           </Card.Content>
           <Card.Content>

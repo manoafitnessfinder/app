@@ -26,8 +26,7 @@
   "loadAssetsFile":  true,
   "defaultEvents": [
     {
-      "date": "April 23rd",
-      "time": "5:00",
+      "date": "2014-01-01T23:28:56.782Z",
       "type": "Run",
       "location": "Ewa Beach",
       "associated": "galileo@moon.com",

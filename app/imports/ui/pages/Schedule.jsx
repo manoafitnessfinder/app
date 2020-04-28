@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import {
   AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
-  TextField, LongTextField,
+  TextField, LongTextField, DateField
 } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
@@ -16,8 +16,7 @@ import { Events } from '../../api/event/Events';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
-  date: String,
-  time: String,
+  date: Date,
   type: {
     type: String,
     allowedValues: ['Run', 'Hike', 'Walk', 'Lift', 'Other'],
@@ -33,9 +32,9 @@ class Schedule extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data, formRef) {
-    const { date, time, type, location, associated, notes } = data;
+    const { date, type, location, associated, notes } = data;
     const owner = Meteor.user().username;
-    Events.insert({ date, time, type, location, associated, notes, owner },
+    Events.insert({ date, type, location, associated, notes, owner },
         (error) => {
           if (error) {
             swal('Error', error.message, 'error');
@@ -58,12 +57,11 @@ class Schedule extends React.Component {
         <Grid container>
           <Divider hidden/>
           <Grid.Row>
-            <Grid.Column width={3}>
+            <Grid.Column width={5}>
               <Segment fixed inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
                 <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                  <TextField name='date' label='Date (MM/DD/YY)'/>
-                  <TextField name='time'/>
+                  <DateField name='date' label='Date (MM/DD/YY)'/>
                   <SelectField name='type' label='Event Type'/>
                   <TextField name='location'/>
                   <TextField name='associated' label='Include a Friend'/>
@@ -73,7 +71,7 @@ class Schedule extends React.Component {
                 </AutoForm>
               </Segment>
             </Grid.Column>
-            <Grid.Column width={13}>
+            <Grid.Column width={11}>
               <Divider horizontal>
                 <Header as='h1' textAlign='center'>Upcoming Events</Header>
               </Divider>
@@ -103,7 +101,7 @@ Schedule.propTypes = {
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Events');
   return {
-    events: Events.find({}, { sort: { time: 1 } }).fetch(),
+    events: Events.find({}, { sort: { date: 1 } }).fetch(),
     ready: subscription.ready(),
   };
 })(Schedule);
