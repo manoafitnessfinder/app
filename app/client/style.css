@@ -78,3 +78,27 @@ tbody {
   border: none!important;
   box-shadow: none!important;
 }
+
+/* Userlanding page */
+#user_landing_middle {
+  background-image: url("/images/UserLanding2.JPG");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  padding-top: 150px;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+
+/* Userlanding button for match */
+.matchButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
