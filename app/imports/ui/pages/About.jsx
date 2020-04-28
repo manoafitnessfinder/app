@@ -44,8 +44,8 @@ class About extends React.Component {
                 </Grid.Row>
               </Grid.Column>
               <Grid.Column width={8}>
-                <Image src="/images/about1.png" fluid/>
-              </Grid.Column>
+              <Image src="/images/about1.png" fluid/>
+            </Grid.Column>
             </Grid.Row>
           <Grid.Row>
             <Grid.Column width={8}>
