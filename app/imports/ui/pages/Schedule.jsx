@@ -68,7 +68,9 @@ class Schedule extends React.Component {
                   <TextField name='location'/>
                   <TextField name='associated' label='Include a Friend'/>
                   <LongTextField name='notes'/>
-                  <SubmitField className='editProfileButton' value='Submit Changes'/>
+                  <Grid centered>
+                    <SubmitField className='editProfileButton' value='Submit Changes'/>
+                  </Grid>
                   <ErrorsField/>
                 </AutoForm>
               </Segment>
