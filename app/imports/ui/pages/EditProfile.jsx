@@ -3,7 +3,7 @@ import { Grid, Loader, Header, Segment, Divider } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import {
   AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
-  TextField, LongTextField
+  TextField, LongTextField,
 } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -40,7 +40,7 @@ class EditProfile extends React.Component {
                 <Header as='h3' textAlign='center'>Profile Information</Header>
                 <TextField name='name'/>
                 <TextField name='image'/>
-                <LongTextField className='descBox'name='description'/>
+                <LongTextField className='descBox' name='description'/>
                 <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
                 <Grid className='doubleLine'>
@@ -49,7 +49,7 @@ class EditProfile extends React.Component {
                 </Grid>
                 <TextField name='goals'/>
                 <Grid centered>
-                <SubmitField className='editProfileButton' value='Submit Changes'/>
+                  <SubmitField className='editProfileButton' value='Submit Changes'/>
                 </Grid>
                 <ErrorsField/>
                 <HiddenField name='owner'/>

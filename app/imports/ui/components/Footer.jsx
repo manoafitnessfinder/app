@@ -45,7 +45,7 @@ class Footer extends React.Component {
             <Grid.Column>
               <h3>
                 { /* Later possibility to add an email box here to autofill
-                the signup page box from the user entered text */ }
+                the signup page box from the user entered text */}
                 <Menu.Item textalign='left'
                            as={NavLink}
                            activeClassName="active"

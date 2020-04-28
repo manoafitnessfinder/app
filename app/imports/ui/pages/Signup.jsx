@@ -50,66 +50,69 @@ class Signup extends React.Component {
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/editprofile' } };
+    /* Need to add id to the editprofile path for redirection to work. */
+    /* const id = this.props.profiles._id; */
+    const { from } = this.props.location.state ||
+    ({ from: { pathname: `/editprofile/${this.props.profiles._id}` } } && this.props.profiles._id !== undefined);
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
     const signupStyle = { padding: '10px' };
     return (
-      <Container>
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Image style={signupStyle} size='huge' centered src="/images/signup.jpg"/>
-            <Header as="h3" textAlign="center">
-              Sign-up and start connecting with other Manoa students today!
-            </Header>
-            <Form onSubmit={this.submit}>
-              <Container>
-              <Form.Group widths='equal'>
-                <Form.Input fluid label='Name'
-                            name="name"
-                            type="name"
-                            placeholder='Your name here.'
-                            onChange={this.handleChange}
-                />
-              </Form.Group>
-              <Form.Group widths='equal'>
-                <Form.Input fluid
-                            label="Email"
-                            name="email"
-                            type="email"
-                            placeholder="UH E-mail address"
-                            onChange={this.handleChange}
-                />
-                <Form.Input
-                    label="Password"
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={this.handleChange}
-                />
-              </Form.Group>
-                <Form.Field align='center'>
-                  <Checkbox label='I agree to the Terms and Conditions' />
-                </Form.Field>
-              <Form.Field align='center'>
-                <Form.Button basic color='green' content="Set Up Profile"/>
-              </Form.Field>
-              </Container>
-            </Form>
-            {this.state.error === '' ? (
-              ''
-            ) : (
-              <Message
-                error
-                header="There was an error is your registration. Try again or contact us."
-                content={this.state.error}
-              />
-            )}
-          </Grid.Column>
-        </Grid>
-      </Container>
+        <Container>
+          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+            <Grid.Column>
+              <Image style={signupStyle} size='huge' centered src="/images/signup.jpg"/>
+              <Header as="h3" textAlign="center">
+                Sign-up and start connecting with other Manoa students today!
+              </Header>
+              <Form onSubmit={this.submit}>
+                <Container>
+                  <Form.Group widths='equal'>
+                    <Form.Input fluid label='Name'
+                                name="name"
+                                type="name"
+                                placeholder='Your name here.'
+                                onChange={this.handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group widths='equal'>
+                    <Form.Input fluid
+                                label="Email"
+                                name="email"
+                                type="email"
+                                placeholder="UH E-mail address"
+                                onChange={this.handleChange}
+                    />
+                    <Form.Input
+                        label="Password"
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        onChange={this.handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Field align='center'>
+                    <Checkbox label='I agree to the Terms and Conditions'/>
+                  </Form.Field>
+                  <Form.Field align='center'>
+                    <Form.Button basic color='green' content="Set Up Profile"/>
+                  </Form.Field>
+                </Container>
+              </Form>
+              {this.state.error === '' ? (
+                  ''
+              ) : (
+                  <Message
+                      error
+                      header="There was an error is your registration. Try again or contact us."
+                      content={this.state.error}
+                  />
+              )}
+            </Grid.Column>
+          </Grid>
+        </Container>
     );
   }
 }
