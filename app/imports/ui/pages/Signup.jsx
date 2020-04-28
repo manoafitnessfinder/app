@@ -32,7 +32,14 @@ class Signup extends React.Component {
         this.setState({ error: err.reason });
       }
     });
-    Profiles.insert({ name, owner }, err => {
+    const interests = ['Walking'];
+    const age = 18;
+    const image = '';
+    const description = '';
+    const gender = 'Undefined';
+    const seeking = 'No Preference';
+    const level = 'Beginner';
+    Profiles.insert({ name, interests, age, image, description, gender, seeking, level, owner }, err => {
       if (err) {
         swal('Error', err.message, 'error');
       } else {
