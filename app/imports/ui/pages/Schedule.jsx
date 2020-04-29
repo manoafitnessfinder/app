@@ -4,15 +4,13 @@ import { Grid, Loader, Segment, Divider, Header, Card } from 'semantic-ui-react'
 import { withTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import {
-  AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
-  TextField, LongTextField, DateField
+  AutoForm, ErrorsField, SelectField, SubmitField,
+  TextField, LongTextField, DateField,
 } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
-import moment from 'moment';
-import MultiSelectField from '../forms/controllers/MultiSelectField';
+import SimpleSchema from 'simpl-schema';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import Event from '/imports/ui/components/Event';
-import SimpleSchema from 'simpl-schema';
 import { Events } from '../../api/event/Events';
 
 /** Create a schema to specify the structure of the data to appear in the form. */

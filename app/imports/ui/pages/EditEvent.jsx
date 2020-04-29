@@ -3,12 +3,11 @@ import { Grid, Loader, Header, Segment, Divider } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import {
   AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
-  TextField, LongTextField, NumField, DateField
+  TextField, LongTextField, DateField,
 } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import MultiSelectField from '../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Events, EventSchema } from '../../api/event/Events';
 
