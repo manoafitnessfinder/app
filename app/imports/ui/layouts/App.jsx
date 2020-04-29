@@ -23,6 +23,8 @@ import Schedule from '../pages/Schedule';
 import AllProfiles from '../pages/AllProfiles';
 import User from '../pages/User';
 import Friends from '../pages/Friends';
+import Testimonials from '../pages/Testimonials';
+import Contact from '../pages/Contact';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -40,6 +42,8 @@ class App extends React.Component {
               <Route path="/profile" component={UserProfile}/>
               <Route path="/landing" component={Landing}/>
               <Route path="/schedule" component={Schedule}/>
+              <Route path="/test" component={Testimonials}/>
+              <Route path="/contact" component={Contact}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/allprofiles" component={AllProfiles}/>
