@@ -98,3 +98,16 @@ h3, h1 {
 .pastCards .card {
   background-color: #f5f5f5!important;
 }
+
+.schedLabel label {
+  color: white!important;
+  font-family: 'Quicksand', sans-serif!important;
+  text-transform: uppercase!important;
+  text-align: left!important;
+}
+
+.scheduleButton {
+  color: #6D9B7C!important;
+  background-color: white!important;
+  font-family: 'Quicksand', sans-serif!important;
+}

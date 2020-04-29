@@ -24,7 +24,10 @@ const formSchema = new SimpleSchema({
     defaultValue: 'Walk',
   },
   location: String,
-  associated: String,
+  associated: {
+    type: String,
+    optional: true,
+  },
   notes: String,
 });
 
@@ -58,21 +61,23 @@ class Schedule extends React.Component {
         <Grid container>
           <Divider hidden/>
           <Grid.Row>
-            <Grid.Column width={5}>
+            <Grid.Column textAlign='center' width={5}>
               <Divider hidden/>
               <Segment fixed inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
                 <AutoForm ref={ref => {
                   fRef = ref;
                 }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                  <DateField name='date' label='Date (MM/DD/YY)'/>
-                  <SelectField name='type' label='Event Type'/>
-                  <TextField name='location'/>
-                  <TextField name='associated' label='Include a Friend'/>
-                  <LongTextField name='notes'/>
-                  <SubmitField className='editProfileButton' value='Submit Changes'/>
+                  <DateField className='schedLabel' name='date' label='Date and Time'/>
+                  <SelectField className='schedLabel' name='type' label='Event Type'/>
+                  <TextField className='schedLabel' name='location'/>
+                  <TextField className='schedLabel' name='associated' label='Include a Friend'/>
+                  <LongTextField className='schedLabel' name='notes'/>
+                  <Divider hidden/>
+                  <SubmitField className='scheduleButton' value='CREATE EVENT'/>
                   <ErrorsField/>
                 </AutoForm>
+                <Divider hidden/>
               </Segment>
             </Grid.Column>
             <Grid.Column width={11}>

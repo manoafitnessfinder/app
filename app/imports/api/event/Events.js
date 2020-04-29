@@ -14,7 +14,10 @@ const EventSchema = new SimpleSchema({
     defaultValue: 'Walk',
   },
   location: String,
-  associated: String,
+  associated: {
+    type: String,
+    optional: true,
+  },
   notes: String,
   owner: String,
 }, { tracker: Tracker });
