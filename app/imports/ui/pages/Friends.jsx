@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Image } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import FriendsList from '../components/Friends';
@@ -17,8 +17,8 @@ class FriendsPage extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>List Friends</Header>
-          <Card.Group>
+          <Image centered src="/images/listFriend.PNG" fluid/>
+          <Card.Group centered>
             {this.props.profiles.map((profile, index) => <FriendsList key={index} profile={profile}/>)}
           </Card.Group>
         </Container>

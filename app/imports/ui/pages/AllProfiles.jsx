@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Loader, Card, Image } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import AllProfiles from '../components/AllProfiles';
@@ -17,8 +17,8 @@ class ListAllProfiles extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>List all users</Header>
-          <Card.Group>
+          <Image centered src="/images/allProfile.JPG" fluid/>
+          <Card.Group centered>
             {this.props.profiles.map((profile, index) => <AllProfiles key={index} profile={profile}/>)}
           </Card.Group>
         </Container>
