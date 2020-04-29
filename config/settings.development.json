@@ -30,7 +30,47 @@
       "type": "Run",
       "location": "Ewa Beach",
       "associated": "galileo@moon.com",
+      "notes": "It was fun.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-05-27T04:02:56.782Z",
+      "type": "Walk",
+      "location": "Mililani",
+      "associated": "galileo@moon.com",
+      "notes": "2 miles.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-06-04T23:28:56.782Z",
+      "type": "Lift",
+      "location": "Mililani",
+      "associated": "galileo@moon.com",
       "notes": "Don't forget to bring water.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-04-26T04:00:56.782Z",
+      "type": "Walk",
+      "location": "Pearl City",
+      "associated": "galileo@moon.com",
+      "notes": "Great walk. Went to gulch.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-04-26T04:00:56.782Z",
+      "type": "Hike",
+      "location": "Haleakala",
+      "associated": "galileo@moon.com",
+      "notes": "Very beautiful. 23:54.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "1996-08-13T12:05:56.782Z",
+      "type": "Run",
+      "location": "Manoa",
+      "associated": "galileo@moon.com",
+      "notes": "So tired.",
       "owner": "john@foo.com"
     }
   ]

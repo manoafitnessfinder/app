@@ -8,6 +8,7 @@ import {
   TextField, LongTextField, DateField
 } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import Event from '/imports/ui/components/Event';
@@ -58,9 +59,12 @@ class Schedule extends React.Component {
           <Divider hidden/>
           <Grid.Row>
             <Grid.Column width={5}>
+              <Divider hidden/>
               <Segment fixed inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
-                <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
+                <AutoForm ref={ref => {
+                  fRef = ref;
+                }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                   <DateField name='date' label='Date (MM/DD/YY)'/>
                   <SelectField name='type' label='Event Type'/>
                   <TextField name='location'/>
@@ -83,6 +87,21 @@ class Schedule extends React.Component {
                 />)
                 }
               </Card.Group>
+
+              <Divider hidden/>
+              <Divider hidden/>
+
+              <Divider horizontal>
+                <Header as='h1' textAlign='center'>Past Events</Header>
+              </Divider>
+              <Card.Group className='pastCards' centered>
+                {this.props.events2.map((event, index) => <Event
+                    key={index}
+                    event={event}
+                    Events={Events}
+                />)
+                }
+              </Card.Group>
             </Grid.Column>
           </Grid.Row>
           <Divider hidden/>
@@ -93,6 +112,7 @@ class Schedule extends React.Component {
 
 Schedule.propTypes = {
   events: PropTypes.array.isRequired,
+  events2: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -101,7 +121,12 @@ Schedule.propTypes = {
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Events');
   return {
-    events: Events.find({}, { sort: { date: 1 } }).fetch(),
+    events: Events.find({
+      date: { $gte: new Date() },
+    }, { sort: { date: 1 } }).fetch(),
+    events2: Events.find({
+      date: { $lt: new Date() },
+    }, { sort: { date: -1 } }).fetch(),
     ready: subscription.ready(),
   };
 })(Schedule);
