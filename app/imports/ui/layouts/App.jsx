@@ -25,6 +25,7 @@ import User from '../pages/User';
 import Friends from '../pages/Friends';
 import Testimonials from '../pages/Testimonials';
 import Contact from '../pages/Contact';
+import UserLanding from "../pages/UserLanding";
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
               <Route path="/about" component={About}/>
               <Route path="/profile" component={UserProfile}/>
               <Route path="/landing" component={Landing}/>
+              <Route path="/userlanding" component={UserLanding}/>
               <Route path="/schedule" component={Schedule}/>
               <Route path="/test" component={Testimonials}/>
               <Route path="/contact" component={Contact}/>

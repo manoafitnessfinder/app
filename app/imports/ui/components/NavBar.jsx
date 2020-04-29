@@ -13,6 +13,7 @@ class NavBar extends React.Component {
           <Grid.Row>
             <Menu attached="top" borderless className="topmenu">
               <Menu.Item as={NavLink} activeClassName="" exact to="/landing" key='landing'>Home</Menu.Item>
+              <Menu.Item as={NavLink} activeClassName="" exact to="/userlanding" key='Userlanding'>User Home</Menu.Item>
               {this.props.currentUser ? (
                   [<Menu.Item as={NavLink} activeClassName="active" exact to="/allprofiles" key='allprofiles'>All
                     Profiles</Menu.Item>,
