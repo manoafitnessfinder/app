@@ -29,14 +29,6 @@ class Footer extends React.Component {
                 <Menu.Item
                     as={NavLink}
                     activeClassName="active"
-                    exact to="/profile"
-                    key='profile'>Profile
-                </Menu.Item>
-              </p>
-              <p>
-                <Menu.Item
-                    as={NavLink}
-                    activeClassName="active"
                     exact to="/AllProfiles"
                     key='AllProfiles'>All Profiles
                 </Menu.Item>
@@ -45,24 +37,8 @@ class Footer extends React.Component {
                 <Menu.Item
                     as={NavLink}
                     activeClassName="active"
-                    exact to="/schedule"
-                    key='schedule'>Schedule
-                </Menu.Item>
-              </p>
-              <p>
-                <Menu.Item
-                    as={NavLink}
-                    activeClassName="active"
                     exact to="/friends"
                     key='friends'>Friends List
-                </Menu.Item>
-              </p>
-              <p>
-                <Menu.Item
-                    as={NavLink}
-                    activeClassName="active"
-                    exact to="/editprofile/:_id"
-                    key='editprofile'>Edit Your Profile
                 </Menu.Item>
               </p>
             </Grid.Column>

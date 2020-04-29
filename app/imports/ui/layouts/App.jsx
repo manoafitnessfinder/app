@@ -40,12 +40,12 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/about" component={About}/>
-              <Route path="/profile" component={UserProfile}/>
               <Route path="/landing" component={Landing}/>
-              <Route path="/userlanding" component={UserLanding}/>
-              <Route path="/schedule" component={Schedule}/>
               <Route path="/test" component={Testimonials}/>
               <Route path="/contact" component={Contact}/>
+              <ProtectedRoute path="/userlanding" component={UserLanding}/>
+              <ProtectedRoute path="/schedule" component={Schedule}/>
+              <ProtectedRoute path="/profile" component={UserProfile}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/allprofiles" component={AllProfiles}/>
