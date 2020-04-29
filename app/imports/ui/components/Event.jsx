@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Header } from 'semantic-ui-react';
+import { Card, Icon, Header, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
@@ -31,8 +31,7 @@ class Event extends React.Component {
             {this.props.event.notes}
           </Card.Content>
           <Card.Content extra textAlign='right'>
-            <Icon name='edit'/>
-            <Link to={`/editevent/${this.props.event._id}`}>Edit</Link>
+            <Icon name='edit'/><Link to={`/editevent/${this.props.event._id}`}>Edit</Link>
             <Icon name='trash'/>
             <Link onClick={() => this.removeItem(this.props.event._id)}>Delete</Link>
           </Card.Content>

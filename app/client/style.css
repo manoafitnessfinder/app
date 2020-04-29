@@ -144,7 +144,8 @@ h3, h1 {
   text-align: left!important;
 }
 
-.scheduleButton {
+/* Edit Event Page #29: SOPHIA 04/28/20 */
+.scheduleButton, .editEventButton {
   color: #6D9B7C!important;
   background-color: white!important;
   font-family: 'Quicksand', sans-serif!important;
