@@ -119,13 +119,15 @@ Schedule.propTypes = {
 /** withTracker connects Meteor data to React components.
  https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
+  const today = new Date();
+  today.setHours(today.getHours() - 10);
   const subscription = Meteor.subscribe('Events');
   return {
     events: Events.find({
-      date: { $gte: new Date() },
+      date: { $gte: today },
     }, { sort: { date: 1 } }).fetch(),
     events2: Events.find({
-      date: { $lt: new Date() },
+      date: { $lt: today },
     }, { sort: { date: -1 } }).fetch(),
     ready: subscription.ready(),
   };
