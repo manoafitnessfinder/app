@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* For landing page. */
+.landing {
+  padding-top: 10px;
+}
+
+.landing_bottom_image {
+  background-image: url("/images/yoga_pose.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  padding-top: 10px;
+}
+/* For landing page. */
+
+.icon{
+  color: #6D9B7C;
+}
+
+.Button{
+  color: #6D9B7C;
+}
+
+.aboutBackground{
+  background: url('/app/public/images/topImage4.JPG') no-repeat fixed center;
+  background-size: cover;
+}
+
+.joinNow{
+  background-color: #6D9B7C;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/*User Profile Page #6: SOPHIA 04/16/20 */
+.userMenu, .ui.inverted.table.tableInfo tr td {
+  background-color: #6D9B7C!important;
+}
+
+tbody {
+  border-radius: 10px!important;
+}
+
+.userComment {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+.profileIcon {
+  color: white!important;
+}
+/*User Profile Page #6: SOPHIA 04/16/20 */
+
+
+/* #4, #24: SOPHIA 04/21/20 */
+.doubleLine {
+  display: flex;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+}
+
+.profileForm, .scheduleBar {
+  background-color: #6D9B7C!important;
+  color: white!important;
+}
+
+#uniforms-0000-0002, #uniforms-0000-0004, #uniforms-0000-0005 {
+  font-family: 'Lato', sans-serif!important;
+}
+
+.editProfileButton {
+  /* Added to center submit button. */
+  position: relative;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* Added to center submit button. */
+
+  color: #6D9B7C!important;
+  background-color: white!important;
+  margin: 30px 0 20px 0 !important;
+}
+
+/* Navbar */
+.menu.attached.borderless.topmenu {
+  padding-top: 10px;
+  border: none!important;
+  box-shadow: none!important;
+}
+
+/* Userlanding page */
+#user_landing_middle {
+  background-image: url("/images/UserLanding2.JPG");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  padding-top: 150px;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+
+/* Userlanding button for match */
+.matchButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+/* Schedule Page #30: SOPHIA 04/28/20 */
+h3, h1 {
+  font-family: 'Quicksand', sans-serif!important;
+  letter-spacing: 2px;
+  text-transform: uppercase!important;
+}
+
+.card a {
+  color: #6D9B7C!important;
+}
+
+.card { min-width: 350px!important; }
+
+.pastCards .card, .card {
+  /* background-color: gainsboro!important; */
+  max-width: 235px!important;
+  min-width: 0px!important;
+}
+
+.pastCards .card {
+  background-color: #f5f5f5!important;
+}
+
+.schedLabel label {
+  color: white!important;
+  font-family: 'Quicksand', sans-serif!important;
+  text-transform: uppercase!important;
+  text-align: left!important;
+}
+
+/* Edit Event Page #29: SOPHIA 04/28/20 */
+.scheduleButton, .editEventButton {
+  color: #6D9B7C!important;
+  background-color: white!important;
+  font-family: 'Quicksand', sans-serif!important;
+}

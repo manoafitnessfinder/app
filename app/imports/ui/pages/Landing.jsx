@@ -1,22 +1,42 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Grid, Image, Container, Header, Segment, Button } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center' container>
-
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
-          </Grid.Column>
-
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
-          </Grid.Column>
-
-        </Grid>
+        /* Outside to maintain consistent borders. */
+        <Container>
+          <Container verticalAlign='middle' textAlign='center'>
+            <Image className="landing" fluid src='/images/landing_page_top.JPG'/>
+          </Container>
+          <Header inverted color='green' textAlign='centered' as={'h1'}>
+            Match based on what you are looking for!</Header>
+          <Grid>
+            <Grid.Row columns={3}>
+              <Grid.Column>
+                <Image fluid src='/images/two_people_running.jpg'/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image fluid src='/images/one_armed_pushups.jpg'/>
+              </Grid.Column>
+              <Grid.Column>
+                <Image fluid src='/images/gym_machines.jpg'/>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          <Header inverted color='green' textAlign='centered' as={'h1'}>
+            Join today and work towards your better self!</Header>
+          <Container className='landing_bottom_image'>
+            <Segment floated='right' compact tertiary textAlign='center'>
+              <Header inverted color='green' textAlign='center' as={'h1'}>Match With <br/> Someone today!<br/> </Header>
+              <Button as={Link} to="/signup" color='green' compact size='medium'>
+                Join Now!
+              </Button>
+            </Segment>
+          </Container>
+        </Container>
     );
   }
 }

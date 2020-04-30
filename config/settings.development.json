@@ -3,11 +3,75 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
   ],
-
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+  "defaultProfile": [
+    {
+      "name": "Marcus Cicero",
+      "age": "63",
+      "image": "https://www.nationalgeographic.com/content/dam/archaeologyandhistory/rights-exempt/history-magazine/2019/01-02/cicero/11-cicero-opener.adapt.1900.1.jpg",
+      "description": "But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose. To do so, I will give you a complete account of the system, and expound the actual teachings of the great explorer of truth, the master builder of human happiness. No one rejects, dislikes or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+      "gender": "Male",
+      "interests": "Running",
+      "seeking": "Gym Buddy",
+      "level": "Beginner",
+      "goals": "Run an 8 min mile",
+      "owner": "john@foo.com"
+    }
+  ],
+  "loadAssetsFile":  true,
+  "defaultEvents": [
+    {
+      "date": "2014-01-01T23:28:56.782Z",
+      "type": "Run",
+      "location": "Ewa Beach",
+      "associated": "galileo@moon.com",
+      "notes": "It was fun.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-05-27T04:02:56.782Z",
+      "type": "Walk",
+      "location": "Mililani",
+      "associated": "galileo@moon.com",
+      "notes": "2 miles.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-06-04T23:28:56.782Z",
+      "type": "Lift",
+      "location": "Mililani",
+      "associated": "galileo@moon.com",
+      "notes": "Don't forget to bring water.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-04-26T04:00:56.782Z",
+      "type": "Walk",
+      "location": "Pearl City",
+      "associated": "galileo@moon.com",
+      "notes": "Great walk. Went to gulch.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "2020-04-26T04:00:56.782Z",
+      "type": "Hike",
+      "location": "Haleakala",
+      "associated": "galileo@moon.com",
+      "notes": "Very beautiful. 23:54.",
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "1996-08-13T12:05:56.782Z",
+      "type": "Run",
+      "location": "Manoa",
+      "associated": "galileo@moon.com",
+      "notes": "So tired.",
+      "owner": "john@foo.com"
+    }
   ]
 }
