@@ -26,7 +26,7 @@ import User from '../pages/User';
 import Friends from '../pages/Friends';
 import Testimonials from '../pages/Testimonials';
 import Contact from '../pages/Contact';
-import UserLanding from "../pages/UserLanding";
+import UserLanding from '../pages/UserLanding';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {

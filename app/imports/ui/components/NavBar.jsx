@@ -14,11 +14,16 @@ class NavBar extends React.Component {
             <Menu attached="top" borderless className="topmenu">
               <Menu.Item as={NavLink} activeClassName="" exact to="/landing" key='landing'>Home</Menu.Item>
               {this.props.currentUser ? (
-                  [<Menu.Item as={NavLink} activeClassName="" exact to="/userlanding" key='Userlanding'>User Home</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/allprofiles" key='allprofiles'>All Profiles</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'>Friends List</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/schedule" key='schedule'>Schedule</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/profile" key='profile'>Profile</Menu.Item>]
+                  [<Menu.Item as={NavLink} activeClassName="" exact to="/userlanding" key='Userlanding'>User
+                    Home</Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/allprofiles" key='allprofiles'>All
+                      Profiles</Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'>Friends
+                      List</Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/schedule"
+                               key='schedule'>Schedule</Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/profile"
+                               key='profile'>Profile</Menu.Item>]
               ) : ''}
               <Menu.Item as={NavLink} activeClassName="" exact to="/about" key='about'>About Us</Menu.Item>
               <Menu.Item as={NavLink} activeClassName="" exact to="/test" key="testimonial">Testimonials</Menu.Item>

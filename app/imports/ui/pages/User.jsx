@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Loader, Header, Divider, Icon, Menu, Image, Table, Container } from 'semantic-ui-react';
-import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
