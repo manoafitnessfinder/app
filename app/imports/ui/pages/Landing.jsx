@@ -21,24 +21,25 @@ class Landing extends React.Component {
                     <Image fluid src='/images/two_running.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
+                    <br/>
                     <Header inverted color='green' textAlign='centered' as={'h1'}>
-                      Don&apos;t get intimidated, match with someone at your skill level so you can meet your goals.
+                      Schedule an event with a friend today!
+                      <Button as={Link} to="/signup" color='green' compact size='medium'>
+                        Join Now!
+                      </Button>
                     </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Reveal animated='fade' instant>
+                <Reveal animated='fade'>
                   <Reveal.Content visible>
                     <Image fluid src='/images/two_pushups.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
                     <Header inverted color='green' textAlign='centered' as={'h1'}>
-                      Schedule an event with a friend today!
-                      <Button as={Link} to="/signup">
-                        Get Started
-                      </Button>
+                      Don&apos;t get intimidated, match with someone at your level.
                     </Header>
                   </Reveal.Content>
                 </Reveal>
@@ -49,8 +50,9 @@ class Landing extends React.Component {
                     <Image fluid src='/images/two_machines.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
+                    <br/>
                     <Header inverted color='green' textAlign='centered' as={'h1'}>
-                      The Freshmen Fifteen could happen to you, get started today making yourself into your best self.
+                      The Freshmen Fifteen could happen to you, get started today.
                     </Header>
                   </Reveal.Content>
                 </Reveal>
