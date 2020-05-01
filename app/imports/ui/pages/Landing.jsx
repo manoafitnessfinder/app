@@ -16,32 +16,42 @@ class Landing extends React.Component {
           <Grid>
             <Grid.Row columns={3}>
               <Grid.Column>
-                <Reveal animated = 'move left' instant>
+                <Reveal animated='move left' instant>
                   <Reveal.Content visible>
                     <Image fluid src='/images/two_running.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
-                    Testing move instant.
+                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                      Don&apos;t get intimidated, match with someone at your skill level so you can meet your goals.
+                    </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Reveal animated = 'fade' instant>
+                <Reveal animated='fade' instant>
                   <Reveal.Content visible>
                     <Image fluid src='/images/two_pushups.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
-                    Testing fade instant.
+                    <br/>
+                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                      Schedule an event with a friend today!
+                      <Button as={Link} to="/signup">
+                        Get Started
+                      </Button>
+                    </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Reveal animated = 'move right' instant>
+                <Reveal animated='move right' instant>
                   <Reveal.Content visible>
                     <Image fluid src='/images/two_machines.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
-                    Testing move right instant.
+                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                      The Freshmen Fifteen could happen to you, get started today making yourself into your best self.
+                    </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
