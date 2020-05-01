@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Image, Container, Header, Segment, Button } from 'semantic-ui-react';
+import { Grid, Image, Container, Header, Segment, Button, Reveal } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -16,13 +16,34 @@ class Landing extends React.Component {
           <Grid>
             <Grid.Row columns={3}>
               <Grid.Column>
-                <Image fluid src='/images/two_running.png'/>
+                <Reveal animated = 'move left' instant>
+                  <Reveal.Content visible>
+                    <Image fluid src='/images/two_running.png'/>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    Testing move instant.
+                  </Reveal.Content>
+                </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Image fluid src='/images/two_pushups.png'/>
+                <Reveal animated = 'fade' instant>
+                  <Reveal.Content visible>
+                    <Image fluid src='/images/two_pushups.png'/>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    Testing fade instant.
+                  </Reveal.Content>
+                </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Image fluid src='/images/two_machines.png'/>
+                <Reveal animated = 'move right' instant>
+                  <Reveal.Content visible>
+                    <Image fluid src='/images/two_machines.png'/>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    Testing move right instant.
+                  </Reveal.Content>
+                </Reveal>
               </Grid.Column>
             </Grid.Row>
           </Grid>
