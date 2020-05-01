@@ -1,5 +1,11 @@
 import React from 'react';
-import { Container, Image, Card, Button, Grid, Icon } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { Link } from 'react-router-dom';
+import { Container, Image, Card, Button, Grid, Icon, Divider, Header, Reveal, List } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Events } from '../../api/event/Events';
+import Event from '/imports/ui/components/Event';
 
 /** A simple static component to render some text for the landing page. */
 class UserLanding extends React.Component {
@@ -7,96 +13,87 @@ class UserLanding extends React.Component {
     return (
         <div className="aboutBackground">
           <Container>
-            <Image centered src="/images/UserLanding1.JPG" fluid/>
+            <Image fluid centered src="/images/UserLanding1.JPG"/>
+            <Divider horizontal>
+              <Header as='h1' textAlign='center'>Upcoming Events</Header>
+            </Divider>
             <Card.Group centered>
-              <Card>
-                <Card.Content>
-                  <Image
-                      floated='right'
-                      size='mini'
-                      src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
-                  />
-                  <Card.Header>Event 1</Card.Header>
-                  <Card.Meta>Add content here</Card.Meta>
-                  <Card.Description>
-                    Steve wants to add you to the group <strong>best friends</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Approve
-                    </Button>
-                    <Button basic color='red'>
-                      Decline
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image
-                      floated='right'
-                      size='mini'
-                      src='https://react.semantic-ui.com/images/avatar/large/molly.png'
-                  />
-                  <Card.Header>Molly Thomas</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Molly wants to add you to the group <strong>musicians</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Approve
-                    </Button>
-                    <Button basic color='red'>
-                      Decline
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card>
-                <Card.Content>
-                  <Image
-                      floated='right'
-                      size='mini'
-                      src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg'
-                  />
-                  <Card.Header>Jenny Lawrence</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Jenny requested permission to view your contact details
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Approve
-                    </Button>
-                    <Button basic color='red'>
-                      Decline
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
+              {this.props.events.map((event, index) => <Event
+                  key={index}
+                  event={event}
+                  Events={Events}
+              />)
+              }
             </Card.Group>
+            <Divider hidden/>
+            <Divider hidden/>
             <Container id='user_landing_middle'>
-                <Button animated className="matchButton" size="huge">
+                <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge">
                   <Button.Content visible>Match</Button.Content>
                   <Button.Content hidden>
                     <Icon name='arrow right' />
                   </Button.Content>
                 </Button>
             </Container>
+            <Divider hidden/>
             <Grid padded>
             <Grid.Row>
-              <Grid.Column width={8}>
-                <Image src="/images/UserLanding7.png" fluid/>
+              <Grid.Column width={8} textAlign='center'>
+                <Reveal animated='move' instant>
+                  <Reveal.Content visible>
+                    <Image src="/images/UserLanding7.png" fluid/>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    <Header as='h1'>Schedule A New Event</Header>
+                    <Header as='h3'>5 Easy Steps!</Header>
+                    <br/>
+                    <Grid.Row>
+                      <List size='huge'>
+                        <List.Item>
+                          <Icon name='calendar' />
+                          Set Date And Time
+                        </List.Item>
+                        <br/>
+                        <List.Item>
+                          <Icon name='thumbtack' />
+                          Set Event Type
+                        </List.Item>
+                        <br/>
+                        <List.Item>
+                          <Icon name='location arrow' />
+                          Set Location
+                        </List.Item>
+                        <br/>
+                        <List.Item>
+                          <Icon name='user plus' />
+                          Include A Friend
+                        </List.Item>
+                        <br/>
+                        <List.Item>
+                          <Icon name='sticky note' />
+                          Leave a note
+                        </List.Item>
+                        <br/>
+                      </List>
+                    </Grid.Row>
+                    <Button as={Link} to="/schedule" animated size="large">
+                      <Button.Content visible>Get Started</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name='arrow right' />
+                      </Button.Content>
+                    </Button>
+                  </Reveal.Content>
+                </Reveal>
               </Grid.Column>
               <Grid.Column textAlign='center' width={8}>
-                <Image src="/images/UserLanding4.PNG" fluid/>
+                <Reveal animated='move right' instant>
+                  <Reveal.Content visible>
+                    <Image src="/images/UserLanding4.PNG" fluid/>
+                  </Reveal.Content>
+                  <Reveal.Content hidden>
+                    <Header as='h1'> Test</Header>
+                  </Reveal.Content>
+                </Reveal>
               </Grid.Column>
             </Grid.Row>
             </Grid>
@@ -106,4 +103,25 @@ class UserLanding extends React.Component {
   }
 }
 
-export default UserLanding;
+UserLanding.propTypes = {
+  events: PropTypes.array.isRequired,
+  events2: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+/** withTracker connects Meteor data to React components.
+ https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  const today = new Date();
+  today.setHours(today.getHours() - 10);
+  const subscription = Meteor.subscribe('Events');
+  return {
+    events: Events.find({
+      date: { $gte: today },
+    }, { sort: { date: 1 } }).fetch(),
+    events2: Events.find({
+      date: { $lt: today },
+    }, { sort: { date: -1 } }).fetch(),
+    ready: subscription.ready(),
+  };
+})(UserLanding);
