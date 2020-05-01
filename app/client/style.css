@@ -151,8 +151,17 @@ h3, h1 {
   font-family: 'Quicksand', sans-serif!important;
 }
 
-/* For the allProfiles Page. */
+/**
+ For the allProfiles and Friends Page.
+ Added issue 47 5/1/2020 Patrick.
+ **/
 
 .imagePadding {
+  padding-top: 10px;
   padding-bottom: 10px;
 }
+
+/**
+ For the allProfiles and Friends Page.
+ Added issue 47 5/1/2020 Patrick.
+ **/
