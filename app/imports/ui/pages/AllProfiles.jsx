@@ -17,7 +17,9 @@ class ListAllProfiles extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Image centered src="/images/allProfile.JPG" fluid/>
+          <Container className = 'imagePadding'>
+            <Image style={ { width: '980px', height: '250px' }} centered src="/images/allProfile.JPG"/>
+          </Container>
           <Card.Group centered>
             {this.props.profiles.map((profile, index) => <AllProfiles key={index} profile={profile}/>)}
           </Card.Group>

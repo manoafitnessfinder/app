@@ -17,7 +17,9 @@ class FriendsPage extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Image centered src="/images/listFriend.PNG" fluid/>
+          <Container className = 'imagePadding'>
+            <Image style={ { width: '980px', height: '250px' }} centered src="/images/listFriend.PNG"/>
+          </Container>
           <Card.Group centered>
             {this.props.profiles.map((profile, index) => <FriendsList key={index} profile={profile}/>)}
           </Card.Group>
