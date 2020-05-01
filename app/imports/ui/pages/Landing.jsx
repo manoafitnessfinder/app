@@ -16,13 +16,13 @@ class Landing extends React.Component {
           <Grid>
             <Grid.Row columns={3}>
               <Grid.Column>
-                <Image fluid src='/images/two_people_running.jpg'/>
+                <Image fluid src='/images/two_running.png'/>
               </Grid.Column>
               <Grid.Column>
-                <Image fluid src='/images/one_armed_pushups.jpg'/>
+                <Image fluid src='/images/two_pushups.png'/>
               </Grid.Column>
               <Grid.Column>
-                <Image fluid src='/images/gym_machines.jpg'/>
+                <Image fluid src='/images/two_machines.png'/>
               </Grid.Column>
             </Grid.Row>
           </Grid>
