@@ -62,8 +62,10 @@ class Landing extends React.Component {
           <Header inverted color='green' textAlign='centered' as={'h1'}>
             Join today and work towards your better self!</Header>
           <Container className='landing_bottom_image'>
-            <Segment floated='right' compact tertiary textAlign='center'>
-              <Header inverted color='green' textAlign='center' as={'h1'}>Match With <br/> Someone today!<br/> </Header>
+            <Segment basic floated='right' compact textAlign='center'>
+              <Header inverted color='green' textAlign='center' as={'h1'}>
+                <br/>Match With <br/> Someone today!<br/>
+              </Header>
               <Button as={Link} to="/signup" color='green' compact size='medium'>
                 Join Now!
               </Button>
