@@ -76,19 +76,13 @@ class User extends React.Component {
                                         <Table.Cell>Goals</Table.Cell>
                                         <Table.Cell>{this.props.doc.goals}</Table.Cell>
                                     </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>
-                                            <Feed>
-                                                {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
-                                            </Feed>
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            <AddNote owner={this.props.doc.owner}
-                                                     contactId={this.props.doc._id}/>
-                                        </Table.Cell>
-                                    </Table.Row>
                                 </Table.Body>
                             </Table>
+                            <AddNote className="commentBox" owner={this.props.doc.owner}
+                                     contactId={this.props.doc._id}/>
+                            <Feed className="feedU">
+                                {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
+                            </Feed>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

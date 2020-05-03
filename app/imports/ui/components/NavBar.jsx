@@ -9,8 +9,8 @@ import { Menu, Dropdown, Grid } from 'semantic-ui-react';
 class NavBar extends React.Component {
   render() {
     return (
-        <Grid centered>
-          <Grid.Row>
+        <Grid centered columns={3}>
+          <Grid.Column>
             <Menu attached="top" borderless className="topmenu">
               <Menu.Item as={NavLink} activeClassName="" exact to="/landing" key='landing'>Home</Menu.Item>
               {this.props.currentUser ? (
@@ -46,7 +46,7 @@ class NavBar extends React.Component {
                 )}
               </Menu.Item>
             </Menu>
-          </Grid.Row>
+          </Grid.Column>
         </Grid>
     );
   }

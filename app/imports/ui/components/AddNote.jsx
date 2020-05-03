@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import {Form, Segment} from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { AutoForm, ErrorsField, SubmitField, TextField, HiddenField } from 'uniforms-semantic';
 import swal from 'sweetalert';
@@ -33,7 +33,7 @@ class AddNote extends React.Component {
             <AutoForm ref={ref => { fRef = ref; }} schema={NotesSchema} onSubmit={data => this.submit(data, fRef)} >
               <Segment>
                 <TextField label="Comment:" name='note'/>
-                <SubmitField value='Submit'/>
+                <SubmitField basic color='green' value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value={this.props.owner}/>
                 <HiddenField name='contactId' value={this.props.contactId}/>
