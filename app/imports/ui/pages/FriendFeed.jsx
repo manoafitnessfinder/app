@@ -19,11 +19,15 @@ class FriendFeed extends React.Component {
   renderPage() {
     return (
         <Container>
+          <Divider hidden/>
+          <Header as='h1' textAlign='center'>Friend Feed</Header>
+          <Divider hidden/>
+
           <Divider horizontal>
-            <Header as='h1'>Upcoming Events</Header>
+            <Header as='h2'>Upcoming Events</Header>
           </Divider>
 
-          <Card.Group centered>
+          <Card.Group centered className='upFeed'>
             {this.props.events.map((event, index) => <FriendEvent
                 key={index}
                 event={event}
@@ -34,18 +38,20 @@ class FriendFeed extends React.Component {
           <Divider hidden/>
 
           <Divider horizontal>
-            <Header as='h1'>Past Events</Header>
+            <Header as='h2'>Past Events</Header>
           </Divider>
 
 
-          <Card.Group centered>
+          <Card.Group className='pastFeed' centered>
             {this.props.events2.map((event, index) => <FriendEvent
                 key={index}
                 event={event}
             />)
             }
           </Card.Group>
+          <Divider hidden/>
         </Container>
+
     );
   }
 }

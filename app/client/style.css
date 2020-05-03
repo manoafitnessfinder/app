@@ -115,7 +115,7 @@ tbody {
 }
 
 /* Schedule Page #30: SOPHIA 04/28/20 */
-h3, h1 {
+h3, h1, h2 {
   font-family: 'Quicksand', sans-serif!important;
   letter-spacing: 2px;
   text-transform: uppercase!important;
@@ -133,12 +133,18 @@ h3, h1 {
 .schedCards .card { min-width: 350px!important; }
 
 .pastCards .card, .schedCards .card {
+   /* background-color: gainsboro!important; */
+   max-width: 235px!important;
+   min-width: 0px!important;
+ }
+
+.upFeed .card, .pastFeed .card {
   /* background-color: gainsboro!important; */
-  max-width: 235px!important;
+  max-width: 260px!important;
   min-width: 0px!important;
 }
 
-.pastCards .card {
+.pastCards .card, .pastFeed .card {
   background-color: #f5f5f5!important;
 }
 
