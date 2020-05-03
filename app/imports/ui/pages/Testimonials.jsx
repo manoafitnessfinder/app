@@ -39,9 +39,9 @@ class Testimonial extends React.Component {
 
           <Grid.Row>
             <Grid.Column textAlign="center">
-              I`&apos;`ve only been using Manoa Fitness Finder for a little bit, but so far I`&apos;`ve really enjoyed
+              I&apos;ve only been using Manoa Fitness Finder for a little bit, but so far I&apos;ve really enjoyed
               my experience.
-              I`&apos;`m a new student and have an easy time finding other students with similar interest as mine. I now
+              I&apos;m a new student and have an easy time finding other students with similar interest as mine. I now
               am
               able to play volleyball every weekend and meet new people in the process. - Sally B.
             </Grid.Column>
