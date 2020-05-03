@@ -1,11 +1,12 @@
 import React from 'react';
-import { Grid, Loader, Header, Divider, Icon, Menu, Image, Table, Container } from 'semantic-ui-react';
+import { Grid, Loader, Header, Divider, Icon, Menu, Image, Table, Container, Feed } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Link } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
+import { Notes } from '../../api/note/Notes';
 
 /** Renders the Page for editing a single document. */
 class User extends React.Component {
@@ -73,6 +74,14 @@ class User extends React.Component {
                       <Table.Cell>Goals</Table.Cell>
                       <Table.Cell>{this.props.doc.goals}</Table.Cell>
                     </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Comments</Table.Cell>
+                      <Table.Cell>
+                        <Feed>
+                          {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
+                        </Feed>
+                      </Table.Cell>
+                    </Table.Row>
                   </Table.Body>
                 </Table>
               </Grid.Column>
@@ -85,14 +94,17 @@ class User extends React.Component {
 
 User.propTypes = {
   doc: PropTypes.object,
+  notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
   const subscription = Meteor.subscribe('AllProfiles');
+  const subscription2 = Meteor.subscribe('Notes');
   return {
     doc: Profiles.findOne(documentId),
-    ready: subscription.ready(),
+    notes: Notes.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(User);
