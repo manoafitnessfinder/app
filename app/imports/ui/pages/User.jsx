@@ -81,7 +81,8 @@ class User extends React.Component {
                             <AddNote className="commentBox" owner={this.props.doc.owner}
                                      contactId={this.props.doc._id}/>
                             <Feed className="feedU">
-                                {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
+                                {this.props.notes.map((note, index) => <Note key={index} note={note}
+                                                                             profile={this.props.doc.owner}/>)}
                             </Feed>
                         </Grid.Column>
                     </Grid.Row>
