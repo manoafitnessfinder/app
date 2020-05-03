@@ -25,7 +25,7 @@ class FriendEvent extends React.Component {
               </Header>
             </Card.Content>
             <Card.Content extra>
-              {this.props.event.owner}
+              <Icon name='user circle'/> {this.props.event.owner}
             </Card.Content>
             <Card.Content>
               <Icon name='thumbtack'/> {this.props.event.type}<br/>
