@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from 'meteor/accounts-base';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profile.js';
 import { Events } from '../../api/event/Events.js';
@@ -24,11 +23,6 @@ if (Stuffs.find().count() === 0) {
 function addProfile(data) {
   console.log(`  Adding: ${data.name} for (${data.owner})`);
   Profiles.insert(data);
-}
-
-function addAccount(data){
-  console.log(`Adding ${data.email}`);
-  Accounts.insert(data);
 }
 
 if (Profiles.find().count() === 0) {
