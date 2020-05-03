@@ -1,143 +1,129 @@
 import React from 'react';
-import {Meteor} from 'meteor/meteor';
-import {Container, Icon, Grid, Menu, Header, Table, Divider, Image, Loader, Segment, Feed} from 'semantic-ui-react';
-import {withTracker} from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { Container, Icon, Grid, Menu, Header, Table, Divider, Image, Loader, Segment, Feed } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import {AutoForm, ErrorsField, SubmitField, LongTextField} from 'uniforms-semantic';
+import { AutoForm, ErrorsField, SubmitField, LongTextField, HiddenField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
-import {Link, Redirect} from 'react-router-dom';
-import {Profiles} from '../../api/profile/Profile';
-import {Notes} from '../../api/note/Notes';
+import { Link, Redirect } from 'react-router-dom';
+import { Profiles } from '../../api/profile/Profile';
+import { Notes } from '../../api/note/Notes';
 import AddNote from "../components/AddNote";
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
-    comment: String,
-    quantity: Number,
-    condition: {
-        type: String,
-        allowedValues: ['excellent', 'good', 'fair', 'poor'],
-        defaultValue: 'good',
-    },
+  comment: String,
+  quantity: Number,
+  condition: {
+    type: String,
+    allowedValues: ['excellent', 'good', 'fair', 'poor'],
+    defaultValue: 'good',
+  },
 });
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class UserProfile extends React.Component {
-    /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
-    render() {
-        return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  /** Render the page once subscriptions have been received. */
+  renderPage() {
+    let fRef = null;
+    if (this.props.profiles[0].description === '') {
+      return <Redirect to={`/editprofile/${this.props.profiles[0]._id}`}/>;
     }
+    return (
+        <Container>
+          <Divider hidden/>
+          <Grid>
+            <Grid.Column width={13}>
+              <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
+            </Grid.Column>
+            <Grid.Column width={3} textAlign='right'>
+              <Icon name='edit'/> <Link to={`/editprofile/${this.props.profiles[0]._id}`}>Edit Profile</Link>
+            </Grid.Column>
+          </Grid>
+          <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
+            <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
+            <Menu.Item><Icon className='profileIcon' name='map'/> User Feed</Menu.Item>
+          </Menu>
+          <Divider hidden/>
+          <Grid verticalalign='middle'>
+            <Grid.Row>
+              <Grid.Column width={1}/>
+              <Grid.Column width={4}>
+                <Image circular className='userImage'
+                       fluid
+                       src={this.props.profiles[0].image}/>
+              </Grid.Column>
+              <Grid.Column width={10} verticalAlign='middle' textAlign='justified'>
+                <Header
+                    as='h3'>{this.props.profiles[0].name}, {this.props.profiles[0].age}, {this.props.profiles[0].gender}
+                </Header>
+                <p>{this.props.profiles[0].description}</p>
+              </Grid.Column>
+              <Grid.Column width={1}/>
+            </Grid.Row>
+          </Grid>
+          <Divider hidden/>
+          <Grid>
+            <Grid.Row>
+              <Grid.Column>
+                <Table className="tableInfo" color='teal' inverted padded textalign='center'>
+                  <Table.Body>
+                    <Table.Row>
+                      <Table.Cell>Interests</Table.Cell>
+                      <Table.Cell>{this.props.profiles[0].interests}</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Seeking</Table.Cell>
+                      <Table.Cell>{this.props.profiles[0].seeking}</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Level</Table.Cell>
+                      <Table.Cell>{this.props.profiles[0].level}</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>Goals</Table.Cell>
+                      <Table.Cell>{this.props.profiles[0].goals}</Table.Cell>
+                    </Table.Row>
+                    <Table.Row>
+                      <Table.Cell>
+                        <Feed>
+                          {this.props.notes.map((note, index) => <Note key={index}
+                                                                       note={this.props.notes.filter(note => (note.contactId === this.props.profiles._id))}/>)}
+                        </Feed>
+                      </Table.Cell> <Table.Cell>
 
-    /** Render the page once subscriptions have been received. */
-    renderPage() {
-        let fRef = null;
-        if (this.props.profiles[0].description === '') {
-            return <Redirect to={`/editprofile/${this.props.profiles[0]._id}`}/>;
-        }
-        return (
-            <Container>
-                <Divider hidden/>
-                <Grid>
-                    <Grid.Column width={13}>
-                        <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
-                    </Grid.Column>
-                    <Grid.Column width={3} textAlign='right'>
-                        <Icon name='edit'/> <Link to={`/editprofile/${this.props.profiles[0]._id}`}>Edit Profile</Link>
-                    </Grid.Column>
-                </Grid>
-                <Menu widths={3} icon='labeled' inverted color='teal' className='userMenu'>
-                    <Menu.Item><Icon className='profileIcon' name='user'/> Add Friend</Menu.Item>
-                    <Menu.Item><Icon className='profileIcon' name='heart'/> Like Page</Menu.Item>
-                    <Menu.Item><Icon className='profileIcon' name='map'/> User Feed</Menu.Item>
-                </Menu>
-                <Divider hidden/>
-                <Grid verticalalign='middle'>
-                    <Grid.Row>
-                        <Grid.Column width={1}/>
-                        <Grid.Column width={4}>
-                            <Image circular className='userImage'
-                                   fluid
-                                   src={this.props.profiles[0].image}/>
-                        </Grid.Column>
-                        <Grid.Column width={10} verticalAlign='middle' textAlign='justified'>
-                            <Header
-                                as='h3'>{this.props.profiles[0].name}, {this.props.profiles[0].age}, {this.props.profiles[0].gender}
-                            </Header>
-                            <p>{this.props.profiles[0].description}</p>
-                        </Grid.Column>
-                        <Grid.Column width={1}/>
-                    </Grid.Row>
-                </Grid>
-                <Divider hidden/>
-                <Grid>
-                    <Grid.Row>
-                        <Grid.Column>
-                            <Table className="tableInfo" color='teal' inverted padded textalign='center'>
-                                <Table.Body>
-                                    <Table.Row>
-                                        <Table.Cell>Interests</Table.Cell>
-                                        <Table.Cell>{this.props.profiles[0].interests}</Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>Seeking</Table.Cell>
-                                        <Table.Cell>{this.props.profiles[0].seeking}</Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>Level</Table.Cell>
-                                        <Table.Cell>{this.props.profiles[0].level}</Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>Goals</Table.Cell>
-                                        <Table.Cell>{this.props.profiles[0].goals}</Table.Cell>
-                                    </Table.Row>
-                                    <Table.Row>
-                                        <Table.Cell>
-                                            <Feed>
-                                                {this.props.notes.map((note, index) => <Note key={index}
-                                                                                             note={this.props.notes.filter(note => (note.contactId === this.props.profiles._id))}/>)}
-                                            </Feed>
-                                        </Table.Cell>
-                                        <Table.Cell>
-                                            <AddNote owner={this.props.profiles.owner} contactId={this.props.profiles._id}/>
-                                        </Table.Cell>
-                                    </Table.Row>
-                                </Table.Body>
-                            </Table>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
-
-                <Divider hidden/>
-
-
-                <AutoForm ref={ref => {
-                    fRef = ref;
-                }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                    <Segment className="userComment">
-                        <LongTextField name='comment'/>
-                        <SubmitField value='Submit'/>
-                        <ErrorsField/>
-                    </Segment>
-                </AutoForm>
-                <Divider hidden/>
-            </Container>
-        );
-    }
+                      <AddNote owner={this.props.profiles[0].owner} contactId={this.props.profiles[0]._id}/>
+                    </Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                </Table>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+    );
+  }
 }
 
 UserProfile.propTypes = {
-    profiles: PropTypes.array.isRequired,
-    notes: PropTypes.array.isRequired,
-    ready: PropTypes.bool.isRequired,
+  profiles: PropTypes.array.isRequired,
+  notes: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-    const subscription = Meteor.subscribe('Profiles');
-    const subscription2 = Meteor.subscribe('Notes');
-    return {
-        profiles: Profiles.find({}).fetch(),
-        notes: Notes.find({}).fetch(),
-        ready: subscription.ready() && subscription2.ready(),
-    };
+  const subscription = Meteor.subscribe('Profiles');
+  const subscription2 = Meteor.subscribe('Notes');
+  return {
+    profiles: Profiles.find({}).fetch(),
+    notes: Notes.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
+  };
 })(UserProfile);
