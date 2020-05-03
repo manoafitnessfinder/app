@@ -36,6 +36,7 @@ class Schedule extends React.Component {
   submit(data, formRef) {
     const { date, type, location, associated, notes } = data;
     const owner = Meteor.user().username;
+    console.log(`the owner of this event is ${owner}`);
     Events.insert({ date, type, location, associated, notes, owner },
         (error) => {
           if (error) {
@@ -83,12 +84,7 @@ class Schedule extends React.Component {
                 <Header as='h1' textAlign='center'>Upcoming Events</Header>
               </Divider>
               <Card.Group centered>
-                {this.props.events.map((event, index) => <Event
-                    key={index}
-                    event={event}
-                    Events={Events}
-                />)
-                }
+                {this.props.events.map((event, index) => <Event key={index} event={event}/>)}
               </Card.Group>
 
               <Divider hidden/>
@@ -101,7 +97,6 @@ class Schedule extends React.Component {
                 {this.props.events2.map((event, index) => <Event
                     key={index}
                     event={event}
-                    Events={Events}
                 />)
                 }
               </Card.Group>

@@ -9,6 +9,7 @@ const Friends = new Mongo.Collection('Friends');
 const FriendSchema = new SimpleSchema({
   owner: String, /** This is the person who's currently logged in * */
   contactId: String, /** This is the friend you are adding. * */
+  friendEmail: String, /** This is to make events work, this is the friends email * */
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

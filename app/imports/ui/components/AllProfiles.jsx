@@ -23,7 +23,8 @@ class AllProfiles extends React.Component {
               <Link to={`/User/${this.props.profile._id}`}>View Profile</Link>
             </Card.Content>
             <Card.Content extra>
-              <AddFriend owner={Meteor.user().username} contactId={this.props.profile._id}/>
+              <AddFriend owner={Meteor.user().username} contactId={this.props.profile._id}
+                         friendEmail={this.props.profile.owner}/>
             </Card.Content>
           </Card.Content>
         </Card>

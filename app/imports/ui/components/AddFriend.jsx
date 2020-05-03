@@ -14,14 +14,14 @@ class AddFriend extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { owner, contactId } = data;
-    Friends.insert({ owner, contactId },
+    const { owner, contactId, friendEmail } = data;
+    Friends.insert({ owner, contactId, friendEmail },
         (error) => {
           if (error) {
             swal('Note Error', error.message, 'error');
           } else {
             swal('Success', `${Profiles.findOne(this._id = contactId).name} +
-            ADDED as the friend of ${owner}`, 'success');
+            added as the friend of ${owner}. Their email is ${friendEmail}`, 'success');
             formRef.reset();
           }
         });
@@ -39,6 +39,7 @@ class AddFriend extends React.Component {
             <ErrorsField/>
             <HiddenField name='owner' value={this.props.owner}/>
             <HiddenField name='contactId' value={this.props.contactId}/>
+            <HiddenField name='friendEmail' value={this.props.friendEmail}/>
           </Segment>
         </AutoForm>
     );
@@ -48,6 +49,7 @@ class AddFriend extends React.Component {
 AddFriend.propTypes = {
   owner: PropTypes.string.isRequired,
   contactId: PropTypes.string.isRequired,
+  friendEmail: PropTypes.string.isRequired,
   profiles: PropTypes.array.isRequired,
 };
 

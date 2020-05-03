@@ -9,8 +9,6 @@ import { Friends } from '../../api/friend/Friend';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FriendsList extends React.Component {
   render() {
-    // console.log(this.props.profile._id);
-    // console.log(Friends.findOne({ owner: 'john@foo.com' }))
     if (Friends.findOne({ contactId: this.props.profile._id })) {
       return (
           <Card>
