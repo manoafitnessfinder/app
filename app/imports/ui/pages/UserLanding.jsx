@@ -28,7 +28,7 @@ class UserLanding extends React.Component {
             <Divider hidden/>
             <Divider hidden/>
             <Container id='user_landing_middle'>
-                <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge">
+                <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge" centered>
                   <Button.Content visible>Match</Button.Content>
                   <Button.Content hidden>
                     <Icon name='arrow right' />
@@ -76,7 +76,7 @@ class UserLanding extends React.Component {
                         <br/>
                       </List>
                     </Grid.Row>
-                    <Button as={Link} to="/schedule" animated size="large">
+                    <Button as={Link} to="/events" animated size="large">
                       <Button.Content visible>Get Started</Button.Content>
                       <Button.Content hidden>
                         <Icon name='arrow right' />
@@ -88,10 +88,20 @@ class UserLanding extends React.Component {
               <Grid.Column textAlign='center' width={8}>
                 <Reveal animated='move right' instant>
                   <Reveal.Content visible>
-                    <Image src="/images/UserLanding4.PNG" fluid/>
+                    <Image src="/images/UserLanding5.png" fluid/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
-                    <Header as='h1'> Test</Header>
+                    <Header as='h1'>Keep up with your friends</Header>
+                    <Divider hidden/>
+                    <Header as='h3'>View events your friends accomplished!</Header>
+                    <Header as='h3'>Keep up to date on how their fitness goals!</Header>
+                    <Header as='h3'>Lets lose that freshman 15 together!</Header>
+                    <Button as={Link} to="/friendevents" animated size="large">
+                      <Button.Content visible>View Now</Button.Content>
+                      <Button.Content hidden>
+                        <Icon name='arrow right' />
+                      </Button.Content>
+                    </Button>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
