@@ -72,6 +72,22 @@
       "associated": "galileo@moon.com",
       "notes": "So tired.",
       "owner": "john@foo.com"
+    },
+    {
+      "date": "1996-08-13T12:05:56.782Z",
+      "type": "Run",
+      "location": "Manoa",
+      "associated": "galileo@moon.com",
+      "notes": "So tired.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "date": "1996-08-13T12:05:56.782Z",
+      "type": "Run",
+      "location": "Manoa",
+      "associated": "galileo@moon.com",
+      "notes": "So tired.",
+      "owner": "1@foo.com"
     }
   ]
 }

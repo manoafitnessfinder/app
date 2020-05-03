@@ -50,3 +50,11 @@ Meteor.publish('Friends', function publish() {
   }
   return this.ready();
 });
+
+Meteor.publish('AllEvents', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Events.find({ owner: { $ne: username } });
+  }
+  return this.ready();
+});
