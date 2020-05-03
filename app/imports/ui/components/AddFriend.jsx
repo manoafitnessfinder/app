@@ -34,13 +34,13 @@ class AddFriend extends React.Component {
         <AutoForm ref={ref => {
           fRef = ref;
         }} schema={FriendSchema} onSubmit={data => this.submit(data, fRef)}>
-          <Segment>
+
             <SubmitField value='Add Friend'/>
             <ErrorsField/>
             <HiddenField name='owner' value={this.props.owner}/>
             <HiddenField name='contactId' value={this.props.contactId}/>
             <HiddenField name='friendEmail' value={this.props.friendEmail}/>
-          </Segment>
+
         </AutoForm>
     );
   }

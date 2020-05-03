@@ -176,3 +176,12 @@ h3, h1, h2 {
  For the allProfiles and Friends Page.
  Added issue 47 5/1/2020 Patrick.
  **/
+
+a.profLink {
+  color: #fff!important;
+}
+
+.ui.segment.profThing, .ui.segment.profThing h3, .ui.segment.profThing h2, .segIcon {
+  background-color: #6D9B7C!important;
+  color: #fff!important;
+}
