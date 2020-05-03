@@ -1,7 +1,9 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profile.js';
 import { Events } from '../../api/event/Events.js';
+
 
 /* eslint-disable no-console */
 
@@ -24,6 +26,11 @@ function addProfile(data) {
   Profiles.insert(data);
 }
 
+function addAccount(data){
+  console.log(`Adding ${data.email}`);
+  Accounts.insert(data);
+}
+
 if (Profiles.find().count() === 0) {
   if (Meteor.settings.defaultProfile) {
     console.log('Creating default profile for John@Foo.com.');
@@ -40,7 +47,7 @@ if (Profiles.find().count() === 0) {
  * For more info on assets, see https://docs.meteor.com/api/assets.html
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  */
-if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 7)) {
+if ((Meteor.settings.loadAssetsFile) && (Meteor.users.find().count() < 200)) {
   const assetsFileName = 'data.json';
   console.log(`Loading data from private/${assetsFileName}`);
   const jsonData = JSON.parse(Assets.getText(assetsFileName));
