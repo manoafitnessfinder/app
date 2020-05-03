@@ -9,6 +9,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 import { Notes } from '../../api/note/Notes';
 import AddNote from "../components/AddNote";
+import Note from '../components/Note.jsx';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -93,11 +94,9 @@ class UserProfile extends React.Component {
                     <Table.Row>
                       <Table.Cell>
                         <Feed>
-                          {this.props.notes.map((note, index) => <Note key={index}
-                                                                       note={this.props.notes.filter(note => (note.contactId === this.props.profiles._id))}/>)}
+                          {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
                         </Feed>
                       </Table.Cell> <Table.Cell>
-
                       <AddNote owner={this.props.profiles[0].owner} contactId={this.props.profiles[0]._id}/>
                     </Table.Cell>
                     </Table.Row>
