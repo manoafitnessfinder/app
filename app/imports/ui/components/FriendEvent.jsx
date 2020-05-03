@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, Icon, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import { Link } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import moment from 'moment';
 import 'moment-timezone';
@@ -10,7 +9,7 @@ import { Friends } from '../../api/friend/Friend';
 import { Profiles } from '../../api/profile/Profile';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Event extends React.Component {
+class FriendEvent extends React.Component {
   removeItem(docID) {
     this.props.Events.remove(docID);
   }
@@ -25,6 +24,9 @@ class Event extends React.Component {
                 @ {moment(this.props.event.date).add(10, 'hours').format('hh:mm A')}<br/>
               </Header>
             </Card.Content>
+            <Card.Content extra>
+              {this.props.event.owner}
+            </Card.Content>
             <Card.Content>
               <Icon name='thumbtack'/> {this.props.event.type}<br/>
               <Icon name='location arrow'/> {this.props.event.location}<br/>
@@ -34,11 +36,6 @@ class Event extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            <Card.Content extra textAlign='right'>
-              <Icon name='edit'/><Link to={`/editevent/${this.props.event._id}`}>Edit</Link>
-              <Icon name='trash'/>
-              <a onClick={() => this.removeItem(this.props.event._id)}>Delete</a>
-            </Card.Content>
           </Card>
       );
     }
@@ -47,7 +44,7 @@ class Event extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-Event.propTypes = {
+FriendEvent.propTypes = {
   event: PropTypes.object.isRequired,
   Events: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
@@ -62,4 +59,4 @@ export default withTracker(() => {
     profile: Profiles.find({}).fetch(),
     ready: subscriptionFriends.ready() && subscriptionsProfile.ready(),
   };
-})(Event);
+})(FriendEvent);

@@ -83,7 +83,7 @@ class Schedule extends React.Component {
               <Divider horizontal>
                 <Header as='h1' textAlign='center'>Upcoming Events</Header>
               </Divider>
-              <Card.Group centered>
+              <Card.Group className='schedCards' centered>
                 {this.props.events.map((event, index) => <Event key={index} event={event}/>)}
               </Card.Group>
 

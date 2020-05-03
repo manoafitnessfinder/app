@@ -125,9 +125,14 @@ h3, h1 {
   color: #6D9B7C!important;
 }
 
-.card { min-width: 350px!important; }
+.card {
+  margin: 10px!important;
+  display: block;
+}
 
-.pastCards .card, .card {
+.schedCards .card { min-width: 350px!important; }
+
+.pastCards .card, .schedCards .card {
   /* background-color: gainsboro!important; */
   max-width: 235px!important;
   min-width: 0px!important;
