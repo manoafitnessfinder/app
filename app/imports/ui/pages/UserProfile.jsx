@@ -91,15 +91,6 @@ class UserProfile extends React.Component {
                       <Table.Cell>Goals</Table.Cell>
                       <Table.Cell>{this.props.profiles[0].goals}</Table.Cell>
                     </Table.Row>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Feed>
-                          {this.props.notes.map((note, index) => <Note key={index} note={note}/>)}
-                        </Feed>
-                      </Table.Cell> <Table.Cell>
-                      <AddNote owner={this.props.profiles[0].owner} contactId={this.props.profiles[0]._id}/>
-                    </Table.Cell>
-                    </Table.Row>
                   </Table.Body>
                 </Table>
               </Grid.Column>

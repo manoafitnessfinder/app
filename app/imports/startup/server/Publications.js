@@ -54,8 +54,7 @@ Meteor.publish('Friends', function publish() {
 
 Meteor.publish('Notes', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Notes.find({ owner: username });
+    return Notes.find();
   }
   return this.ready();
 });
