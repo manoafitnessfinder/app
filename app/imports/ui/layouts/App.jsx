@@ -46,12 +46,12 @@ class App extends React.Component {
               <Route path="/test" component={Testimonials}/>
               <Route path="/contact" component={Contact}/>
               <ProtectedRoute path="/userlanding" component={UserLanding}/>
-              <ProtectedRoute path="/schedule" component={Schedule}/>
+              <ProtectedRoute path="/events" component={Schedule}/>
               <ProtectedRoute path="/profile" component={UserProfile}/>
               <ProtectedRoute path="/list" component={ListStuff}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/allprofiles" component={AllProfiles}/>
-              <ProtectedRoute path="/friendfeed" component={FriendFeed}/>
+              <ProtectedRoute path="/friendevents" component={FriendFeed}/>
               <ProtectedRoute path="/editprofile/:_id" component={EditProfile}/>
               <ProtectedRoute path="/editevent/:_id" component={EditEvent}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>

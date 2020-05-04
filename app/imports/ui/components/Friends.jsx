@@ -11,7 +11,7 @@ class FriendsList extends React.Component {
   render() {
     if (Friends.findOne({ contactId: this.props.profile._id })) {
       return (
-          <Card>
+          <Card color='green' >
             <Image src={this.props.profile.image} wrapped ui={false}/>
             <Card.Content>
               <Card.Header>{this.props.profile.name}</Card.Header>

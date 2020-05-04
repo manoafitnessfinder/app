@@ -27,10 +27,10 @@ class NavBar extends React.Component {
                                 <Menu.Item as={NavLink} activeClassName="active" exact to="/allprofiles"
                                            key='allprofiles'>All
                                     Profiles</Menu.Item>,
-                                <Menu.Item as={NavLink} activeClassName="active" exact to="/schedule"
-                                           key='schedule'>My Events</Menu.Item>,
-                                <Menu.Item as={NavLink} activeClassName="active" exact to="/friendfeed"
-                                           key='friendfeed'>Friend Events</Menu.Item>,
+                                <Menu.Item as={NavLink} activeClassName="active" exact to="/events"
+                                           key='events'>My Events</Menu.Item>,
+                                <Menu.Item as={NavLink} activeClassName="active" exact to="/friendevents"
+                                           key='friendevents'>Friend Events</Menu.Item>,
                                 <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'>Friends
                                     List</Menu.Item>,
                                 <Menu.Item as={NavLink} activeClassName="active" exact to="/profile"

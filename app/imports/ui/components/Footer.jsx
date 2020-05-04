@@ -50,6 +50,7 @@ class Footer extends React.Component {
                             </Menu.Item>
                         </p>
                     </Grid.Column>
+                    {this.props.currentUser === '' ? (
                     <Grid.Column>
                         <h3>
                             { /* Later possibility to add an email box here to autofill
@@ -64,7 +65,8 @@ class Footer extends React.Component {
                             Finder
                             today!</p>
                     </Grid.Column>
-                </Grid>
+                    ) : "" }
+                        </Grid>
             </footer>
         );
     }
