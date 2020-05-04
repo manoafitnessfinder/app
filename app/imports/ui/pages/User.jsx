@@ -81,7 +81,8 @@ class User extends React.Component {
                 <AddNote className="commentBox"
                          owner={this.props.doc.owner}
                          contactId={this.props.doc._id}
-                         madeBy={ this.props.madeBy[0].name }/>
+                         madeBy={ this.props.madeBy[0].name }
+                         imageC={ this.props.imageC[0] }/>
                 <Feed className="feedU">
                   {this.props.notes.map((note, index) => <Note key={index} note={note}
                                                                profile={this.props.doc.owner}/>)}
@@ -98,6 +99,7 @@ User.propTypes = {
   doc: PropTypes.object,
   notes: PropTypes.array.isRequired,
   madeBy: PropTypes.array,
+  imageC: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -110,6 +112,7 @@ export default withTracker(({ match }) => {
     doc: Profiles.findOne(documentId),
     notes: Notes.find({}).fetch(),
     madeBy: Profiles.find({ owner: currentUser }).fetch(),
+    imageC: Profiles.find({ owner: currentUser }).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(User);

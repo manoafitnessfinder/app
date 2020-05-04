@@ -9,7 +9,7 @@ class Note extends React.Component {
     if (this.props.profile === this.props.note.owner) {
       return (
           <Feed.Event>
-            <Feed.Label icon='pencil'/>
+            <Feed.Label image={this.props.note.imageC}/>
             <Feed.Content>
               <Feed.Summary>
                 {this.props.note.madeBy}
