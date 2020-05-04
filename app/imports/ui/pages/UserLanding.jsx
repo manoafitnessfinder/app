@@ -48,7 +48,7 @@ class UserLanding extends React.Component {
                     <Header as='h3'>5 Easy Steps!</Header>
                     <br/>
                     <Grid.Row>
-                      <List size='huge'>
+                      <List as='h3' size='huge'>
                         <List.Item>
                           <Icon name='calendar' />
                           Set Date And Time
