@@ -29,14 +29,14 @@ class UserLanding extends React.Component {
             <Divider hidden/>
             <Container id='user_landing_middle'>
                 <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge" centered>
-                  <Button.Content visible>Match</Button.Content>
+                  <Button.Content visible>Find Friends</Button.Content>
                   <Button.Content hidden>
                     <Icon name='arrow right' />
                   </Button.Content>
                 </Button>
             </Container>
             <Divider hidden/>
-            <Grid padded>
+            <Grid>
             <Grid.Row>
               <Grid.Column width={8} textAlign='center'>
                 <Reveal animated='move' instant>
@@ -128,10 +128,10 @@ export default withTracker(() => {
   return {
     events: Events.find({
       date: { $gte: today },
-    }, { sort: { date: 1 } }).fetch(),
+    }, { sort: { date: 1 }, limit: 4 }).fetch(),
     events2: Events.find({
       date: { $lt: today },
-    }, { sort: { date: -1 } }).fetch(),
+    }, { sort: { date: -1 }, limit: 4 }).fetch(),
     ready: subscription.ready(),
   };
 })(UserLanding);
