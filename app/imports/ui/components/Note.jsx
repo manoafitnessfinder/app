@@ -12,7 +12,7 @@ class Note extends React.Component {
             <Feed.Label icon='pencil'/>
             <Feed.Content>
               <Feed.Summary>
-                {this.props.note.owner}
+                {this.props.note.madeBy}
                 <Feed.Date content={this.props.note.createdAt.toLocaleDateString('en-US')}/>
               </Feed.Summary>
               <Feed.Summary>
@@ -29,7 +29,7 @@ class Note extends React.Component {
 /** Require a document to be passed to this component. */
 Note.propTypes = {
   note: PropTypes.object.isRequired,
-  profile: PropTypes.string.isRequired
+  profile: PropTypes.string.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */

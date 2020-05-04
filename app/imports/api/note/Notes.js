@@ -11,6 +11,7 @@ const NotesSchema = new SimpleSchema({
   owner: String,
   contactId: String,
   createdAt: Date,
+  madeBy: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
