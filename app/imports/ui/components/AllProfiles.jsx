@@ -9,7 +9,7 @@ import AddFriend from '../components/AddFriend';
 class AllProfiles extends React.Component {
   render() {
     return (
-        <Card>
+        <Card color='green' >
           <Image src={this.props.profile.image} wrapped ui={false}/>
           <Card.Content>
             <Card.Header>{this.props.profile.name}</Card.Header>
