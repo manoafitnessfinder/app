@@ -81,7 +81,7 @@ class User extends React.Component {
                 <AddNote className="commentBox"
                          owner={this.props.doc.owner}
                          contactId={this.props.doc._id}
-                         madeBy={ this.props.madeBy.name }/>
+                         madeBy={ this.props.madeBy[0].name }/>
                 <Feed className="feedU">
                   {this.props.notes.map((note, index) => <Note key={index} note={note}
                                                                profile={this.props.doc.owner}/>)}
@@ -97,19 +97,19 @@ class User extends React.Component {
 User.propTypes = {
   doc: PropTypes.object,
   notes: PropTypes.array.isRequired,
-  madeBy: PropTypes.string.isRequired,
+  madeBy: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
-  const subscription = Meteor.subscribe('AllProfiles');
+  const subscription = Meteor.subscribe('TestProfiles');
   const subscription2 = Meteor.subscribe('Notes');
-  const currentUser = Meteor.user().username;
+  const currentUser = Meteor.user() ? Meteor.user().username : ''
   return {
     doc: Profiles.findOne(documentId),
     notes: Notes.find({}).fetch(),
-    madeBy: Profiles.find({ owner: currentUser }),
+    madeBy: Profiles.find({ owner: currentUser }).fetch(),
     ready: subscription.ready() && subscription2.ready(),
   };
 })(User);

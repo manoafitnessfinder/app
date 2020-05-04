@@ -31,6 +31,13 @@ Meteor.publish('Profiles', function publish() {
   return this.ready();
 });
 
+Meteor.publish('TestProfiles', function publish() {
+  if (this.userId) {
+    return Profiles.find();
+  }
+  return this.ready();
+});
+
 Meteor.publish('AllProfiles', function publish() {
   const username = Meteor.users.findOne(this.userId).username;
   return Profiles.find({ owner: { $ne: username } });
