@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Divider, Icon, Menu, Image, Table, Container, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Divider, Icon, Image, Table, Container, Segment, Feed } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -7,6 +7,9 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Link } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 import AddFriend from '../components/AddFriend';
+import { Notes } from '../../api/note/Notes';
+import AddNote from '../components/AddNote';
+import Note from '../components/Note.jsx';
 
 /** Renders the Page for editing a single document. */
 class User extends React.Component {
@@ -82,6 +85,15 @@ class User extends React.Component {
                       </Table.Row>
                     </Table.Body>
                   </Table>
+                  <AddNote className="commentBox"
+                           owner={this.props.doc.owner}
+                           contactId={this.props.doc._id}
+                           madeBy={this.props.madeBy[0].name}
+                           imageC={this.props.imageC[0]}/>
+                  <Feed className="feedU">
+                    {this.props.notes.map((note, index) => <Note key={index} note={note}
+                                                                 profile={this.props.doc.owner}/>)}
+                  </Feed>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -95,14 +107,22 @@ class User extends React.Component {
 
 User.propTypes = {
   doc: PropTypes.object,
+  notes: PropTypes.array.isRequired,
+  madeBy: PropTypes.array,
+  imageC: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
-  const subscription = Meteor.subscribe('AllProfiles');
+  const subscription = Meteor.subscribe('TestProfiles');
+  const subscription2 = Meteor.subscribe('Notes');
+  const currentUser = Meteor.user() ? Meteor.user().username : '';
   return {
     doc: Profiles.findOne(documentId),
-    ready: subscription.ready(),
+    notes: Notes.find({}).fetch(),
+    madeBy: Profiles.find({ owner: currentUser }).fetch(),
+    imageC: Profiles.find({ owner: currentUser }).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(User);
