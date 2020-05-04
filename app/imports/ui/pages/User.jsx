@@ -89,7 +89,7 @@ class User extends React.Component {
                            owner={this.props.doc.owner}
                            contactId={this.props.doc._id}
                            madeBy={this.props.madeBy[0].name}
-                           imageC={this.props.madeBy[0].image}/>
+                           image={this.props.madeBy[0].image}/>
                   <Feed className="feedU">
                     {this.props.notes.map((note, index) => <Note key={index} note={note}
                                                                  profile={this.props.doc.owner}/>)}

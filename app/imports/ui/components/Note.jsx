@@ -9,7 +9,7 @@ class Note extends React.Component {
     if (this.props.profile === this.props.note.owner) {
       return (
           <Feed.Event inverted>
-            <Feed.Label image={this.props.note.imageC}/>
+            <Feed.Label image={this.props.note.image}/>
             <Feed.Content>
               <Feed.Summary>
                 {this.props.note.madeBy}
