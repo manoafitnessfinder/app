@@ -62,11 +62,11 @@ class About extends React.Component {
           <Grid padded>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
-                <Header size='huge' style={{ color: '#6D9B7C' }}>
+                <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                   How Fitness Finder Works
                 </Header>
                 <Grid.Row>
-                  <List size='huge'>
+                  <List as='h2' size='huge'>
                     <List.Item>
                     <Icon name='user' />
                     Sign-up and create an account
@@ -76,12 +76,12 @@ class About extends React.Component {
                       Edit user profile
                     </List.Item>
                     <List.Item>
-                      <Icon name='add user' />
-                      Match with users with similar intrests
-                    </List.Item>
-                    <List.Item>
                       <Icon name='search' />
                       Search for the perfect gym buddy
+                    </List.Item>
+                    <List.Item>
+                      <Icon name='add user' />
+                      Add Friends to your workouts
                     </List.Item>
                     <List.Item>
                       <Icon name='calendar' />
@@ -89,7 +89,7 @@ class About extends React.Component {
                     </List.Item>
                     <List.Item>
                       <Icon name='feed' />
-                      Track your progress and other workouts events
+                      Track your friends events
                     </List.Item>
                   </List>
                 </Grid.Row>
@@ -103,21 +103,21 @@ class About extends React.Component {
               <Image src="/images/about2.jpg" fluid/>
             </Grid.Column>
             <Grid.Column textAlign='center' width={8}>
-              <Header size='huge' style={{ color: '#6D9B7C' }}>
+              <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                 Who Are We
               </Header>
-              <Header size='large'>
-                Fitness Finder is an app that helps students find their workout buddy to lose the freshman fifteen. We
-                match you with users who have similar fitness intrests and you can connect to set up a workout session
+              <Header as='h2' size='large'>
+                Fitness Finder is an app that helps students find their workout buddy to lose the freshman fifteen. You
+                are able to find students with similar fitness goals and connect to set up a workout session
               </Header>
             </Grid.Column>
           </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
-                <Header size='huge' style={{ color: '#6D9B7C' }}>
+                <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                   Why We Matter
                 </Header>
-                <Header size='large'>
+                <Header as='h2' size='large'>
                   You no longer have to workout alone! Fitness Finder  allows you to feel empowered while you make those
                   fitness connections!
                 </Header>
@@ -137,31 +137,31 @@ class About extends React.Component {
                 <Grid.Row>
                   <Form onSubmit={this.submit}>
                     <Container>
-                    <Form.Group widths='equal'>
-                      <Form.Input fluid label='Name'
+                    <Form.Group as='h2' widths='equal'>
+                      <Form.Input fluid label='NAME'
                                   name="name"
                                   type="name"
                                   placeholder='Your name here.'
                                   onChange={this.handleChange}
                       />
                     </Form.Group>
-                    <Form.Group widths='equal'>
+                    <Form.Group as='h2' widths='equal'>
                       <Form.Input fluid
-                                  label="Email"
+                                  label="EMAIL"
                                   name="email"
                                   type="email"
                                   placeholder="UH E-mail address"
                                   onChange={this.handleChange}
                       />
                       <Form.Input
-                          label="Password"
+                          label="PASSWORD"
                           name="password"
                           type="password"
                           placeholder="Password"
                           onChange={this.handleChange}
                       />
                     </Form.Group>
-                    <Form.Field align='center'>
+                    <Form.Field as='h2' align='center'>
                       <Checkbox label='I agree to the Terms and Conditions'/>
                     </Form.Field>
                     <Form.Field align='center'>
