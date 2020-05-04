@@ -12,7 +12,7 @@ const NotesSchema = new SimpleSchema({
   contactId: String,
   createdAt: Date,
   madeBy: String,
-  image: String
+  image: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

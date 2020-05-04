@@ -1,5 +1,4 @@
 import React from 'react';
-import { Segment } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { AutoForm, ErrorsField, SubmitField, HiddenField } from 'uniforms-semantic';
 import { withTracker } from 'meteor/react-meteor-data';

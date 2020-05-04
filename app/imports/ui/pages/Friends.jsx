@@ -15,7 +15,7 @@ class FriendsPage extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    console.log(Profiles.find().count())
+    console.log(Profiles.find().count());
     return (
         <Container>
           <Container className = 'imagePadding'>

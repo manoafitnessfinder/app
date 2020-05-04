@@ -1,13 +1,10 @@
 import React from 'react';
-import {Form, Segment} from 'semantic-ui-react';
-import { Meteor } from 'meteor/meteor';
+import { Segment } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, TextField, HiddenField } from 'uniforms-semantic';
 import swal from 'sweetalert';
-import { withTracker } from 'meteor/react-meteor-data';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import PropTypes from 'prop-types';
 import { Notes, NotesSchema } from '../../api/note/Notes';
-import { Profiles } from '../../api/profile/Profile';
 
 /** Renders the Page for adding a document. */
 class AddNote extends React.Component {

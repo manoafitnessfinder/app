@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import { Link } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 import AddFriend from '../components/AddFriend';
 import { Notes } from '../../api/note/Notes';

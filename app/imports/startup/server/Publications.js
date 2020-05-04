@@ -4,7 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
 import { Friends } from '../../api/friend/Friend';
 import { Events } from '../../api/event/Events.js';
-import { Notes} from '../../api/note/Notes';
+import { Notes } from '../../api/note/Notes';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
