@@ -7,11 +7,11 @@ class Landing extends React.Component {
   render() {
     return (
         /* Outside to maintain consistent borders. */
-        <Container>
+        <Container className = 'landingPage'>
           <Container verticalAlign='middle' textAlign='center'>
-            <Image className="landing" fluid src='/images/landing_page_top.JPG'/>
+            <Image className="landing" fluid src='/images/landing_page_top.PNG'/>
           </Container>
-          <Header inverted color='green' textAlign='centered' as={'h1'}>
+          <Header className = 'landingPage' textAlign='centered' as={'h1'}>
             Match based on what you are looking for!</Header>
           <Grid>
             <Grid.Row columns={3}>
@@ -22,9 +22,9 @@ class Landing extends React.Component {
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
-                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
                       Schedule an event with a friend today!
-                      <Button as={Link} to="/signup" color='green' compact size='medium'>
+                      <Button as={Link} to="/signup" className = 'landingPage' compact size='medium'>
                         Join Now!
                       </Button>
                     </Header>
@@ -38,7 +38,7 @@ class Landing extends React.Component {
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
-                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
                       Don&apos;t get intimidated, match with someone at your level.
                     </Header>
                   </Reveal.Content>
@@ -51,7 +51,7 @@ class Landing extends React.Component {
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
-                    <Header inverted color='green' textAlign='centered' as={'h1'}>
+                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
                       The Freshmen Fifteen could happen to you, get started today.
                     </Header>
                   </Reveal.Content>
@@ -59,14 +59,14 @@ class Landing extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Header inverted color='green' textAlign='centered' as={'h1'}>
+          <Header className = 'landingPage' textAlign='centered' as={'h1'}>
             Join today and work towards your better self!</Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
-              <Header inverted color='green' textAlign='center' as={'h1'}>
+              <Header className = 'landingPage' textAlign='center' as={'h1'}>
                 <br/>Match With <br/> Someone today!<br/>
               </Header>
-              <Button as={Link} to="/signup" color='green' compact size='medium'>
+              <Button as={Link} to="/signup" className = 'landingPage' compact size='medium'>
                 Join Now!
               </Button>
             </Segment>

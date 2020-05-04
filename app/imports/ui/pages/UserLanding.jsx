@@ -28,84 +28,84 @@ class UserLanding extends React.Component {
             <Divider hidden/>
             <Divider hidden/>
             <Container id='user_landing_middle'>
-                <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge" centered>
-                  <Button.Content visible>Find Friends</Button.Content>
-                  <Button.Content hidden>
-                    <Icon name='arrow right' />
-                  </Button.Content>
-                </Button>
+              <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge" centered>
+                <Button.Content visible>Find Friends</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='arrow right'/>
+                </Button.Content>
+              </Button>
             </Container>
             <Divider hidden/>
             <Grid>
-            <Grid.Row>
-              <Grid.Column width={8} textAlign='center'>
-                <Reveal animated='move' instant>
-                  <Reveal.Content visible>
-                    <Image src="/images/UserLanding7.png" fluid/>
-                  </Reveal.Content>
-                  <Reveal.Content hidden>
-                    <Header as='h1'>Schedule A New Event</Header>
-                    <Header as='h3'>5 Easy Steps!</Header>
-                    <br/>
-                    <Grid.Row>
-                      <List as='h3' size='huge'>
-                        <List.Item>
-                          <Icon name='calendar' />
-                          Set Date And Time
-                        </List.Item>
-                        <br/>
-                        <List.Item>
-                          <Icon name='thumbtack' />
-                          Set Event Type
-                        </List.Item>
-                        <br/>
-                        <List.Item>
-                          <Icon name='location arrow' />
-                          Set Location
-                        </List.Item>
-                        <br/>
-                        <List.Item>
-                          <Icon name='user plus' />
-                          Include A Friend
-                        </List.Item>
-                        <br/>
-                        <List.Item>
-                          <Icon name='sticky note' />
-                          Leave a note
-                        </List.Item>
-                        <br/>
-                      </List>
-                    </Grid.Row>
-                    <Button as={Link} to="/events" animated size="large">
-                      <Button.Content visible>Get Started</Button.Content>
-                      <Button.Content hidden>
-                        <Icon name='arrow right' />
-                      </Button.Content>
-                    </Button>
-                  </Reveal.Content>
-                </Reveal>
-              </Grid.Column>
-              <Grid.Column textAlign='center' width={8}>
-                <Reveal animated='move right' instant>
-                  <Reveal.Content visible>
-                    <Image src="/images/UserLanding5.png" fluid/>
-                  </Reveal.Content>
-                  <Reveal.Content hidden>
-                    <Header as='h1'>Keep up with your friends</Header>
-                    <Divider hidden/>
-                    <Header as='h3'>View events your friends accomplished!</Header>
-                    <Header as='h3'>Keep up to date on how their fitness goals!</Header>
-                    <Header as='h3'>Lets lose that freshman 15 together!</Header>
-                    <Button as={Link} to="/friendevents" animated size="large">
-                      <Button.Content visible>View Now</Button.Content>
-                      <Button.Content hidden>
-                        <Icon name='arrow right' />
-                      </Button.Content>
-                    </Button>
-                  </Reveal.Content>
-                </Reveal>
-              </Grid.Column>
-            </Grid.Row>
+              <Grid.Row>
+                <Grid.Column width={8} textAlign='center'>
+                  <Reveal animated='move left' instant>
+                    <Reveal.Content visible>
+                      <Image fluid src="/images/UserLanding7.png"/>
+                    </Reveal.Content>
+                    <Reveal.Content hidden>
+                      <Header as='h1'>Schedule A New Event</Header>
+                      <Header as='h3'>5 Easy Steps!</Header>
+                      <br/>
+                      <Grid.Row>
+                        <List as='h3' size='huge'>
+                          <List.Item>
+                            <Icon name='calendar'/>
+                            Set Date And Time
+                          </List.Item>
+                          <br/>
+                          <List.Item>
+                            <Icon name='thumbtack'/>
+                            Set Event Type
+                          </List.Item>
+                          <br/>
+                          <List.Item>
+                            <Icon name='location arrow'/>
+                            Set Location
+                          </List.Item>
+                          <br/>
+                          <List.Item>
+                            <Icon name='user plus'/>
+                            Include A Friend
+                          </List.Item>
+                          <br/>
+                          <List.Item>
+                            <Icon name='sticky note'/>
+                            Leave a note
+                          </List.Item>
+                          <br/>
+                        </List>
+                      </Grid.Row>
+                      <Button as={Link} to="/events" animated size="large">
+                        <Button.Content visible>Get Started</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='arrow right'/>
+                        </Button.Content>
+                      </Button>
+                    </Reveal.Content>
+                  </Reveal>
+                </Grid.Column>
+                <Grid.Column textAlign='center' width={8}>
+                  <Reveal animated='move right' instant>
+                    <Reveal.Content visible>
+                      <Image src="/images/UserLanding5.png" fluid/>
+                    </Reveal.Content>
+                    <Reveal.Content hidden>
+                      <Header as='h1'>Keep up with your friends</Header>
+                      <Divider hidden/>
+                      <Header as='h3'>View events your friends accomplished!</Header>
+                      <Header as='h3'>Keep up to date on how their fitness goals!</Header>
+                      <Header as='h3'>Lets lose that freshman 15 together!</Header>
+                      <Button as={Link} to="/friendevents" animated size="large">
+                        <Button.Content visible>View Now</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='arrow right'/>
+                        </Button.Content>
+                      </Button>
+                    </Reveal.Content>
+                  </Reveal>
+                </Grid.Column>
+              </Grid.Row>
             </Grid>
           </Container>
         </div>

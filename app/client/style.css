@@ -3,6 +3,7 @@
 /* For landing page. */
 .landing {
   padding-top: 10px;
+  color: #6D9B7C;
 }
 
 .landing_bottom_image {
@@ -11,6 +12,10 @@
   width: 100%;
   height: 800px;
   padding-top: 10px;
+}
+
+.landingPage {
+  color: #6D9B7C !important;
 }
 /* For landing page. */
 
