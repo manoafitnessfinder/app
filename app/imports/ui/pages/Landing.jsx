@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Image, Container, Header, Segment, Button, Reveal } from 'semantic-ui-react';
+import { Grid, Image, Container, Header, Segment, Button, Reveal, Icon } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -23,9 +23,12 @@ class Landing extends React.Component {
                   <Reveal.Content hidden>
                     <br/>
                     <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-                      Schedule an event with a friend today!
-                      <Button as={Link} to="/signup" className = 'landingPage' compact size='medium'>
-                        Join Now!
+                      Schedule an event with a friend today!<br/>
+                      <Button as={Link} to="/signup" animated size="large">
+                        <Button.Content visible>Start Your Workout</Button.Content>
+                        <Button.Content hidden>
+                          <Icon name='arrow right'/>
+                        </Button.Content>
                       </Button>
                     </Header>
                   </Reveal.Content>
@@ -66,8 +69,11 @@ class Landing extends React.Component {
               <Header className = 'landingPage' textAlign='center' as={'h1'}>
                 <br/>Match With <br/> Someone today!<br/>
               </Header>
-              <Button as={Link} to="/signup" className = 'landingPage' compact size='medium'>
-                Join Now!
+              <Button as={Link} to="/signup" animated size="large">
+                <Button.Content visible>Join Now</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='arrow right'/>
+                </Button.Content>
               </Button>
             </Segment>
           </Container>
