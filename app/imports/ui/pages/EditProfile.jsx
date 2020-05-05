@@ -45,9 +45,9 @@ class EditProfile extends React.Component {
                 <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
                 <Grid className='doubleLine'>
-                  <SelectField name='seeking'/>
-                  <SelectField name='level'/>
-                  <NumField name = 'age'/>
+                  <SelectField className = 'dropDownFix' name='seeking'/>
+                  <SelectField className = 'dropDownFix' name='level'/>
+                  <NumField className = 'dropDownFix' name = 'age'/>
                 </Grid>
                 <TextField name='goals'/>
                 <Grid centered>
