@@ -47,7 +47,7 @@ class EditProfile extends React.Component {
                 <Grid className='doubleLine'>
                   <SelectField className = 'dropDownFix' name='seeking'/>
                   <SelectField className = 'dropDownFix' name='level'/>
-                  <NumField className = 'dropDownFix' name = 'age'/>
+                  <NumField name = 'age'/>
                 </Grid>
                 <TextField name='goals'/>
                 <Grid centered>

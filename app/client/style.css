@@ -20,16 +20,15 @@
 /* For landing page. */
 
 
-/* For the edit profile. */
+/* Apply where there is a select field in auto form. */
 
 .dropDownFix {
-  height: 30px;
   padding: 0px 12px;
   font-size: 13px;
 }
 
 
-/* For the edit profile drop down. */
+/* Apply where there is a select field in auto form. */
 
 .icon{
   color: #6D9B7C;
@@ -74,7 +73,7 @@ tbody {
 .doubleLine {
   display: flex;
   padding-top: 10px!important;
-  padding-bottom: 40px!important;
+  padding-bottom: 10px!important;
 }
 
 .profileForm, .scheduleBar {
