@@ -18,7 +18,7 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Reveal animated='move left' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/Landing2.png'/>
+                    <Image fluid src='/images/Landing2.PNG'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
