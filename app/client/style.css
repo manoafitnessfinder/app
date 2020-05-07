@@ -7,31 +7,15 @@
 }
 
 .landing_bottom_image {
-  background-image: url("/images/Landing6.JPG");
+  background-image: url("/images/bottom_landing_page.JPG");
   background-size: cover;
   width: 100%;
-  height: 500px;
-  display: flex;
-  padding-top: 380px;
-  padding-right: 463px;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: center;
+  height: 800px;
+  padding-top: 10px;
 }
 
 .landingPage {
-   color: #6D9B7C !important;
- }
-/* Join button for LandingPage */
-.JoinButton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-
+  color: #6D9B7C !important;
 }
 /* For landing page. */
 
@@ -124,12 +108,12 @@ tbody {
 
 /* Userlanding page */
 #user_landing_middle {
-  background-image: url("/images/UserLanding2_1.png");
+  background-image: url("/images/UserLanding2.JPG");
   background-size: cover;
   width: 100%;
-  height: 420px;
+  height: 600px;
   display: flex;
-  padding-top: 270px;
+  padding-top: 150px;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -165,10 +149,10 @@ h3, h1, h2 {
 .schedCards .card { min-width: 350px!important; }
 
 .pastCards .card, .schedCards .card {
-   /* background-color: gainsboro!important; */
-   max-width: 235px!important;
-   min-width: 0px!important;
- }
+  /* background-color: gainsboro!important; */
+  max-width: 235px!important;
+  min-width: 0px!important;
+}
 
 .upFeed .card, .pastFeed .card {
   /* background-color: gainsboro!important; */
@@ -220,28 +204,4 @@ a.profLink {
 
 .feedU{
   background-color: #6D9B7C!important;
-}
-
-/* Userlanding page */
-#user_landing_top {
-  background-image: url("/images/UserLanding1_2.png");
-  background-size: cover;
-  width: 100%;
-  height: 350px;
-  display: flex;
-  padding-top: 240px;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: center;
-}
-
-/* Userlanding button for match */
-.matchButton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
 }
