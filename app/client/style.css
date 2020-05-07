@@ -7,15 +7,31 @@
 }
 
 .landing_bottom_image {
-  background-image: url("/images/bottom_landing_page.JPG");
+  background-image: url("/images/Landing6.JPG");
   background-size: cover;
   width: 100%;
-  height: 800px;
-  padding-top: 10px;
+  height: 500px;
+  display: flex;
+  padding-top: 380px;
+  padding-right: 463px;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
 }
 
 .landingPage {
-  color: #6D9B7C !important;
+   color: #6D9B7C !important;
+ }
+/* Join button for LandingPage */
+.JoinButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
 }
 /* For landing page. */
 
@@ -108,12 +124,12 @@ tbody {
 
 /* Userlanding page */
 #user_landing_middle {
-  background-image: url("/images/UserLanding2.JPG");
+  background-image: url("/images/UserLanding2_1.png");
   background-size: cover;
   width: 100%;
-  height: 600px;
+  height: 420px;
   display: flex;
-  padding-top: 150px;
+  padding-top: 270px;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -204,4 +220,28 @@ a.profLink {
 
 .feedU{
   background-color: #6D9B7C!important;
+}
+
+/* Userlanding page */
+#user_landing_top {
+  background-image: url("/images/UserLanding1_2.png");
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  padding-top: 240px;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+
+/* Userlanding button for match */
+.matchButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }

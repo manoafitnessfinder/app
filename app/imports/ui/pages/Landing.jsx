@@ -9,7 +9,7 @@ class Landing extends React.Component {
         /* Outside to maintain consistent borders. */
         <Container className = 'landingPage'>
           <Container verticalAlign='middle' textAlign='center'>
-            <Image className="landing" fluid src='/images/landing_page_top.PNG'/>
+            <Image className="landing" fluid src='/images/Landing1.JPG'/>
           </Container>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
             Match based on what you are looking for!</Header>
@@ -18,7 +18,7 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Reveal animated='move left' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/two_running.png'/>
+                    <Image fluid src='/images/Landing2.png'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
@@ -35,22 +35,15 @@ class Landing extends React.Component {
                 </Reveal>
               </Grid.Column>
               <Grid.Column>
-                <Reveal animated='fade'>
-                  <Reveal.Content visible>
-                    <Image fluid src='/images/two_pushups.png'/>
-                  </Reveal.Content>
-                  <Reveal.Content hidden>
                     <br/>
                     <Header className = 'landingPage' textAlign='centered' as={'h1'}>
                       Don&apos;t get intimidated, match with someone at your level.
                     </Header>
-                  </Reveal.Content>
-                </Reveal>
               </Grid.Column>
               <Grid.Column>
                 <Reveal animated='move right' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/two_machines.png'/>
+                    <Image fluid src='/images/Landing3.PNG'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
@@ -66,10 +59,7 @@ class Landing extends React.Component {
             Join today and work towards your better self!</Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
-              <Header className = 'landingPage' textAlign='center' as={'h1'}>
-                <br/>Match With <br/> Someone today!<br/>
-              </Header>
-              <Button as={Link} to="/signup" animated size="large">
+              <Button as={Link} to="/signup" animated className="JoinButton" size="large">
                 <Button.Content visible>Join Now</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>

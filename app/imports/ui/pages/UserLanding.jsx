@@ -13,7 +13,14 @@ class UserLanding extends React.Component {
     return (
         <div className="aboutBackground">
           <Container>
-            <Image fluid centered src="/images/UserLanding1.JPG"/>
+            <Container id='user_landing_top'>
+              <Button as={Link} to="/profile" animated className="editProfile" size="huge" centered>
+                <Button.Content visible>Edit Profile</Button.Content>
+                <Button.Content hidden>
+                  <Icon name='arrow right'/>
+                </Button.Content>
+              </Button>
+            </Container>
             <Divider horizontal>
               <Header as='h1' textAlign='center'>Upcoming Events</Header>
             </Divider>
@@ -41,14 +48,14 @@ class UserLanding extends React.Component {
                 <Grid.Column width={8} textAlign='center'>
                   <Reveal animated='move left' instant>
                     <Reveal.Content visible>
-                      <Image fluid src="/images/UserLanding7.png"/>
+                      <Image fluid src="/images/UserLanding3_1.JPG"/>
                     </Reveal.Content>
                     <Reveal.Content hidden>
                       <Header as='h1'>Schedule A New Event</Header>
                       <Header as='h3'>5 Easy Steps!</Header>
                       <br/>
                       <Grid.Row>
-                        <List as='h3' size='huge'>
+                        <List as='h3' size='large'>
                           <List.Item>
                             <Icon name='calendar'/>
                             Set Date And Time
@@ -88,7 +95,7 @@ class UserLanding extends React.Component {
                 <Grid.Column textAlign='center' width={8}>
                   <Reveal animated='move right' instant>
                     <Reveal.Content visible>
-                      <Image src="/images/UserLanding5.png" fluid/>
+                      <Image src="/images/UserLanding4.JPG" fluid/>
                     </Reveal.Content>
                     <Reveal.Content hidden>
                       <Header as='h1'>Keep up with your friends</Header>

@@ -58,10 +58,11 @@ class About extends React.Component {
     return (
         <div className="aboutBackground">
         <Container>
-          <Image centered src="/images/topImage4.JPG" fluid/>
-          <Grid padded>
+          <Image centered src="/images/About1.JPG" fluid/>
+          <Grid>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
+                <br/>
                 <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                   How Fitness Finder Works
                 </Header>
@@ -95,14 +96,16 @@ class About extends React.Component {
                 </Grid.Row>
               </Grid.Column>
               <Grid.Column width={8}>
-              <Image src="/images/about1.png" fluid/>
+                <br/>
+              <Image src="/images/About2.png" fluid/>
             </Grid.Column>
             </Grid.Row>
           <Grid.Row>
             <Grid.Column width={8}>
-              <Image src="/images/about2.jpg" fluid/>
+              <Image src="/images/About3.png" fluid/>
             </Grid.Column>
             <Grid.Column textAlign='center' width={8}>
+              <br/>
               <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                 Who Are We
               </Header>
@@ -114,6 +117,7 @@ class About extends React.Component {
           </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
+                <br/>
                 <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                   Why We Matter
                 </Header>
@@ -123,7 +127,7 @@ class About extends React.Component {
                 </Header>
               </Grid.Column>
               <Grid.Column width={8}>
-                <Image src="/images/about3.png" fluid/>
+                <Image src="/images/About4.png" fluid/>
               </Grid.Column>
             </Grid.Row>
             <div className="joinNow">

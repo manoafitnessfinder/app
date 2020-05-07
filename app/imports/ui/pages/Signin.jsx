@@ -45,7 +45,7 @@ export default class Signin extends React.Component {
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Image src="/images/Signup.png" size='massive' />
+              <Image src="/images/SignIn.JPG"/>
             </Grid.Column>
             <Divider hidden vertical/>
             <Grid.Column>
