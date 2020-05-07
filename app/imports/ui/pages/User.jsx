@@ -9,6 +9,7 @@ import AddFriend from '../components/AddFriend';
 import { Notes } from '../../api/note/Notes';
 import AddNote from '../components/AddNote';
 import Note from '../components/Note.jsx';
+import _ from 'lodash';
 
 /** Renders the Page for editing a single document. */
 class User extends React.Component {
