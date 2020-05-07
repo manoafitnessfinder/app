@@ -19,8 +19,8 @@ class AddFriend extends React.Component {
           if (error) {
             swal('Note Error', error.message, 'error');
           } else {
-            swal('Success', `${Profiles.findOne(this._id = contactId).name} +
-            added as the friend of ${owner}. Their email is ${friendEmail}`, 'success');
+            swal('Success',
+                `${Profiles.findOne(this._id = contactId).name} added as the friend of ${owner}.`, 'success');
             formRef.reset();
           }
         });
@@ -34,11 +34,11 @@ class AddFriend extends React.Component {
           fRef = ref;
         }} schema={FriendSchema} onSubmit={data => this.submit(data, fRef)}>
 
-            <SubmitField value='Add Friend'/>
-            <ErrorsField/>
-            <HiddenField name='owner' value={this.props.owner}/>
-            <HiddenField name='contactId' value={this.props.contactId}/>
-            <HiddenField name='friendEmail' value={this.props.friendEmail}/>
+          <SubmitField value='Add Friend'/>
+          <ErrorsField/>
+          <HiddenField name='owner' value={this.props.owner}/>
+          <HiddenField name='contactId' value={this.props.contactId}/>
+          <HiddenField name='friendEmail' value={this.props.friendEmail}/>
 
         </AutoForm>
     );
