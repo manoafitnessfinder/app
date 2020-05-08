@@ -69,7 +69,9 @@ class User extends React.Component {
                     <Table.Body>
                       <Table.Row>
                         <Table.Cell> <Icon name='clipboard'/> <b>Interests</b></Table.Cell>
-                        <Table.Cell>{this.props.doc.interests}</Table.Cell>
+                        <Table.Cell>{_.map(this.props.doc.interests, function (string) {
+                          return `${string}  `;
+                        })}</Table.Cell>
                       </Table.Row>
                       <Table.Row>
                         <Table.Cell> <Icon name='search'/> <b>Seeking</b></Table.Cell>
