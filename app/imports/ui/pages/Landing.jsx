@@ -12,7 +12,7 @@ class Landing extends React.Component {
             <Image className="landing" fluid src='/images/Landing1.JPG'/>
           </Container>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-            Match based on what you are looking for!</Header>
+            5 Simple Steps to your Fitness Goals!</Header>
           <Grid>
             <Grid.Row columns={3}>
               <Grid.Column>
@@ -79,7 +79,7 @@ class Landing extends React.Component {
             </Grid.Row>
           </Grid>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-            Join today and work towards your better self!</Header>
+           Work towards your better self!</Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
               <Button as={Link} to="/signup" animated className="JoinButton" size="large">
