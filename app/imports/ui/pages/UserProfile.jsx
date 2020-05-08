@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Icon, Grid, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
 import SimpleSchema from 'simpl-schema';
 import { Link, Redirect } from 'react-router-dom';

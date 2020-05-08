@@ -4,12 +4,13 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import _ from 'lodash';
 import { Profiles } from '../../api/profile/Profile';
 import AddFriend from '../components/AddFriend';
 import { Notes } from '../../api/note/Notes';
 import AddNote from '../components/AddNote';
 import Note from '../components/Note.jsx';
-import _ from 'lodash';
+
 
 /** Renders the Page for editing a single document. */
 class User extends React.Component {
