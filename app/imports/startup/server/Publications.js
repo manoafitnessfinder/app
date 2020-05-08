@@ -1,27 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { Roles } from 'meteor/alanning:roles';
-import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profile';
 import { Friends } from '../../api/friend/Friend';
 import { Events } from '../../api/event/Events.js';
 import { Notes } from '../../api/note/Notes';
-
-/** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Stuff', function publish() {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Stuffs.find({ owner: username });
-  }
-  return this.ready();
-});
-
-/** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('StuffAdmin', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Stuffs.find();
-  }
-  return this.ready();
-});
 
 Meteor.publish('Profiles', function publish() {
   if (this.userId) {
@@ -36,9 +17,9 @@ Meteor.publish('AllProfiles', function publish() {
   return Profiles.find({ owner: { $ne: username } });
 });
 
-Meteor.publish('Events', function publish() {
+Meteor.publish('TestProfiles', function publish() {
   if (this.userId) {
-    return Events.find({});
+    return Profiles.find();
   }
   return this.ready();
 });
@@ -51,17 +32,17 @@ Meteor.publish('Friends', function publish() {
   return this.ready();
 });
 
-Meteor.publish('AllEvents', function publish() {
+Meteor.publish('Events', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Events.find({ owner: { $ne: username } });
+    return Events.find({});
   }
   return this.ready();
 });
 
-Meteor.publish('TestProfiles', function publish() {
+Meteor.publish('AllEvents', function publish() {
   if (this.userId) {
-    return Profiles.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Events.find({ owner: { $ne: username } });
   }
   return this.ready();
 });
