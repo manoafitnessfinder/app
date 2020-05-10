@@ -98,15 +98,15 @@ class Signup extends React.Component {
                   </Form.Field>
                 </Container>
               </Form>
-              {this.state.error === '' ? (
-                  ''
-              ) : (
-                  <Message
-                      error
-                      header="There was an error is your registration. Try again or contact us."
-                      content={this.state.error}
-                  />
-              )}
+                  {this.state.error === '' ? (
+                      ''
+                  ) : (
+                      <Message
+                          error
+                          header="There was an error is your registration. Try again or contact us."
+                          content={this.state.error}
+                      />
+                  )}
             </Grid.Column>
           </Grid>
         </Container>
