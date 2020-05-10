@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Image, Container, Header, Segment, Button, Reveal, Icon } from 'semantic-ui-react';
+import { Grid, Image, Container, Header, Segment, Button, Reveal, Icon, List } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -9,16 +9,16 @@ class Landing extends React.Component {
         /* Outside to maintain consistent borders. */
         <Container className = 'landingPage'>
           <Container verticalAlign='middle' textAlign='center'>
-            <Image className="landing" fluid src='/images/Landing1.JPG'/>
+            <Image className="landing" fluid src='/images/Landing1.PNG'/>
           </Container>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-            Match based on what you are looking for!</Header>
+            5 Simple Steps to your Fitness Goals!</Header>
           <Grid>
             <Grid.Row columns={3}>
               <Grid.Column>
                 <Reveal animated='move left' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/Landing2.PNG'/>
+                    <Image fluid src='/images/Landing2.jpg'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
@@ -34,16 +34,39 @@ class Landing extends React.Component {
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
-              <Grid.Column>
-                    <br/>
-                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-                      Don&apos;t get intimidated, match with someone at your level.
-                    </Header>
+              <Grid.Column textAlign='center'>
+                <br/>
+                <List as='h2' size='large'>
+                  <List.Item>
+                    <Icon name='user' />
+                    Create an account
+                  </List.Item>
+                  <br/>
+                  <List.Item>
+                    <Icon name='edit' />
+                    Edit user profile
+                  </List.Item>
+                  <br/>
+                  <List.Item>
+                    <Icon name='search' />
+                    Find Fitness Friends
+                  </List.Item>
+                  <br/>
+                  <List.Item>
+                    <Icon name='calendar' />
+                    Create schedule workouts
+                  </List.Item>
+                  <br/>
+                  <List.Item>
+                    <Icon name='feed' />
+                    Track your friends events
+                  </List.Item>
+                </List>
               </Grid.Column>
               <Grid.Column>
                 <Reveal animated='move right' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/Landing3.PNG'/>
+                    <Image fluid src='/images/Landing3.jpg'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
@@ -56,7 +79,7 @@ class Landing extends React.Component {
             </Grid.Row>
           </Grid>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-            Join today and work towards your better self!</Header>
+            Work towards your better self!</Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
               <Button as={Link} to="/signup" animated className="JoinButton" size="large">
