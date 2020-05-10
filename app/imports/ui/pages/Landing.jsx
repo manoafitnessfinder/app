@@ -9,7 +9,7 @@ class Landing extends React.Component {
         /* Outside to maintain consistent borders. */
         <Container className = 'landingPage'>
           <Container verticalAlign='middle' textAlign='center'>
-            <Image className="landing" fluid src='/images/Landing1.JPG'/>
+            <Image className="landing" fluid src='/images/Landing1.PNG'/>
           </Container>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
             5 Simple Steps to your Fitness Goals!</Header>
@@ -18,7 +18,7 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Reveal animated='move left' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/Landing2.PNG'/>
+                    <Image fluid src='/images/Landing2.jpg'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
@@ -66,7 +66,7 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Reveal animated='move right' instant>
                   <Reveal.Content visible>
-                    <Image fluid src='/images/Landing3.PNG'/>
+                    <Image fluid src='/images/Landing3.jpg'/>
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>

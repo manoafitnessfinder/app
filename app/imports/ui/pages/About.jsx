@@ -58,7 +58,7 @@ class About extends React.Component {
     return (
         <div className="aboutBackground">
         <Container>
-          <Image centered src="/images/About1.JPG" fluid/>
+          <Image centered src="/images/About1.PNG" fluid/>
           <Grid>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
@@ -97,12 +97,12 @@ class About extends React.Component {
               </Grid.Column>
               <Grid.Column width={8}>
                 <br/>
-              <Image src="/images/About2.png" fluid/>
+              <Image src="/images/About2.jpeg" fluid/>
             </Grid.Column>
             </Grid.Row>
           <Grid.Row>
             <Grid.Column width={8}>
-              <Image src="/images/About3.png" fluid/>
+              <Image src="/images/About3.jpg" fluid/>
             </Grid.Column>
             <Grid.Column textAlign='center' width={8}>
               <br/>
@@ -127,7 +127,7 @@ class About extends React.Component {
                 </Header>
               </Grid.Column>
               <Grid.Column width={8}>
-                <Image src="/images/About4.png" fluid/>
+                <Image src="/images/About4.jpg" fluid/>
               </Grid.Column>
             </Grid.Row>
             <div className="joinNow">

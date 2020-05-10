@@ -48,7 +48,7 @@ class UserLanding extends React.Component {
                 <Grid.Column width={8} textAlign='center'>
                   <Reveal animated='move left' instant>
                     <Reveal.Content visible>
-                      <Image fluid src="/images/UserLanding3_1.JPG"/>
+                      <Image fluid src="/images/UserLanding3.PNG"/>
                     </Reveal.Content>
                     <Reveal.Content hidden>
                       <Header as='h1'>Schedule A New Event</Header>
@@ -95,7 +95,7 @@ class UserLanding extends React.Component {
                 <Grid.Column textAlign='center' width={8}>
                   <Reveal animated='move right' instant>
                     <Reveal.Content visible>
-                      <Image src="/images/UserLanding4.JPG" fluid/>
+                      <Image src="/images/UserLanding4.PNG" fluid/>
                     </Reveal.Content>
                     <Reveal.Content hidden>
                       <Header as='h1'>Keep up with your friends</Header>

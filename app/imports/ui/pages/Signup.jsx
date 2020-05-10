@@ -60,7 +60,7 @@ class Signup extends React.Component {
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Image style={signupStyle} size='huge' centered src="/images/Signup.png"/>
+              <Image style={signupStyle} size='huge' centered src="/images/SignUp.jpg"/>
               <Header as="h3" textAlign="center">
                 Sign-up and start connecting with other Manoa students today!
               </Header>
@@ -98,15 +98,15 @@ class Signup extends React.Component {
                   </Form.Field>
                 </Container>
               </Form>
-              {this.state.error === '' ? (
-                  ''
-              ) : (
-                  <Message
-                      error
-                      header="There was an error is your registration. Try again or contact us."
-                      content={this.state.error}
-                  />
-              )}
+                  {this.state.error === '' ? (
+                      ''
+                  ) : (
+                      <Message
+                          error
+                          header="There was an error is your registration. Try again or contact us."
+                          content={this.state.error}
+                      />
+                  )}
             </Grid.Column>
           </Grid>
         </Container>
