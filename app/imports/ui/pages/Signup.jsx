@@ -39,7 +39,7 @@ class Signup extends React.Component {
     const gender = 'Undefined';
     const seeking = 'No Preference';
     const level = 'Beginner';
-    Profiles.insert({ name, interests, age, image, description, gender, seeking, level, owner }, err => {
+    Profiles.insert({ name, interests, age, image, description, gender, seeking, level, owner, email }, err => {
       if (err) {
         swal('Error', err.message, 'error');
       } else {

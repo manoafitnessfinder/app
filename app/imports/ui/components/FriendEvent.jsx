@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Header } from 'semantic-ui-react';
+import { Card, Icon, Header, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -7,6 +7,9 @@ import moment from 'moment';
 import 'moment-timezone';
 import { Friends } from '../../api/friend/Friend';
 import { Profiles } from '../../api/profile/Profile';
+import { Attending } from '../../api/attending/Attending';
+import AttendEvent from './AttendingEvent';
+import Attend from './Attend';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FriendEvent extends React.Component {
@@ -15,6 +18,8 @@ class FriendEvent extends React.Component {
   }
 
   render() {
+    const test = Profiles.find({ owner: this.props.event.owner }).fetch();
+    const profile = test[0];
     if (Friends.findOne({ friendEmail: this.props.event.owner })) {
       return (
           <Card color='green' centered>
@@ -25,7 +30,7 @@ class FriendEvent extends React.Component {
               </Header>
             </Card.Content>
             <Card.Content extra>
-              <Icon name='user circle'/> {this.props.event.owner}
+              <Icon name='user circle'/> {profile.name}
             </Card.Content>
             <Card.Content>
               <Icon name='thumbtack'/> {this.props.event.type}<br/>
@@ -35,6 +40,15 @@ class FriendEvent extends React.Component {
             <Card.Content>
               <b>NOTES</b><br/>
               {this.props.event.notes}
+            </Card.Content>
+            <AttendEvent eventId={this.props.event._id}
+                         profile={this.props.currentUser[0]}/>
+            <Card.Content>
+              <b>Attending This event:</b>
+              <Feed>
+                {this.props.attending.map((attending, index) => <Attend key={index} attending={attending}
+                                                                        event={this.props.event}/>)}
+              </Feed>
             </Card.Content>
           </Card>
       );
@@ -46,17 +60,22 @@ class FriendEvent extends React.Component {
 /** Require a document to be passed to this component. */
 FriendEvent.propTypes = {
   event: PropTypes.object.isRequired,
-  Events: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
+  currentUser: PropTypes.array.isRequired,
+  attending: PropTypes.array.isRequired,
+  Events: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
 export default withTracker(() => {
+  const subscription = Meteor.subscribe('TestProfiles');
   const subscriptionFriends = Meteor.subscribe('Friends');
-  const subscriptionsProfile = Meteor.subscribe('Profiles');
+  const subscriptionAttending = Meteor.subscribe('Attending');
+  const currentUser = Meteor.user() ? Meteor.user().username : '';
   return {
     friends: Friends.find({}).fetch(),
-    profile: Profiles.find({}).fetch(),
-    ready: subscriptionFriends.ready() && subscriptionsProfile.ready(),
+    currentUser: Profiles.find({ owner: currentUser }).fetch(),
+    attending: Attending.find({}).fetch(),
+    ready: subscriptionFriends.ready() && subscription.ready() && subscriptionAttending.ready(),
   };
 })(FriendEvent);
