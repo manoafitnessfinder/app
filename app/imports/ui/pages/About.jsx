@@ -67,27 +67,28 @@ class About extends React.Component {
                   How Fitness Finder Works
                 </Header>
                 <Grid.Row>
-                  <List as='h2' size='huge'>
+                  <br/>
+                  <List as='h2' size='large'>
                     <List.Item>
-                    <Icon name='user' />
-                    Sign-up and create an account
-                  </List.Item>
+                      <Icon name='user' />
+                      Create an account
+                    </List.Item>
+                    <br/>
                     <List.Item>
                       <Icon name='edit' />
                       Edit user profile
                     </List.Item>
+                    <br/>
                     <List.Item>
                       <Icon name='search' />
-                      Search for the perfect gym buddy
+                      Find Fitness Friends
                     </List.Item>
-                    <List.Item>
-                      <Icon name='add user' />
-                      Add Friends to your workouts
-                    </List.Item>
+                    <br/>
                     <List.Item>
                       <Icon name='calendar' />
                       Create schedule workouts
                     </List.Item>
+                    <br/>
                     <List.Item>
                       <Icon name='feed' />
                       Track your friends events
@@ -141,7 +142,7 @@ class About extends React.Component {
                 <Grid.Row>
                   <Form onSubmit={this.submit}>
                     <Container>
-                    <Form.Group as='h2' widths='equal'>
+                    <Form.Group as='h3' widths='equal'>
                       <Form.Input fluid label='NAME'
                                   name="name"
                                   type="name"
@@ -149,7 +150,7 @@ class About extends React.Component {
                                   onChange={this.handleChange}
                       />
                     </Form.Group>
-                    <Form.Group as='h2' widths='equal'>
+                    <Form.Group as='h3' widths='equal'>
                       <Form.Input fluid
                                   label="EMAIL"
                                   name="email"
@@ -165,9 +166,6 @@ class About extends React.Component {
                           onChange={this.handleChange}
                       />
                     </Form.Group>
-                    <Form.Field as='h2' align='center'>
-                      <Checkbox label='I agree to the Terms and Conditions'/>
-                    </Form.Field>
                     <Form.Field align='center'>
                       <Form.Button content="Set Up Profile"/>
                     </Form.Field>
