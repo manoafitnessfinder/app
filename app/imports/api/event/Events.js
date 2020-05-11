@@ -18,7 +18,10 @@ const EventSchema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  notes: String,
+  notes: {
+    type: String,
+    optional: true,
+  },
   owner: String,
 }, { tracker: Tracker });
 

@@ -26,7 +26,10 @@ const formSchema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  notes: String,
+  notes: {
+    type: String,
+    optional: true,
+  },
 });
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
