@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Header } from 'semantic-ui-react'
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
@@ -11,7 +12,7 @@ class Footer extends React.Component {
         <footer>
           <Grid style={divStyle} centered stackable columns='3' container>
             <Grid.Column>
-              <h3 textalign='left'>About Us</h3>
+              <Header as='h3' inverted>About Us</Header>
               <hr/>
               <p>
                 <a href="https://github.com/manoafitnessfinder/app/">Our github page</a>
@@ -24,7 +25,7 @@ class Footer extends React.Component {
               </p>
             </Grid.Column>
             <Grid.Column>
-              <h3 textalign='left'>Sitemap</h3>
+              <Header as='h3' inverted>Sitemap</Header>
               <hr/>
               <p>
                 <Menu.Item
@@ -53,14 +54,14 @@ class Footer extends React.Component {
             </Grid.Column>
             { this.props.currentUser === '' ? (
                 <Grid.Column>
-                  <h3>
+                  <Header as='h3' inverted>
                     { /* Later possibility to add an email box here to autofill
                 the signup page box from the user entered text */}
                     <Menu.Item textalign='left'
                                as={NavLink}
                                activeClassName="active"
                                exact to="/signup"
-                               key='signup'>Create your account today!</Menu.Item></h3>
+                               key='signup'>Create your account today!</Menu.Item></Header>
                   <hr/>
                   <p>With all the workout and social possibilities, why wait? Create an account with Manoa Fitness
                     Finder

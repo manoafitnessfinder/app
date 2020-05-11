@@ -146,7 +146,7 @@ tbody {
 }
 
 /* Schedule Page #30: SOPHIA 04/28/20 */
-h3, h1, h2 {
+h3, h1, h2, h4, p {
   font-family: 'Quicksand', sans-serif!important;
   letter-spacing: 2px;
   text-transform: uppercase!important;
@@ -243,4 +243,13 @@ a.profLink {
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+}
+
+/* Footer background colour*/
+
+footer {
+  background-color: #6D9B7C !important;
+  padding-top: 20px;
+  border-top-width: 20px;
+  border-top-color: #FFFFFF;
 }
