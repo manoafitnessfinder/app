@@ -32,8 +32,8 @@ class AttendEvent extends React.Component {
             <SubmitField basic color='green' value='Attend This Event'/>
             <ErrorsField/>
             <HiddenField name='eventId' value={this.props.eventId}/>
-            <HiddenField name='otherEmail' value={this.props.profile.owner}/>
-            <HiddenField name='otherName' value={this.props.profile.name}/>
+            <HiddenField name='otherEmail' value={this.props.anotherprofile.owner}/>
+            <HiddenField name='otherName' value={this.props.anotherprofile.name}/>
           </Segment>
         </AutoForm>
     );
@@ -42,7 +42,7 @@ class AttendEvent extends React.Component {
 
 AttendEvent.propTypes = {
   eventId: PropTypes.string.isRequired,
-  profile: PropTypes.object.isRequired,
+  anotherprofile: PropTypes.object.isRequired,
 };
 
 export default AttendEvent;

@@ -29,7 +29,7 @@ class FriendEvent extends React.Component {
         button = <h3/>;
       } else {
         button = <AttendEvent eventId={this.props.event._id}
-                              profile={this.props.currentUser[0]}/>;
+                              anotherprofile={this.props.currentUser[0]}/>;
       }
       return (
           <Card color='green' centered>
@@ -71,7 +71,7 @@ FriendEvent.propTypes = {
   event: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
   currentUser: PropTypes.array.isRequired,
-  attending: PropTypes.array.isRequired,
+  attending: PropTypes.string.isRequired,
   Events: PropTypes.object.isRequired,
 };
 

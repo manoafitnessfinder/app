@@ -21,7 +21,7 @@ class ListAllProfiles extends React.Component {
             <Image style={ { width: '987px', height: '250px' }} centered src="/images/AllProfiles.PNG"/>
           </Container>
           <Card.Group centered>
-            {this.props.profiles.map((profile, index) => <AllProfiles key={index} profile={profile}/>)}
+            {this.props.profiles.map((testprofile, index) => <AllProfiles key={index} testprofile={testprofile}/>)}
           </Card.Group>
         </Container>
     );
