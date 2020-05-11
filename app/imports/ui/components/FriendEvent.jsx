@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Header, Feed } from 'semantic-ui-react';
+import { Card, Icon, Header, Feed, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -18,6 +18,10 @@ class FriendEvent extends React.Component {
   }
 
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  renderPage() {
     const test = Profiles.find({ owner: this.props.event.owner }).fetch();
     const profile = test[0];
     let button;
