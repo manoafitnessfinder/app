@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, SubmitField, TextField, HiddenField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, SubmitField, HiddenField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import PropTypes from 'prop-types';

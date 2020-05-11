@@ -71,8 +71,9 @@ FriendEvent.propTypes = {
   event: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
   currentUser: PropTypes.array.isRequired,
-  attending: PropTypes.string.isRequired,
+  attending: PropTypes.array.isRequired,
   Events: PropTypes.object.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
@@ -86,5 +87,5 @@ export default withTracker(() => {
     currentUser: Profiles.find({ owner: currentUser }).fetch(),
     attending: Attending.find({}).fetch(),
     ready: subscriptionFriends.ready() && subscription.ready() && subscriptionAttending.ready(),
-  };
+};
 })(FriendEvent);
