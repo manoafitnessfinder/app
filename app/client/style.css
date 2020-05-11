@@ -159,6 +159,7 @@ h3, h1, h2, h4, p {
 .card {
   margin: 10px!important;
   display: block;
+  word-wrap: break-word;
 }
 
 .schedCards .card { min-width: 350px!important; }
