@@ -159,6 +159,7 @@ h3, h1, h2, h4, p {
 .card {
   margin: 10px!important;
   display: block;
+  word-wrap: break-word;
 }
 
 .schedCards .card { min-width: 350px!important; }
@@ -252,4 +253,21 @@ footer {
   padding-top: 20px;
   border-top-width: 20px;
   border-top-color: #FFFFFF;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
+}
+
+
+/* ISSUE #71 - SOPHIA */
+.grnBtn {
+  background-color: #6D9B7C!important;
+  color: #fff!important;
+  border: 1px solid #fff!important;
+}
+
+.iWht {
+  color:#fff!important;
 }

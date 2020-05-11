@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Menu } from 'semantic-ui-react';
+import { Grid, Menu, Divider } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Header } from 'semantic-ui-react'

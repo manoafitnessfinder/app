@@ -17,11 +17,11 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, image, description, interests, seeking, level, age, goals, _id } = data;
-    Profiles.update(_id, { $set: { name, image, description, interests, seeking, level, age, goals } },
+    const { name, gender, image, description, interests, seeking, level, age, goals, _id } = data;
+    Profiles.update(_id, { $set: { name, gender, image, description, interests, seeking, level, age, goals } },
         (error) => (error ?
-        swal('Error', error.message, 'error') :
-        swal('Success', 'Your info has been updated successfully', 'success')));
+            swal('Error', error.message, 'error') :
+            swal('Success', 'Your info has been updated successfully', 'success')));
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -39,20 +39,21 @@ class EditProfile extends React.Component {
             <AutoForm schema={ProfileSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
               <Segment inverted className='profileForm' very padded>
                 <Header as='h3' textAlign='center'>Profile Information</Header>
-                <TextField name='name'/>
+                <Grid className='doubleLine'>
+                  <TextField name='name'/>
+                  <SelectField name='gender'/>
+                </Grid>
                 <TextField name='image'/>
                 <LongTextField className='descBox' name='description'/>
                 <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
                 <Grid className='doubleLine'>
-                  <SelectField className = 'dropDownFix' name='seeking'/>
-                  <SelectField className = 'dropDownFix' name='level'/>
-                  <NumField name = 'age'/>
+                  <SelectField className='dropDownFix' name='seeking'/>
+                  <SelectField className='dropDownFix' name='level'/>
+                  <NumField name='age'/>
                 </Grid>
                 <TextField name='goals'/>
-                <Grid centered>
-                  <SubmitField className='editProfileButton' value='Submit Changes'/>
-                </Grid>
+                <SubmitField className='editProfileButton' value='Submit Changes'/>
                 <ErrorsField/>
                 <HiddenField name='owner'/>
               </Segment>
