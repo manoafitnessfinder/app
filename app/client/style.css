@@ -259,3 +259,15 @@ footer {
 footer a {
   color: #fff;
 }
+
+
+/* ISSUE #71 - SOPHIA */
+.grnBtn {
+  background-color: #6D9B7C!important;
+  color: #fff!important;
+  border: 1px solid #fff!important;
+}
+
+.iWht {
+  color:#fff!important;
+}
