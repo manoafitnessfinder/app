@@ -3,6 +3,7 @@ import { Profiles } from '../../api/profile/Profile';
 import { Friends } from '../../api/friend/Friend';
 import { Events } from '../../api/event/Events.js';
 import { Notes } from '../../api/note/Notes';
+import { Attending } from '../../api/attending/Attending';
 
 Meteor.publish('Profiles', function publish() {
   if (this.userId) {
@@ -50,6 +51,13 @@ Meteor.publish('AllEvents', function publish() {
 Meteor.publish('Notes', function publish() {
   if (this.userId) {
     return Notes.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish('Attending', function publish() {
+  if (this.userId) {
+    return Attending.find();
   }
   return this.ready();
 });
