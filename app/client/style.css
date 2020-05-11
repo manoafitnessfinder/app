@@ -252,4 +252,9 @@ footer {
   padding-top: 20px;
   border-top-width: 20px;
   border-top-color: #FFFFFF;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
 }
