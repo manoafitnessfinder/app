@@ -40,7 +40,7 @@ class UserProfile extends React.Component {
           <Segment className='profThing'>
             <Grid>
               <Grid.Column width={13}>
-                <Header as="h2" textalign="center">{this.props.profiles[0].name}&apos;s Profile</Header>
+                <Header as="h2" textalign="center">My Profile</Header>
               </Grid.Column>
               <Grid.Column width={3} textAlign='right'>
                 <Icon className='segIcon' name='edit'/> <Link className='profLink'
@@ -105,19 +105,6 @@ class UserProfile extends React.Component {
             </Grid>
             <Divider hidden/>
           </Segment>
-          <Divider hidden/>
-
-
-          <AutoForm ref={ref => {
-            fRef = ref;
-          }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-            <Segment className="userComment">
-              <LongTextField name='comment'/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-          <Divider hidden/>
         </Container>
     );
   }
