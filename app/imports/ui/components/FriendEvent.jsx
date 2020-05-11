@@ -20,7 +20,17 @@ class FriendEvent extends React.Component {
   render() {
     const test = Profiles.find({ owner: this.props.event.owner }).fetch();
     const profile = test[0];
+    let button;
     if (Friends.findOne({ friendEmail: this.props.event.owner })) {
+      let testing = (_.where(this.props.attending, { eventId: this.props.event._id }));
+      testing = (_.findWhere(testing, { otherEmail: Meteor.user().username }));
+      if (testing === undefined) { testing = ''; }
+      if (testing.otherEmail === Meteor.user().username) {
+        button = <h3/>;
+      } else {
+        button = <AttendEvent eventId={this.props.event._id}
+                              profile={this.props.currentUser[0]}/>;
+      }
       return (
           <Card color='green' centered>
             <Card.Content>
@@ -41,8 +51,7 @@ class FriendEvent extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            <AttendEvent eventId={this.props.event._id}
-                         profile={this.props.currentUser[0]}/>
+            {button}
             <Card.Content>
               <b>Attending This event:</b>
               <Feed>
