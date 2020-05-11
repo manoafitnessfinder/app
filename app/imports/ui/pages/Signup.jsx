@@ -91,9 +91,6 @@ class Signup extends React.Component {
                     />
                   </Form.Group>
                   <Form.Field align='center'>
-                    <Checkbox label='I agree to the Terms and Conditions'/>
-                  </Form.Field>
-                  <Form.Field align='center'>
                     <Form.Button basic color='green' content="Set Up Profile"/>
                   </Form.Field>
                 </Container>
