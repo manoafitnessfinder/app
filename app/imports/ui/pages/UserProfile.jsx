@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Icon, Grid, Header, Table, Divider, Image, Loader, Segment } from 'semantic-ui-react';
+import { Container, Icon, Grid, Header, Table, Divider, Image, Loader, Segment, Feed } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -8,6 +8,8 @@ import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-sema
 import SimpleSchema from 'simpl-schema';
 import { Link, Redirect } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
+import Note from '../components/Note';
+import { Notes } from '../../api/note/Notes';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -100,6 +102,10 @@ class UserProfile extends React.Component {
                       </Table.Row>
                     </Table.Body>
                   </Table>
+                  <Feed className="feedU">
+                    {this.props.notes.map((note, index) => <Note key={index} note={note}
+                                                                 profile={this.props.profiles[0].owner}/>)}
+                  </Feed>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
@@ -112,14 +118,17 @@ class UserProfile extends React.Component {
 
 UserProfile.propTypes = {
   profiles: PropTypes.array.isRequired,
+  notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   const subscription = Meteor.subscribe('Profiles');
+  const subscription2 = Meteor.subscribe('Notes');
   return {
     profiles: Profiles.find({}).fetch(),
-    ready: subscription.ready(),
+    notes: Notes.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(UserProfile);
