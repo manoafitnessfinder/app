@@ -90,7 +90,7 @@ class User extends React.Component {
                   </Table>
                   <AddNote className="commentBox"
                            owner={this.props.doc.owner}
-                           contactId={this.props.doc._id}
+                           contactId={this.props.madeBy[0]._id}
                            madeBy={this.props.madeBy[0].name}
                            image={this.props.madeBy[0].image}/>
                   <Feed className="feedU">
