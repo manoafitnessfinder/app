@@ -52,33 +52,24 @@ class UserLanding extends React.Component {
                     </Reveal.Content>
                     <Reveal.Content hidden>
                       <Header as='h1'>Schedule A New Event</Header>
-                      <Header as='h3'>5 Easy Steps!</Header>
+                      <Header as='h3'>4 Easy Steps!</Header>
                       <br/>
                       <Grid.Row>
                         <List as='h3' size='large'>
                           <List.Item>
-                            <Icon name='calendar'/>
-                            Set Date And Time
+                            <Icon name='calendar'/> Set date and time
                           </List.Item>
                           <br/>
                           <List.Item>
-                            <Icon name='thumbtack'/>
-                            Set Event Type
+                            <Icon name='thumbtack'/> Set event type
                           </List.Item>
                           <br/>
                           <List.Item>
-                            <Icon name='location arrow'/>
-                            Set Location
+                            <Icon name='location arrow'/> Set location
                           </List.Item>
                           <br/>
                           <List.Item>
-                            <Icon name='user plus'/>
-                            Include A Friend
-                          </List.Item>
-                          <br/>
-                          <List.Item>
-                            <Icon name='sticky note'/>
-                            Leave a note
+                            <Icon name='sticky note'/> Add notes
                           </List.Item>
                           <br/>
                         </List>
@@ -100,8 +91,8 @@ class UserLanding extends React.Component {
                     <Reveal.Content hidden>
                       <Header as='h1'>Keep up with your friends</Header>
                       <Divider hidden/>
-                      <Header as='h3'>View events your friends accomplished!</Header>
-                      <Header as='h3'>Keep up to date on how their fitness goals!</Header>
+                      <Header as='h3'>View past events your friends accomplished and join new ones that are coming
+                      up.</Header>
                       <Header as='h3'>Lets lose that freshman 15 together!</Header>
                       <Button as={Link} to="/friendevents" animated size="large">
                         <Button.Content visible>View Now</Button.Content>
