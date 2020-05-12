@@ -12,7 +12,7 @@ class Landing extends React.Component {
             <Image className="landing" fluid src='/images/Landing1.PNG'/>
           </Container>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-            5 Simple Steps to your Fitness Goals!</Header>
+            Follow 5 Simple Steps to reach your Fitness Goals!</Header>
           <Grid verticalAlign='middle'>
             <Grid.Row columns={3}>
               <Grid.Column verticalAlign='middle'>
@@ -54,7 +54,7 @@ class Landing extends React.Component {
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='feed' /> See your friends' events
+                    <Icon name='feed' /> See & join friends' events
                   </List.Item>
                 </List>
               </Grid.Column>
@@ -66,7 +66,7 @@ class Landing extends React.Component {
                   <Reveal.Content hidden>
                     <br/>
                     <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-                      Avoid the freshman fifteen! Get started right away.
+                      Get started right away to avoid the freshman fifteen!
                     </Header>
                   </Reveal.Content>
                 </Reveal>
@@ -74,7 +74,7 @@ class Landing extends React.Component {
             </Grid.Row>
           </Grid>
           <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-           Work for a better you. </Header>
+           Work toward a better you. </Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
               <Button className='scheduleButton' as={Link} to="/signup" animated size="large">

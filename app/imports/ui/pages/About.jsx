@@ -70,28 +70,23 @@ class About extends React.Component {
                   <br/>
                   <List as='h2' size='large'>
                     <List.Item>
-                      <Icon name='user' />
-                      Create an account
+                      <Icon name='user' /> Create an account
                     </List.Item>
                     <br/>
                     <List.Item>
-                      <Icon name='edit' />
-                      Edit user profile
+                      <Icon name='edit' /> Edit your profile
                     </List.Item>
                     <br/>
                     <List.Item>
-                      <Icon name='search' />
-                      Find Fitness Friends
+                      <Icon name='search' /> Find Fitness Friends
                     </List.Item>
                     <br/>
                     <List.Item>
-                      <Icon name='calendar' />
-                      Create schedule workouts
+                      <Icon name='calendar' /> Schedule new workouts
                     </List.Item>
                     <br/>
                     <List.Item>
-                      <Icon name='feed' />
-                      Track your friends events
+                      <Icon name='feed' /> See & join friends' events
                     </List.Item>
                   </List>
                 </Grid.Row>
@@ -108,11 +103,11 @@ class About extends React.Component {
             <Grid.Column textAlign='center' width={8}>
               <br/>
               <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
-                Who Are We
+                Who we are
               </Header>
               <Header as='h2' size='large'>
-                Fitness Finder is an app that helps students find their workout buddy to lose the freshman fifteen. You
-                are able to find students with similar fitness goals and connect to set up a workout session
+                Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy to find others
+                with similar fitness goals and connect to schedule events together.
               </Header>
             </Grid.Column>
           </Grid.Row>
@@ -123,8 +118,8 @@ class About extends React.Component {
                   Why We Matter
                 </Header>
                 <Header as='h2' size='large'>
-                  You no longer have to workout alone! Fitness Finder  allows you to feel empowered while you make those
-                  fitness connections!
+                  You no longer have to worry about going to the gym without a spotter or going on a run alone! Manoa
+                  Fitness Finder allows you to make fitness connections with others with similar interests.
                 </Header>
               </Grid.Column>
               <Grid.Column width={8}>
@@ -136,7 +131,7 @@ class About extends React.Component {
                 <Header inverted as='h2'>
                   Join the Hunt!
                   <Header.Subheader>
-                  Sign-Up and start matching with members today!
+                  Sign up and start matching with members today!
                   </Header.Subheader>
                 </Header>
                 <Grid.Row>

@@ -62,7 +62,7 @@ class Signup extends React.Component {
             <Grid.Column>
               <Image style={signupStyle} size='huge' centered src="/images/SignUp.jpg"/>
               <Header as="h3" textAlign="center">
-                Sign-up and start connecting with other Manoa students today!
+                Sign up and start connecting with other Manoa students today!
               </Header>
               <Form onSubmit={this.submit}>
                 <Container>
