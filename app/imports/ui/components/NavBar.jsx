@@ -7,6 +7,7 @@ import { Menu, Dropdown, Grid } from 'semantic-ui-react';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
+
   render() {
     return (
         <Grid centered container>
@@ -14,27 +15,27 @@ class NavBar extends React.Component {
             <Menu attached="top" borderless className="topmenu">
               {this.props.currentUser === '' ? (
                   [<Menu.Item as={NavLink} activeClassName="" exact to="/landing"
-                              key='landing'>Home</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="" exact to="/about" key='about'>About
-                      Us</Menu.Item>,
+                              key='landing'><h4>Home</h4></Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="" exact to="/about" key='about'><h4>About
+                        Us</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="" exact to="/test"
-                               key="testimonial">Testimonials</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="" exact to="/contact" key="contact">Contact
-                      Us</Menu.Item>]
+                               key="testimonial"><h4>Testimonials</h4></Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="" exact to="/contact" key="contact"><h4>Contact
+                        Us</h4></Menu.Item>]
               ) : (
                   [<Menu.Item as={NavLink} activeClassName="" exact to="/userlanding" key='Userlanding'>
-                    Home</Menu.Item>,
+                      <h4>Home</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/allprofiles"
-                               key='allprofiles'>All
-                      Profiles</Menu.Item>,
+                               key='allprofiles'><h4>All
+                        Profiles</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/events"
-                               key='events'>My Events</Menu.Item>,
+                               key='events'><h4>My Events</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/friendevents"
-                               key='friendevents'>Friend Events</Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'>Friends
-                      List</Menu.Item>,
+                               key='friendevents'><h4>Friend Events</h4></Menu.Item>,
+                    <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'><h4>Friends
+                        List</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/profile"
-                               key='profile'>My Profile</Menu.Item>]
+                               key='profile'><h4>My Profile</h4></Menu.Item>]
               )}
 
               <Menu.Item position="right">
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
                       </Dropdown.Menu>
                     </Dropdown>
                 ) : (
-                    <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
+                    <Dropdown pointing="top right" icon={'user'} >
                       <Dropdown.Menu>
                         <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact
                                        to="/signout"/>
