@@ -24,12 +24,15 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, gender, image, description, interests, seeking, level, age, goals, _id } = data;
-    Profiles.update(_id, { $set: { name, gender, image, description, interests, seeking, level, age, goals } },
-        (error) => (error ?
-            swal('Error', error.message, 'error') :
-            swal('Success', 'Your info has been updated successfully', 'success')));
-  }
+    const { name, image, description, interests, seeking, level, age, goals, _id } = data;
+    Profiles.update(_id, { $set: { name, image, description, interests, seeking, level, age, goals } },
+        (error) => {
+          if (error) {
+            swal('Error', err.message, 'error');
+          } else {
+            this.setState({ error: '', redirectToReferer: true });
+          }
+        });
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
