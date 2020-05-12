@@ -17,6 +17,11 @@ import {Link} from "react-router-dom";
 /** Renders the Page for editing a single document. */
 class EditProfile extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+  }
+
   /** On successful submit, insert the data. */
   submit(data) {
     const { name, image, description, interests, seeking, level, age, goals, _id } = data;
