@@ -38,10 +38,8 @@
 /* Apply where there is a select field in auto form. */
 
 .dropDownFix {
-  padding: 0px 12px;
   font-size: 13px;
 }
-
 
 /* Apply where there is a select field in auto form. */
 
@@ -167,6 +165,8 @@ p {
   text-transform: uppercase!important;
   text-align: left!important;
 }
+
+
 
 /* Edit Event Page #29: SOPHIA 04/28/20 */
 .scheduleButton, .editEventButton {

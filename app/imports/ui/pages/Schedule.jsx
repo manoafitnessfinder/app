@@ -68,14 +68,14 @@ class Schedule extends React.Component {
               <Divider hidden/>
               <Segment inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
-                <AutoForm ref={ref => {
+                <AutoForm className='schedLabel' ref={ref => {
                   fRef = ref;
                 }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                  <DateField className='schedLabel' name='date' label='Date and Time'/>
-                  <SelectField className='schedLabel' name='type' label='Event Type'/>
-                  <TextField className='schedLabel' name='location'/>
-                  {/* <TextField className='schedLabel' name='associated' label='Include a Friend'/> */}
-                  <LongTextField className='schedLabel' name='notes'/>
+                  <DateField name='date' label='Date and Time'/>
+                  <SelectField className = 'dropDownFix' name='type' label='Event Type'/>
+                  <TextField name='location'/>
+                  {/* <TextField name='associated' label='Include a Friend'/> */}
+                  <LongTextField name='notes'/>
                   <Divider hidden/>
                   <SubmitField className='scheduleButton' value='CREATE EVENT'/>
                   <ErrorsField/>
