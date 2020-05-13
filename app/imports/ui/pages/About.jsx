@@ -85,7 +85,7 @@ class About extends React.Component {
                     </List.Item>
                     <br/>
                     <List.Item>
-                      <Icon name='feed' /> See & join friends' events
+                      <Icon name='feed' /> See & join friends&apos; events
                     </List.Item>
                   </List>
                 </Grid.Row>
@@ -105,8 +105,8 @@ class About extends React.Component {
                   Who we are
                 </Header>
                 <Header as='h4' size='large'>
-                  Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy to find others
-                  with similar fitness goals and connect to schedule events together.
+                  Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy
+                  to find others with similar fitness goals and connect to schedule events together.
                 </Header>
               </Grid.Column>
             </Grid.Row>

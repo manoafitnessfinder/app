@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 import { Card, Icon, Header, Feed, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -15,10 +14,6 @@ import Attend from './Attend';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FriendEvent extends React.Component {
-  removeItem(docID) {
-    this.props.Events.remove(docID);
-  }
-
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
@@ -28,7 +23,9 @@ class FriendEvent extends React.Component {
     const profile = test[0];
     let button;
     if (Friends.findOne({ friendEmail: this.props.event.owner })) {
+      // eslint-disable-next-line no-undef
       let testing = (_.where(this.props.attending, { eventId: this.props.event._id }));
+      // eslint-disable-next-line no-undef
       testing = (_.findWhere(testing, { otherEmail: Meteor.user().username }));
       if (testing === undefined) { testing = ''; }
       if (testing.otherEmail === Meteor.user().username) {
