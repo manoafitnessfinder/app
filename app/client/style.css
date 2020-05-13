@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Work+Sans&display=swap');
 
 /* For landing page. */
 .landing {
@@ -146,10 +146,19 @@ tbody {
 }
 
 /* Schedule Page #30: SOPHIA 04/28/20 */
-h3, h1, h2, h4, p {
+h3, h1, h2 {
   font-family: 'Quicksand', sans-serif!important;
   letter-spacing: 2px;
   text-transform: uppercase!important;
+}
+
+h4, p {
+  font-family: 'Quicksand', sans-serif!important;
+  text-transform: uppercase;
+}
+
+p {
+  text-transform: none!important;
 }
 
 .card a {
@@ -265,9 +274,13 @@ footer a {
 .grnBtn {
   background-color: #6D9B7C!important;
   color: #fff!important;
-  border: 1px solid #fff!important;
 }
 
 .iWht {
   color:#fff!important;
+}
+
+.whtBtn {
+  background-color: #fff!important;
+  color: #6D9B7C!important;
 }

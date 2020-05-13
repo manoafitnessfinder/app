@@ -34,7 +34,7 @@ class AddFriend extends React.Component {
           fRef = ref;
         }} schema={FriendSchema} onSubmit={data => this.submit(data, fRef)}>
 
-          <SubmitField value='Add Friend'/>
+          <SubmitField className='grnBtn' value='Add Friend'/>
           <ErrorsField/>
           <HiddenField name='owner' value={this.props.owner}/>
           <HiddenField name='contactId' value={this.props.contactId}/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -33,7 +33,7 @@ class AllProfiles extends React.Component {
             <Card.Content extra>
               <Link to={`/User/${this.props.testprofile._id}`}>View Profile</Link>
             </Card.Content>
-            <Card.Content extra>
+            <Card.Content textAlign='center' extra>
               {button}
             </Card.Content>
           </Card.Content>

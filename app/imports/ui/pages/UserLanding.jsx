@@ -14,7 +14,7 @@ class UserLanding extends React.Component {
         <div className="aboutBackground">
           <Container>
             <Container id='user_landing_top'>
-              <Button as={Link} to="/profile" animated className="editProfile" size="huge" centered>
+              <Button as={Link} to="/profile" animated className="whtBtn" size="huge" centered>
                 <Button.Content visible>Edit Profile</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>
@@ -35,7 +35,7 @@ class UserLanding extends React.Component {
             <Divider hidden/>
             <Divider hidden/>
             <Container id='user_landing_middle'>
-              <Button as={Link} to="/allprofiles" animated className="matchButton" size="huge" centered>
+              <Button as={Link} to="/allprofiles" animated className="whtBtn" size="huge" centered>
                 <Button.Content visible>Find Friends</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>
@@ -50,7 +50,7 @@ class UserLanding extends React.Component {
                     <Reveal.Content visible>
                       <Image fluid src="/images/UserLanding3.PNG"/>
                     </Reveal.Content>
-                    <Reveal.Content hidden>
+                    <Reveal.Content hidden><br/><br/><br/><br/>
                       <Header as='h1'>Schedule A New Event</Header>
                       <Header as='h3'>4 Easy Steps!</Header>
                       <br/>
@@ -74,10 +74,10 @@ class UserLanding extends React.Component {
                           <br/>
                         </List>
                       </Grid.Row>
-                      <Button as={Link} to="/events" animated size="large">
+                      <Button className='grnBtn' as={Link} to="/events" animated size="large">
                         <Button.Content visible>Get Started</Button.Content>
                         <Button.Content hidden>
-                          <Icon name='arrow right'/>
+                          <Icon className='iWht' name='arrow right'/>
                         </Button.Content>
                       </Button>
                     </Reveal.Content>
@@ -89,15 +89,16 @@ class UserLanding extends React.Component {
                       <Image src="/images/UserLanding4.PNG" fluid/>
                     </Reveal.Content>
                     <Reveal.Content hidden>
+                      <br/><br/><br/><br/><br/>
                       <Header as='h1'>Keep up with your friends</Header>
                       <Divider hidden/>
                       <Header as='h3'>View past events your friends accomplished and join new ones that are coming
                       up.</Header>
                       <Header as='h3'>Let's lose that freshman 15 together!</Header>
-                      <Button as={Link} to="/friendevents" animated size="large">
+                      <Button className='grnBtn' as={Link} to="/friendevents" animated size="large">
                         <Button.Content visible>View Now</Button.Content>
                         <Button.Content hidden>
-                          <Icon name='arrow right'/>
+                          <Icon className='iWht' name='arrow right'/>
                         </Button.Content>
                       </Button>
                     </Reveal.Content>
