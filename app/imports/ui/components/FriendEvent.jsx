@@ -54,7 +54,7 @@ class FriendEvent extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            <Card.Content textAlign='center'>
+            <Card.Content textalign='center'>
               {button}<br/>
               <b>ATTENDING THIS EVENT:</b>
               <Feed>

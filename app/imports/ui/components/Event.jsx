@@ -37,7 +37,7 @@ class Event extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            <Card.Content>
+            <Card.Content textalign='center'>
               <b>ATTENDING THIS EVENT:</b>
               <Feed>
                 {this.props.attending.map((attending, index) => <Attend key={index} attending={attending}
