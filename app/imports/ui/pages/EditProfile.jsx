@@ -60,7 +60,7 @@ class EditProfile extends React.Component {
                   <TextField name='name'/>
                   <SelectField name='gender'/>
                 </Grid>
-                <TextField name='image'/>
+                <TextField name='image' label='Image (URL)'/>
                 <LongTextField className='descBox' name='description'/>
                 <Header as='h3' textAlign='center'>Matching Information</Header>
                 <MultiSelectField name='interests'/>
