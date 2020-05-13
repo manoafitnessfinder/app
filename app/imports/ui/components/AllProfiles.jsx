@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from 'lodash';
+// import _ from 'lodash';
 import { Card, Image } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -12,6 +12,7 @@ import { Friends } from '../../api/friend/Friend';
 class AllProfiles extends React.Component {
   render() {
     let button;
+    // eslint-disable-next-line no-undef
     let thisFriend = _.findWhere(this.props.friends, { contactId: this.props.testprofile._id });
     if (thisFriend === undefined) {
       thisFriend = '';
