@@ -73,7 +73,7 @@ class Schedule extends React.Component {
                   <DateField className='schedLabel' name='date' label='Date and Time'/>
                   <SelectField className='schedLabel' name='type' label='Event Type'/>
                   <TextField className='schedLabel' name='location'/>
-                  <TextField className='schedLabel' name='associated' label='Include a Friend'/>
+                  {/* <TextField className='schedLabel' name='associated' label='Include a Friend'/> */}
                   <LongTextField className='schedLabel' name='notes'/>
                   <Divider hidden/>
                   <SubmitField className='scheduleButton' value='CREATE EVENT'/>

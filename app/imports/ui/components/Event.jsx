@@ -31,7 +31,7 @@ class Event extends React.Component {
             <Card.Content>
               <Icon name='thumbtack'/> {this.props.event.type}<br/>
               <Icon name='location arrow'/> {this.props.event.location}<br/>
-              <Icon name='user plus'/> {this.props.event.associated}<br/>
+              {/* <Icon name='user plus'/> {this.props.event.associated}<br/> */}
             </Card.Content>
             <Card.Content>
               <b>NOTES</b><br/>
