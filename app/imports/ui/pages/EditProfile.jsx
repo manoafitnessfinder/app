@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Loader, Header, Segment, Divider} from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, Divider } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import {
   AutoForm, ErrorsField, HiddenField, SelectField, SubmitField,
@@ -12,7 +12,6 @@ import PropTypes from 'prop-types';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { Profiles, ProfileSchema } from '../../api/profile/Profile';
-import {Link} from "react-router-dom";
 
 /** Renders the Page for editing a single document. */
 class EditProfile extends React.Component {
@@ -24,17 +23,16 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const {name, image, description, interests, seeking, level, age, goals, _id} = data;
-    Profiles.update(_id, {$set: {name, image, description, interests, seeking, level, age, goals}},
+    const { name, image, description, interests, seeking, level, age, goals, _id } = data;
+    Profiles.update(_id, { $set: { name, image, description, interests, seeking, level, age, goals } },
         (error) => {
           if (error) {
-            swal('Error', err.message, 'error');
+            swal('Error', error.message, 'error');
           } else {
-            this.setState({error: '', redirectToReferer: true});
+            this.setState({ error: '', redirectToReferer: true });
           }
         });
   }
-
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {

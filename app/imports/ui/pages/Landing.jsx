@@ -57,7 +57,7 @@ class Landing extends React.Component {
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='feed'/> See & join friends' events
+                    <Icon name='feed'/> See & join friends`&apos;` events
                   </List.Item>
                 </List>
               </Grid.Column>
@@ -71,9 +71,9 @@ class Landing extends React.Component {
                     <br/>
                     <br/>
                     <br/>
-                      <Header className='landingPage' textAlign='center' as={'h1'}>
-                        Get started right away to avoid the freshman fifteen!
-                      </Header>
+                    <Header className='landingPage' textAlign='center' as={'h1'}>
+                      Get started right away to avoid the freshman fifteen!
+                    </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>

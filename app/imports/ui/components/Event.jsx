@@ -9,7 +9,6 @@ import 'moment-timezone';
 import { Friends } from '../../api/friend/Friend';
 import { Profiles } from '../../api/profile/Profile';
 import { Attending } from '../../api/attending/Attending';
-import AttendEvent from './AttendingEvent';
 import Attend from './Attend';
 import { Events } from '../../api/event/Events';
 

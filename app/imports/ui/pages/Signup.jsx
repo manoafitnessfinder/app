@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Header, Image, Message, Checkbox } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Image, Message } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import { Profiles } from '../../api/profile/Profile';
 
