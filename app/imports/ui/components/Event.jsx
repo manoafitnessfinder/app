@@ -60,7 +60,6 @@ class Event extends React.Component {
 /** Require a document to be passed to this component. */
 Event.propTypes = {
   event: PropTypes.object.isRequired,
-  Events: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
   attending: PropTypes.array.isRequired,
 };

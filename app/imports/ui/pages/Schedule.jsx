@@ -67,7 +67,7 @@ class Schedule extends React.Component {
           <Grid.Row>
             <Grid.Column textAlign='center' width={5}>
               <Divider hidden/>
-              <Segment fixed inverted className='scheduleBar'>
+              <Segment inverted className='scheduleBar'>
                 <Header as='h3' textAlign='center'>SCHEDULE A NEW EVENT</Header>
                 <AutoForm ref={ref => {
                   fRef = ref;

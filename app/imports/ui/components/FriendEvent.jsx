@@ -76,7 +76,6 @@ FriendEvent.propTypes = {
   friends: PropTypes.array.isRequired,
   currentUser: PropTypes.array.isRequired,
   attending: PropTypes.array.isRequired,
-  Events: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
