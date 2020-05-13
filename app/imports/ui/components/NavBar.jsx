@@ -33,9 +33,7 @@ class NavBar extends React.Component {
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/friendevents"
                                key='friendevents'><h4>Friend Events</h4></Menu.Item>,
                     <Menu.Item as={NavLink} activeClassName="active" exact to="/friends" key='friends'><h4>Friends
-                        List</h4></Menu.Item>,
-                    <Menu.Item as={NavLink} activeClassName="active" exact to="/profile"
-                               key='profile'><h4>My Profile</h4></Menu.Item>]
+                        List</h4></Menu.Item>]
               )}
 
               <Menu.Item position="right">
@@ -51,7 +49,7 @@ class NavBar extends React.Component {
                       <Dropdown.Menu>
                         <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact
                                        to="/signout"/>
-                        <Dropdown.Item icon="user" text="Profile Page" as={NavLink} exact
+                        <Dropdown.Item icon="user" text="My Profile" as={NavLink} exact
                                        to="/profile"/>
                       </Dropdown.Menu>
                     </Dropdown>

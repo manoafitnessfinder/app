@@ -7,11 +7,11 @@ class Landing extends React.Component {
   render() {
     return (
         /* Outside to maintain consistent borders. */
-        <Container className = 'landingPage'>
+        <Container className='landingPage'>
           <Container verticalAlign='middle' textAlign='center'>
             <Image className="landing" fluid src='/images/Landing1.PNG'/>
           </Container>
-          <Header className = 'landingPage' textAlign='centered' as={'h1'}>
+          <Header className='landingPage' textAlign='centered' as={'h1'}>
             Follow 5 Simple Steps to reach your Fitness Goals!</Header>
           <Grid verticalAlign='middle'>
             <Grid.Row columns={3}>
@@ -22,7 +22,9 @@ class Landing extends React.Component {
                   </Reveal.Content>
                   <Reveal.Content hidden verticalAlign='middle'>
                     <br/>
-                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
+                    <br/>
+                    <br/>
+                    <Header className='landingPage' textAlign='centered' as={'h1'}>
                       Schedule an event with a friend today!
                       <Divider hidden/>
                       <Button className='grnBtn' as={Link} to="/signup" animated size="large">
@@ -38,23 +40,23 @@ class Landing extends React.Component {
               <Grid.Column textAlign='center'>
                 <List as='h2' size='large'>
                   <List.Item>
-                    <Icon name='user' /> Create an account
+                    <Icon name='user'/> Create an account
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='edit' /> Edit your profile
+                    <Icon name='edit'/> Edit your profile
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='search' /> Find Fitness Friends
+                    <Icon name='search'/> Find Fitness Friends
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='calendar' /> Schedule new workouts
+                    <Icon name='calendar'/> Schedule new workouts
                   </List.Item>
                   <br/>
                   <List.Item>
-                    <Icon name='feed' /> See & join friends' events
+                    <Icon name='feed'/> See & join friends' events
                   </List.Item>
                 </List>
               </Grid.Column>
@@ -65,20 +67,23 @@ class Landing extends React.Component {
                   </Reveal.Content>
                   <Reveal.Content hidden>
                     <br/>
-                    <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-                      Get started right away to avoid the freshman fifteen!
-                    </Header>
+                    <br/>
+                    <br/>
+                    <br/>
+                      <Header className='landingPage' textAlign='centered' as={'h1'}>
+                        Get started right away to avoid the freshman fifteen!
+                      </Header>
                   </Reveal.Content>
                 </Reveal>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Header className = 'landingPage' textAlign='centered' as={'h1'}>
-           Work toward a better you. </Header>
+          <Header className='landingPage' textAlign='centered' as={'h1'}>
+            Work toward a better you. </Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
-              <Button className='scheduleButton' as={Link} to="/signup" animated size="large">
-                <Button.Content visible>JOIN NOW</Button.Content>
+              <Button className='whtBtn' as={Link} to="/signup" animated size="large">
+                <Button.Content visible>Join Now</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>
                 </Button.Content>

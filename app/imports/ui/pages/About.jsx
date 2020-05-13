@@ -105,7 +105,7 @@ class About extends React.Component {
               <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                 Who we are
               </Header>
-              <Header as='h2' size='large'>
+              <Header as='h4' size='large'>
                 Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy to find others
                 with similar fitness goals and connect to schedule events together.
               </Header>
@@ -117,7 +117,7 @@ class About extends React.Component {
                 <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
                   Why We Matter
                 </Header>
-                <Header as='h2' size='large'>
+                <Header as='h4' size='large'>
                   You no longer have to worry about going to the gym without a spotter or going on a run alone! Manoa
                   Fitness Finder allows you to make fitness connections with others with similar interests.
                 </Header>
