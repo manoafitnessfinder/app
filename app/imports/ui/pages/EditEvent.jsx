@@ -9,17 +9,28 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import { Redirect } from 'react-router-dom';
 import { Events, EventSchema } from '../../api/event/Events';
 
 /** Renders the Page for editing a single document. */
 class EditEvent extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+  }
+
   /** On successful submit, insert the data. */
   submit(data) {
-    const { date, type, location, associated, notes, _id } = data;
-    Events.update(_id, { $set: { date, type, location, associated, notes } }, (error) => (error ?
-        swal('Error', error.message, 'error') :
-        swal('Success', 'Event info has been updated successfully', 'success')));
+    const { date, type, location, notes, _id } = data;
+    Events.update(_id, { $set: { date, type, location, notes } },
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            this.setState({ error: '', redirectToReferer: true });
+          }
+        });
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -29,6 +40,11 @@ class EditEvent extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
+    const { from } = this.props.location.state || { from: { pathname: /events/ } };
+    // if correct authentication, redirect to from: page instead of signup screen
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
     return (
         <Grid container centered>
           <Grid.Column>
@@ -38,7 +54,6 @@ class EditEvent extends React.Component {
                 <Header as='h3' textAlign='center'>Edit Event</Header>
                 <DateField name='date' label='Date and Time' />
                 <SelectField name='type' label='Event Type' />
-                <TextField name='associated' label='Include a Friend'/>
                 <TextField name='location'/>
                 <LongTextField name='notes'/>
                 <Divider hidden/>
@@ -59,6 +74,7 @@ class EditEvent extends React.Component {
 EditEvent.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
+  location: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
 
