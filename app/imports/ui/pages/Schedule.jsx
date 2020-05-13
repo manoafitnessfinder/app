@@ -41,7 +41,6 @@ class Schedule extends React.Component {
   submit(data, formRef) {
     const { date, type, location, associated, notes } = data;
     const owner = Meteor.user().username;
-    console.log(`the owner of this event is ${owner}`);
     Events.insert({ date, type, location, associated, notes, owner },
         (error) => {
           if (error) {
