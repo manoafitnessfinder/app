@@ -18,8 +18,10 @@ const formSchema = new SimpleSchema({
   date: Date,
   type: {
     type: String,
-    allowedValues: ['Run', 'Hike', 'Walk', 'Lift', 'Other'],
-    defaultValue: 'Walk',
+    allowedValues: ['Running', 'Lifting', 'Acrobatics', 'Calisthenics',
+      'Walking', 'Hiking', 'Climbing', 'Surfing', 'Yoga', 'Volleyball', 'Basketball',
+      'Baseball', 'Badminton', 'Tennis', 'Swimming', 'Dodgeball', 'Soccer', 'Other'],
+    defaultValue: 'Walking',
   },
   location: String,
   associated: {
