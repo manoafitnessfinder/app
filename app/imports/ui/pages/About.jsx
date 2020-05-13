@@ -56,7 +56,6 @@ class About extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-        <div className="aboutBackground">
         <Container>
           <Image centered src="/images/About1.PNG" fluid/>
           <Grid>
@@ -180,7 +179,6 @@ class About extends React.Component {
             </div>
           </Grid>
         </Container>
-        </div>
     );
   }
 }

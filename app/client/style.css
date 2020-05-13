@@ -53,11 +53,7 @@
   color: #6D9B7C;
 }
 
-.aboutBackground{
-  background: url('/app/public/images/topImage4.JPG') no-repeat fixed center;
-  background-size: cover;
-}
-
+/*About page: Christine*/
 .joinNow{
   background-color: #6D9B7C;
   padding-top: 30px;
@@ -119,30 +115,6 @@ tbody {
   padding-top: 10px;
   border: none!important;
   box-shadow: none!important;
-}
-
-/* Userlanding page */
-#user_landing_middle {
-  background-image: url("/images/UserLanding2.png");
-  background-size: cover;
-  width: 100%;
-  height: 420px;
-  display: flex;
-  padding-top: 270px;
-  align-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  justify-content: center;
-}
-
-/* Userlanding button for match */
-.matchButton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
 }
 
 /* Schedule Page #30: SOPHIA 04/28/20 */
@@ -231,7 +203,7 @@ a.profLink {
   background-color: #6D9B7C!important;
 }
 
-/* Userlanding page */
+/* Userlanding page top image */
 #user_landing_top {
   background-image: url("/images/UserLanding.PNG");
   background-size: cover;
@@ -246,13 +218,19 @@ a.profLink {
   justify-content: center;
 }
 
-/* Userlanding button for match */
-.matchButton{
+/* Userlanding page middle image */
+#user_landing_middle {
+  background-image: url("/images/UserLanding2.png");
+  background-size: cover;
+  width: 100%;
+  height: 420px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 270px;
   align-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
 }
 
 /* Footer background colour*/
