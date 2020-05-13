@@ -11,11 +11,12 @@ import { Profiles } from '../../api/profile/Profile';
 import { Attending } from '../../api/attending/Attending';
 import AttendEvent from './AttendingEvent';
 import Attend from './Attend';
+import { Events } from '../../api/event/Events';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Event extends React.Component {
   removeItem(docID) {
-    this.props.Events.remove(docID);
+    Events.remove(docID);
   }
 
   render() {
