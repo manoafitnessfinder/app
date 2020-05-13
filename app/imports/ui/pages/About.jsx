@@ -127,7 +127,7 @@ class About extends React.Component {
               </Grid.Column>
             </Grid.Row>
             <div className="joinNow">
-              <Grid container verticalAlign="center">
+              <Grid container verticalAlign='middle' textAlign='center'>
                 <Header inverted as='h2'>
                   Join the Hunt!
                   <Header.Subheader>
