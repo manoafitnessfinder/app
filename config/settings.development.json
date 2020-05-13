@@ -27,7 +27,7 @@
   "defaultEvents": [
     {
       "date": "2014-01-01T23:28:56.782Z",
-      "type": "Run",
+      "type": "Running",
       "location": "Ewa Beach",
       "associated": "galileo@moon.com",
       "notes": "It was fun.",
@@ -35,7 +35,7 @@
     },
     {
       "date": "2020-05-27T04:02:56.782Z",
-      "type": "Walk",
+      "type": "Walking",
       "location": "Mililani",
       "associated": "galileo@moon.com",
       "notes": "2 miles.",
@@ -43,7 +43,7 @@
     },
     {
       "date": "2020-06-04T23:28:56.782Z",
-      "type": "Lift",
+      "type": "Lifting",
       "location": "Mililani",
       "associated": "galileo@moon.com",
       "notes": "Don't forget to bring water.",
@@ -51,7 +51,7 @@
     },
     {
       "date": "2020-04-26T04:00:56.782Z",
-      "type": "Walk",
+      "type": "Walking",
       "location": "Pearl City",
       "associated": "galileo@moon.com",
       "notes": "Great walk. Went to gulch.",
@@ -59,7 +59,7 @@
     },
     {
       "date": "2020-04-26T04:00:56.782Z",
-      "type": "Hike",
+      "type": "Hiking",
       "location": "Haleakala",
       "associated": "galileo@moon.com",
       "notes": "Very beautiful. 23:54.",
@@ -67,7 +67,7 @@
     },
     {
       "date": "1996-08-13T12:05:56.782Z",
-      "type": "Run",
+      "type": "Running",
       "location": "Manoa",
       "associated": "galileo@moon.com",
       "notes": "So tired.",
@@ -75,7 +75,7 @@
     },
     {
       "date": "1996-08-13T12:05:56.782Z",
-      "type": "Run",
+      "type": "Running",
       "location": "Manoa",
       "associated": "galileo@moon.com",
       "notes": "So tired.",
@@ -83,7 +83,7 @@
     },
     {
       "date": "1996-08-13T12:05:56.782Z",
-      "type": "Run",
+      "type": "Running",
       "location": "Manoa",
       "associated": "galileo@moon.com",
       "notes": "So tired.",
