@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Header } from 'semantic-ui-react';
+import { Card, Icon, Header, Feed } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,9 @@ import moment from 'moment';
 import 'moment-timezone';
 import { Friends } from '../../api/friend/Friend';
 import { Profiles } from '../../api/profile/Profile';
+import { Attending } from '../../api/attending/Attending';
+import AttendEvent from './AttendingEvent';
+import Attend from './Attend';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Event extends React.Component {
@@ -34,6 +37,13 @@ class Event extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
+            <Card.Content>
+              <b>Attending This event:</b>
+              <Feed>
+                {this.props.attending.map((attending, index) => <Attend key={index} attending={attending}
+                                                                        event={this.props.event}/>)}
+              </Feed>
+            </Card.Content>
             <Card.Content extra textAlign='right'>
               <Icon name='edit'/><Link to={`/editevent/${this.props.event._id}`}>Edit</Link>
               <Icon name='trash'/>
@@ -51,15 +61,18 @@ Event.propTypes = {
   event: PropTypes.object.isRequired,
   Events: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
+  attending: PropTypes.array.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
 export default withTracker(() => {
   const subscriptionFriends = Meteor.subscribe('Friends');
   const subscriptionsProfile = Meteor.subscribe('Profiles');
+  const subscriptionAttending = Meteor.subscribe('Attending');
   return {
     friends: Friends.find({}).fetch(),
     profile: Profiles.find({}).fetch(),
-    ready: subscriptionFriends.ready() && subscriptionsProfile.ready(),
+    attending: Attending.find({}).fetch(),
+    ready: subscriptionFriends.ready() && subscriptionsProfile.ready() && subscriptionAttending.ready(),
   };
 })(Event);
