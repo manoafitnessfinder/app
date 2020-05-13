@@ -56,11 +56,6 @@ class About extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-          <Container>
-            <Image centered src="/images/About1.PNG" fluid/>
-            <Grid>
-              <Grid.Row>
-                <Grid.Column textAlign='center' width={8}>
         <Container>
           <Image centered src="/images/About1.PNG" fluid/>
           <Grid>
@@ -72,124 +67,11 @@ class About extends React.Component {
                 </Header>
                 <Grid.Row>
                   <br/>
-                  <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
-                    How Fitness Finder Works
-                  </Header>
-                  <Grid.Row>
+                  <List as='h2' size='large'>
+                    <List.Item>
+                      <Icon name='user' /> Create an account
+                    </List.Item>
                     <br/>
-                    <List as='h2' size='large'>
-                      <List.Item>
-                        <Icon name='user'/> Create an account
-                      </List.Item>
-                      <br/>
-                      <List.Item>
-                        <Icon name='edit'/> Edit your profile
-                      </List.Item>
-                      <br/>
-                      <List.Item>
-                        <Icon name='search'/> Find Fitness Friends
-                      </List.Item>
-                      <br/>
-                      <List.Item>
-                        <Icon name='calendar'/> Schedule new workouts
-                      </List.Item>
-                      <br/>
-                      <List.Item>
-                        <Icon name='feed'/> See & join friends`&apos;` events
-                      </List.Item>
-                    </List>
-                  </Grid.Row>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <br/>
-                  <Image src="/images/About2.jpeg" fluid/>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column width={8}>
-                  <Image src="/images/About3.jpg" fluid/>
-                </Grid.Column>
-                <Grid.Column textAlign='center' width={8}>
-                  <br/>
-                  <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
-                    Who we are
-                  </Header>
-                  <Header as='h4' size='large'>
-                    Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it
-                    easy to find others
-                    with similar fitness goals and connect to schedule events together.
-                  </Header>
-                </Grid.Column>
-              </Grid.Row>
-              <Grid.Row>
-                <Grid.Column textAlign='center' width={8}>
-                  <br/>
-                  <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
-                    Why We Matter
-                  </Header>
-                  <Header as='h4' size='large'>
-                    You no longer have to worry about going to the gym without a spotter or going on a run alone! Manoa
-                    Fitness Finder allows you to make fitness connections with others with similar interests.
-                  </Header>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                  <Image src="/images/About4.jpg" fluid/>
-                </Grid.Column>
-              </Grid.Row>
-              <div className="joinNow">
-                <Grid container verticalAlign='middle' textAlign='center'>
-                  <Header inverted as='h2'>
-                    Join the Hunt!
-                    <Header.Subheader>
-                      Sign up and start matching with members today!
-                    </Header.Subheader>
-                  </Header>
-                  <Grid.Row>
-                    <Form onSubmit={this.submit}>
-                      <Container>
-                        <Form.Group as='h3' widths='equal'>
-                          <Form.Input fluid label='NAME'
-                                      name="name"
-                                      type="name"
-                                      placeholder='Your name here.'
-                                      onChange={this.handleChange}
-                          />
-                        </Form.Group>
-                        <Form.Group as='h3' widths='equal'>
-                          <Form.Input fluid
-                                      label="EMAIL"
-                                      name="email"
-                                      type="email"
-                                      placeholder="UH E-mail address"
-                                      onChange={this.handleChange}
-                          />
-                          <Form.Input
-                              label="PASSWORD"
-                              name="password"
-                              type="password"
-                              placeholder="Password"
-                              onChange={this.handleChange}
-                          />
-                        </Form.Group>
-                        <Form.Field align='center'>
-                          <Form.Button content="Set Up Profile"/>
-                        </Form.Field>
-                      </Container>
-                    </Form>
-                    {this.state.error === '' ? (
-                        ''
-                    ) : (
-                        <Message
-                            error
-                            header="There was an error is your registration. Try again or contact us."
-                            content={this.state.error}
-                        />
-                    )}
-                  </Grid.Row>
-                </Grid>
-              </div>
-            </Grid>
-          </Container>
                     <List.Item>
                       <Icon name='edit' /> Edit your profile
                     </List.Item>
@@ -210,24 +92,24 @@ class About extends React.Component {
               </Grid.Column>
               <Grid.Column width={8}>
                 <br/>
-              <Image src="/images/About2.jpeg" fluid/>
-            </Grid.Column>
+                <Image src="/images/About2.jpeg" fluid/>
+              </Grid.Column>
             </Grid.Row>
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <Image src="/images/About3.jpg" fluid/>
-            </Grid.Column>
-            <Grid.Column textAlign='center' width={8}>
-              <br/>
-              <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
-                Who we are
-              </Header>
-              <Header as='h4' size='large'>
-                Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy to find others
-                with similar fitness goals and connect to schedule events together.
-              </Header>
-            </Grid.Column>
-          </Grid.Row>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <Image src="/images/About3.jpg" fluid/>
+              </Grid.Column>
+              <Grid.Column textAlign='center' width={8}>
+                <br/>
+                <Header as='h3' size='huge' style={{ color: '#6D9B7C' }}>
+                  Who we are
+                </Header>
+                <Header as='h4' size='large'>
+                  Manoa Fitness Finder helps students find a workout buddy to get healthy and active. MFF makes it easy to find others
+                  with similar fitness goals and connect to schedule events together.
+                </Header>
+              </Grid.Column>
+            </Grid.Row>
             <Grid.Row>
               <Grid.Column textAlign='center' width={8}>
                 <br/>
@@ -248,39 +130,39 @@ class About extends React.Component {
                 <Header inverted as='h2'>
                   Join the Hunt!
                   <Header.Subheader>
-                  Sign up and start matching with members today!
+                    Sign up and start matching with members today!
                   </Header.Subheader>
                 </Header>
                 <Grid.Row>
                   <Form onSubmit={this.submit}>
                     <Container>
-                    <Form.Group as='h3' widths='equal'>
-                      <Form.Input fluid label='NAME'
-                                  name="name"
-                                  type="name"
-                                  placeholder='Your name here.'
-                                  onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group as='h3' widths='equal'>
-                      <Form.Input fluid
-                                  label="EMAIL"
-                                  name="email"
-                                  type="email"
-                                  placeholder="UH E-mail address"
-                                  onChange={this.handleChange}
-                      />
-                      <Form.Input
-                          label="PASSWORD"
-                          name="password"
-                          type="password"
-                          placeholder="Password"
-                          onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Field align='center'>
-                      <Form.Button content="Set Up Profile"/>
-                    </Form.Field>
+                      <Form.Group as='h3' widths='equal'>
+                        <Form.Input fluid label='NAME'
+                                    name="name"
+                                    type="name"
+                                    placeholder='Your name here.'
+                                    onChange={this.handleChange}
+                        />
+                      </Form.Group>
+                      <Form.Group as='h3' widths='equal'>
+                        <Form.Input fluid
+                                    label="EMAIL"
+                                    name="email"
+                                    type="email"
+                                    placeholder="UH E-mail address"
+                                    onChange={this.handleChange}
+                        />
+                        <Form.Input
+                            label="PASSWORD"
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            onChange={this.handleChange}
+                        />
+                      </Form.Group>
+                      <Form.Field align='center'>
+                        <Form.Button content="Set Up Profile"/>
+                      </Form.Field>
                     </Container>
                   </Form>
                   {this.state.error === '' ? (
@@ -300,7 +182,6 @@ class About extends React.Component {
     );
   }
 }
-
 /** Ensure that the React Router location object is available in case we need to redirect. */
 About.propTypes = {
   profiles: PropTypes.array.isRequired,
