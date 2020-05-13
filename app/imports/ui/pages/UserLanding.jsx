@@ -14,7 +14,7 @@ class UserLanding extends React.Component {
         <div className="aboutBackground">
           <Container>
             <Container id='user_landing_top'>
-              <Button as={Link} to="/profile" animated className="whtBtn" size="huge" centered>
+              <Button as={Link} to="/profile" animated className="whtBtn" size="huge">
                 <Button.Content visible>Edit Profile</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>
@@ -35,7 +35,7 @@ class UserLanding extends React.Component {
             <Divider hidden/>
             <Divider hidden/>
             <Container id='user_landing_middle'>
-              <Button as={Link} to="/allprofiles" animated className="whtBtn" size="huge" centered>
+              <Button as={Link} to="/allprofiles" animated className="whtBtn" size="huge">
                 <Button.Content visible>Find Friends</Button.Content>
                 <Button.Content hidden>
                   <Icon name='arrow right'/>
@@ -46,7 +46,7 @@ class UserLanding extends React.Component {
             <Grid>
               <Grid.Row>
                 <Grid.Column width={8} textAlign='center'>
-                  <Reveal animated='move left' instant>
+                  <Reveal animated='move' instant>
                     <Reveal.Content visible>
                       <Image fluid src="/images/UserLanding3.PNG"/>
                     </Reveal.Content>

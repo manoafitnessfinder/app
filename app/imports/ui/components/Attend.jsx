@@ -24,7 +24,7 @@ class Attend extends React.Component {
 /** Require a document to be passed to this component. */
 Attend.propTypes = {
   event: PropTypes.object.isRequired,
-  attending: PropTypes.string.isRequired,
+  attending: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
