@@ -8,23 +8,23 @@ class Landing extends React.Component {
     return (
         /* Outside to maintain consistent borders. */
         <Container className='landingPage'>
-          <Container verticalAlign='middle' textAlign='center'>
+          <Container verticalalign='middle' textAlign='center'>
             <Image className="landing" fluid src='/images/Landing1.PNG'/>
           </Container>
-          <Header className='landingPage' textAlign='centered' as={'h1'}>
+          <Header className='landingPage' textAlign='center' as={'h1'}>
             Follow 5 Simple Steps to reach your Fitness Goals!</Header>
-          <Grid verticalAlign='middle'>
+          <Grid verticalalign='middle'>
             <Grid.Row columns={3}>
-              <Grid.Column verticalAlign='middle'>
-                <Reveal animated='move left' instant>
+              <Grid.Column verticalalign='middle'>
+                <Reveal animated='move' instant>
                   <Reveal.Content visible>
                     <Image fluid src='/images/Landing2.jpg'/>
                   </Reveal.Content>
-                  <Reveal.Content hidden verticalAlign='middle'>
+                  <Reveal.Content hidden verticalalign='middle'>
                     <br/>
                     <br/>
                     <br/>
-                    <Header className='landingPage' textAlign='centered' as={'h1'}>
+                    <Header className='landingPage' textAlign='center' as={'h1'}>
                       Schedule an event with a friend today!
                       <Divider hidden/>
                       <Button className='grnBtn' as={Link} to="/signup" animated size="large">
@@ -39,6 +39,7 @@ class Landing extends React.Component {
               </Grid.Column>
               <Grid.Column textAlign='center'>
                 <List as='h2' size='large'>
+                  <br/><br/><br/>
                   <List.Item>
                     <Icon name='user'/> Create an account
                   </List.Item>
@@ -70,7 +71,7 @@ class Landing extends React.Component {
                     <br/>
                     <br/>
                     <br/>
-                      <Header className='landingPage' textAlign='centered' as={'h1'}>
+                      <Header className='landingPage' textAlign='center' as={'h1'}>
                         Get started right away to avoid the freshman fifteen!
                       </Header>
                   </Reveal.Content>
@@ -78,7 +79,7 @@ class Landing extends React.Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          <Header className='landingPage' textAlign='centered' as={'h1'}>
+          <Header className='landingPage' textAlign='center' as={'h1'}>
             Work toward a better you. </Header>
           <Container className='landing_bottom_image'>
             <Segment basic floated='right' compact textAlign='center'>
