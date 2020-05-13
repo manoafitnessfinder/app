@@ -28,13 +28,11 @@ class AttendEvent extends React.Component {
     let fRef = null;
     return (
         <AutoForm ref={ref => { fRef = ref; }} schema={AttendingSchema} onSubmit={data => this.submit(data, fRef)} >
-          <Segment>
-            <SubmitField basic color='green' value='Attend This Event'/>
+            <SubmitField className='grnBtn' value='Attend This Event'/>
             <ErrorsField/>
             <HiddenField name='eventId' value={this.props.eventId}/>
             <HiddenField name='otherEmail' value={this.props.anotherprofile.owner}/>
             <HiddenField name='otherName' value={this.props.anotherprofile.name}/>
-          </Segment>
         </AutoForm>
     );
   }

@@ -55,9 +55,9 @@ class FriendEvent extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            {button}
-            <Card.Content>
-              <b>Attending This event:</b>
+            <Card.Content textAlign='center'>
+              {button}<br/>
+              <b>ATTENDING THIS EVENT:</b>
               <Feed>
                 {this.props.attending.map((attending, index) => <Attend key={index} attending={attending}
                                                                         event={this.props.event}/>)}
