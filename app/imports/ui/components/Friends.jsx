@@ -14,16 +14,13 @@ class FriendsList extends React.Component {
           <Card color='green' >
             <Image src={this.props.profile.image} wrapped ui={false}/>
             <Card.Content>
-              <Card.Header>{this.props.profile.name}</Card.Header>
+              <Card.Header><Link to={`/User/${this.props.profile._id}`}>{this.props.profile.name}</Link></Card.Header>
               <Card.Meta>
                 <span className='date'>{this.props.profile.gender} , {this.props.profile.age}</span>
               </Card.Meta>
               <Card.Description>
                 {this.props.profile.description.substr(0, 200)} ...
               </Card.Description>
-              <Card.Content extra>
-                <Link to={`/User/${this.props.profile._id}`}>View Profile</Link>
-              </Card.Content>
             </Card.Content>
           </Card>
       );
