@@ -4,23 +4,10 @@ import { Container, Icon, Grid, Header, Table, Divider, Image, Loader, Segment, 
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { AutoForm, ErrorsField, SubmitField, LongTextField } from 'uniforms-semantic';
-import SimpleSchema from 'simpl-schema';
 import { Link, Redirect } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profile';
 import Note from '../components/Note';
 import { Notes } from '../../api/note/Notes';
-
-/** Create a schema to specify the structure of the data to appear in the form. */
-const formSchema = new SimpleSchema({
-  comment: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
-  },
-});
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class UserProfile extends React.Component {
@@ -31,7 +18,6 @@ class UserProfile extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    let fRef = null;
     if (this.props.profiles[0].description === '') {
       return <Redirect to={`/editprofile/${this.props.profiles[0]._id}`}/>;
     }
@@ -85,8 +71,8 @@ class UserProfile extends React.Component {
                       <Table.Row>
                         <Table.Cell> <Icon name='clipboard'/> <b>Interests</b></Table.Cell>
                         <Table.Cell>{_.map(this.props.profiles[0].interests, function (string) {
-                            return `${string}  `;
-                          })}</Table.Cell>
+                          return `${string}  `;
+                        })}</Table.Cell>
                       </Table.Row>
                       <Table.Row>
                         <Table.Cell> <Icon name='search'/> <b>Seeking</b></Table.Cell>

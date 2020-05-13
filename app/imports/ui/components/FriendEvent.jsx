@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Card, Icon, Header, Feed, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
@@ -10,6 +11,7 @@ import { Profiles } from '../../api/profile/Profile';
 import { Attending } from '../../api/attending/Attending';
 import AttendEvent from './AttendingEvent';
 import Attend from './Attend';
+
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class FriendEvent extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Icon } from 'semantic-ui-react';
+import { Grid, Image } from 'semantic-ui-react';
 
 class Contact extends React.Component {
 

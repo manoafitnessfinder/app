@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import _ from 'lodash';
+import { Card, Image } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -12,7 +13,9 @@ class AllProfiles extends React.Component {
   render() {
     let button;
     let thisFriend = _.findWhere(this.props.friends, { contactId: this.props.testprofile._id });
-    if (thisFriend === undefined) { thisFriend = ''; }
+    if (thisFriend === undefined) {
+      thisFriend = '';
+    }
     if (thisFriend.owner === Meteor.user().username) {
       button = <h3/>;
     } else {
@@ -23,7 +26,8 @@ class AllProfiles extends React.Component {
         <Card color='green'>
           <Image src={this.props.testprofile.image} wrapped ui={false}/>
           <Card.Content>
-            <Card.Header><Link to={`/User/${this.props.testprofile._id}`}>{this.props.testprofile.name}</Link></Card.Header>
+            <Card.Header><Link to={`/User/${this.props.testprofile._id}`}>{this.props.testprofile.name}
+            </Link></Card.Header>
             <Card.Meta>
               <span className='date'>{this.props.testprofile.gender} , {this.props.testprofile.age}</span>
             </Card.Meta>
