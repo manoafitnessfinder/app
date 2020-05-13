@@ -23,16 +23,15 @@ class AllProfiles extends React.Component {
         <Card color='green'>
           <Image src={this.props.testprofile.image} wrapped ui={false}/>
           <Card.Content>
-            <Card.Header>{this.props.testprofile.name}</Card.Header>
+            <Card.Header><Link to={`/User/${this.props.testprofile._id}`}>{this.props.testprofile.name}</Link></Card.Header>
             <Card.Meta>
               <span className='date'>{this.props.testprofile.gender} , {this.props.testprofile.age}</span>
             </Card.Meta>
             <Card.Description>
               {this.props.testprofile.description.substr(0, 200)} ...
+              <br/>
+              <br/>
             </Card.Description>
-            <Card.Content extra>
-              <Link to={`/User/${this.props.testprofile._id}`}>View Profile</Link>
-            </Card.Content>
             <Card.Content textAlign='center' extra>
               {button}
             </Card.Content>
