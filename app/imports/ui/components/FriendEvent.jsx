@@ -54,7 +54,7 @@ class FriendEvent extends React.Component {
               <b>NOTES</b><br/>
               {this.props.event.notes}
             </Card.Content>
-            <Card.Content textalign='center'>
+            <Card.Content textAlign='center'>
               {button}<br/>
               <b>ATTENDING THIS EVENT:</b>
               <Feed>
@@ -71,6 +71,7 @@ class FriendEvent extends React.Component {
 
 /** Require a document to be passed to this component. */
 FriendEvent.propTypes = {
+  Events: PropTypes.array.isRequired,
   event: PropTypes.object.isRequired,
   friends: PropTypes.array.isRequired,
   currentUser: PropTypes.array.isRequired,
