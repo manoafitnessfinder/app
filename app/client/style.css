@@ -262,3 +262,12 @@ footer a {
   background-color: #fff!important;
   color: #6D9B7C!important;
 }
+
+.commentBox{
+  text-align: left!important;
+}
+
+.submitButton {
+  text-align: center;
+
+}

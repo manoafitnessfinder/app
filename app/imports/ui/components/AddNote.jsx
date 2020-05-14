@@ -28,9 +28,9 @@ class AddNote extends React.Component {
     let fRef = null;
     return (
             <AutoForm ref={ref => { fRef = ref; }} schema={NotesSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
-                <TextField label="Comment:" name='note'/>
-                <SubmitField basic color='green' value='Submit'/>
+              <Segment className = 'submitButton'>
+                <TextField className = 'commentBox' label="Comment:" name='note'/>
+                <SubmitField  basic color='green' value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value={this.props.owner}/>
                 <HiddenField name='contactId' value={this.props.contactId}/>
