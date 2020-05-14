@@ -13,32 +13,34 @@ class AddNote extends React.Component {
   submit(data, formRef) {
     const { note, owner, contactId, createdAt, madeBy, image } = data;
     Notes.insert({ note, owner, contactId, createdAt, madeBy, image },
-      (error) => {
-        if (error) {
-          swal('Notes Error', error.message, 'error');
-        } else {
-          swal('Success', 'Note added successfully', 'success');
-          formRef.reset();
-        }
-      });
+        (error) => {
+          if (error) {
+            swal('Notes Error', error.message, 'error');
+          } else {
+            swal('Success', 'Note added successfully', 'success');
+            formRef.reset();
+          }
+        });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     let fRef = null;
     return (
-            <AutoForm ref={ref => { fRef = ref; }} schema={NotesSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment className = 'submitButton'>
-                <TextField className = 'commentBox' label="Comment:" name='note'/>
-                <SubmitField  basic color='green' value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' value={this.props.owner}/>
-                <HiddenField name='contactId' value={this.props.contactId}/>
-                <HiddenField name='createdAt' value={new Date()}/>
-                <HiddenField name='madeBy' value={this.props.madeBy}/>
-                <HiddenField name='image' value={this.props.image}/>
-              </Segment>
-            </AutoForm>
+        <AutoForm ref={ref => {
+          fRef = ref;
+        }} schema={NotesSchema} onSubmit={data => this.submit(data, fRef)}>
+          <Segment className='submitButton'>
+            <TextField className='commentBox' label="Comment:" name='note'/>
+            <SubmitField basic color='green' value='Submit'/>
+            <ErrorsField/>
+            <HiddenField name='owner' value={this.props.owner}/>
+            <HiddenField name='contactId' value={this.props.contactId}/>
+            <HiddenField name='createdAt' value={new Date()}/>
+            <HiddenField name='madeBy' value={this.props.madeBy}/>
+            <HiddenField name='image' value={this.props.image}/>
+          </Segment>
+        </AutoForm>
     );
   }
 }
