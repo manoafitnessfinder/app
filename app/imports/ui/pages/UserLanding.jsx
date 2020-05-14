@@ -94,7 +94,7 @@ class UserLanding extends React.Component {
                       <Divider hidden/>
                       <Header as='h3'>View past events your friends accomplished and join new ones that are coming
                       up.</Header>
-                      <Header as='h3'>Let`&apos;`s lose that freshman 15 together!</Header>
+                      <Header as='h3'>Let&apos;s lose that freshman 15 together!</Header>
                       <Button className='grnBtn' as={Link} to="/friendevents" animated size="large">
                         <Button.Content visible>View Now</Button.Content>
                         <Button.Content hidden>
